@@ -1,0 +1,394 @@
+{
+  "basics": {
+    "name": "Michel MAIER",
+    "label": "Développeur Web Senior<br/>Développeur principal<br/>Architecte",
+    "image": "michel-maier.jpg",
+    "email": "michel@solean-it.com",
+    "phone": "(+33) 6.13.56.19.40",
+    "url": "https://fr.linkedin.com/in/maier-michel",
+    "summary": "Développeur web expérimenté avec plus de <b>17 ans d'expérience</b>, dont 13 sous le framework Symfony (version 2 et suivantes). Passionné par les bonnes pratiques de développement, l’industrialisation et l’architecture logicielle. Les missions sont majoritairement réalisées à distance, depuis un siège situé en ZFU à Strasbourg.<br/>Je suis mobile et me déplace régulièrement chez le client.",
+    "location": {
+      "address": "20 avenue du Neuhof",
+      "postalCode": "67100",
+      "city": "Strasbourg",
+      "countryCode": "FR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "maier-michel",
+        "url": "https://fr.linkedin.com/in/maier-michel"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Sanofi Accelerator",
+      "position": "Développeur fullstack Typescript",
+      "startDate": "2024-12",
+      "summary": "Intégré à l'équipe GenAI, je travaille sur une application qui permet au équipes métier de générer des fichiers depuis des LLMS.",
+      "highlights": [
+        "Développement de features (backend et frontend) au sein d'une SPA.",
+        "Développement d'un event system permettant le déclenchement d'action par effet de bords.",
+        "Optimisation de microservice de génération de document docx et pdf.",
+        "<b>Contexte :</b> Node.js, TypeScript, ReactJS, NestJS, GraphQL, Docker, AWS ECS, Kanban"
+      ]
+    },
+    {
+      "name": "IAD",
+      "position": "Développeur back-end – PHP / Symfony",
+      "startDate": "2023-12",
+      "endDate": "2024-10",
+      "summary": "Dans le cadre de la rénovation de ses outils et de son expansion à l'international, I@D, leader dans le secteur immobilier, a entrepris un vaste projet de modernisation. Le défi majeur consiste à refondre leurs plateformes existantes pour les adapter aux standards internationaux tout en intégrant des solutions innovantes. Ce projet en cours vise à soutenir la croissance rapide du réseau I@D, particulièrement sur le marché français, mais également à l'international avec l’ouverture des concessions UK et US.",
+      "highlights": [
+        "Développement backend en suivant la vision de la core-team dans une architecture hexagonale (Clean Architecture) et une approche DDD",
+        "Intégration à la squad Grow (5 devs back + 2 devs front), afin de travailler sur la brique candidature pour les conseillers des nouvelles concessions UK et US.",
+        "Intégration à la squad Match (3 devs back + 1 dev front) afin de participer au développement des projets Buyer lead, brique CRM de suivi des leads provenant des différentes plateformes (Leboncoin, Seloger, etc.) pour les qualifier et les transformer en projets d’achat.",
+        "Développement du nouveau projet d’achat, un point d’entrée unique pour gérer les critères des acquéreurs et faire le suivi des biens proposés : notes, visites, baisses de prix...",
+        "Développement d’un moteur de rapprochement automatique permettant de faire coïncider les biens immobiliers du réseau avec les critères de recherche. La première étape a été de développer un moteur de recherche simple, facilitant le business des ventes croisées, notamment pour les biens non publiés sur internet.",
+        "<b>Contexte :</b> Linux Alpine, Docker, Git, PHP 7.2 / PHP 8, Symfony 3.4, 5 et 6, Postgres, PhpUnit, API Platform, AWS (S3, ECS, Lambda, SQS, MariaDB, DocumentDB), Jira, GitHub, Architecture hexagonale, Clean Code, DDD, monolithe modulaire."
+      ]
+    },
+    {
+      "name": "Leboncoin (Adevinta)",
+      "position": "Développeur back-end – PHP / Symfony",
+      "startDate": "2021-09",
+      "endDate": "2022-09",
+      "summary": "On ne présente plus le pure player Leboncoin, ce fameux site d’annonces que tout le monde connaît. Suite au rachat du groupe L’argus, la feature team Import récupère (fork) une application de multidiffusion d’annonces automobiles. Le challenge est de la mettre en production dans l’écosystème (ou presque) du groupe et de diffuser vers le site Leboncoin.fr.",
+      "highlights": [
+        "Amélioration de l’environnement de développement.",
+        "Optimisation de l’image Docker, la faisant passer de plus de 1 Go à quelques centaines de mégaoctets.",
+        "Mise en place de tests fonctionnels sur les principales fonctions de l’application (import/export) et smoke tests sur les interfaces CRUD de configuration.",
+        "Optimisations et refactoring de certains pans de l’application : architecture hexagonale, application des bonnes pratiques, tests unitaires, montée de version de PHP et Symfony.",
+        "Développement d’une API pour automatiser les branchements des clients depuis le service de contractualisation.",
+        "Préparations et migrations des comptes pros du multi-diffuseur (prestataire historique) vers l'outil.",
+        "Intégration de nouveaux logiciels (DMS) dans l'outil, création de nouvelles règles de mapping et de transformation.",
+        "Documentation et élaboration de schémas explicatifs des différentes briques fonctionnelles de l’application, et présentation fonctionnelle aux nouveaux membres de l’équipe et au service client.",
+        "Réunion d’architecture pour le découpage du monolithe en microservices, en vue d’une réécriture en Go et du passage d’une exécution planifiée (crons) à un fonctionnement événementiel pour se rapprocher du « temps réel ».",
+        "<b>Contexte :</b> Linux Alpine, Docker, Git, PHP 7.2 / PHP 8, Symfony 3.4 / 5, MariaDB, MongoDB, Kubernetes, PhpUnit, Sonata Admin, AWS (S3, ECS, Batch, Lambda, SQS, RDS, MariaDB, DocumentDB), Jira, GitHub, Architecture hexagonale, Clean Code"
+      ]
+    },
+    {
+      "name": "Agence DPS (Syneido)",
+      "position": "DevOps / Coaching technique",
+      "startDate": "2021-05",
+      "endDate": "2021-07",
+      "summary": "Suite à une réorganisation en interne, la société DPS m’a contacté afin d’industrialiser leurs process en mettant en place la CI et la CD. La mission s'avérera en réalité bien plus riche que décrite.",
+      "highlights": [
+        "Dockerisation de l’environnement de développement à l’image de la production.",
+        "Présentation de différentes solutions d’intégration continue (pros/cons) et mise en place de l’intégration continue et du déploiement continu d’applications Symfony.",
+        "Organisation d’ateliers techniques (paramétrage et utilisation de Xdebug, présentation de Gitflow, utilisation de Docker, configuration de Windows Subsystem for Linux (WSL)).",
+        "Backup, dockerisation et déploiement de leur outil de gestion de projet (Redmine) sur un serveur devenu inaccessible.",
+        "Migration du site <a href=\"http://www.suzuki.fr\" target=\"_blank\">suzuki.fr</a> d’un hébergement dédié vers une instance Platform.sh dédiée.",
+        "<b>Contexte :</b> Linux, Docker, Git, PHP 7.2, Symfony, Ansible, Ansible Vault, Ansistrano, GitHub Actions, Redmine, GitHub, Platform.sh"
+      ]
+    },
+    {
+      "name": "Diverses startups",
+      "position": "Développeur back-end PHP / JS – Terraform",
+      "startDate": "2020-10",
+      "endDate": "2021-04",
+      "summary": "À partir d’octobre 2020, j'ai découvert une nouvelle stack et participé à la mise en place de plateformes web, au setup de projets et à des migrations vers AWS.",
+      "highlights": [
+        "Passage d'une application monolithique en PHP/Symfony (solution de calcul de dallage béton, norme DTU 13-3) vers le cloud AWS en mode serverless, avec PHP s’exécutant dans des Lambdas. Les calculs sont exécutés en parallèle par le \"moteur de calcul\", entraînant de grosses performances.",
+        "Wrapping d'une API REST legacy via un serveur Apollo GraphQL afin d'être consommée par un site Gatsby pour la refonte complète du site <a href=\"https://www.lunii.com\" target=\"_blank\">lunii.com</a> avec des fonctions e-commerce (produits/panier).",
+        "Participation au setup AWS des plateformes <a href=\"https://www.maars.cc\" target=\"_blank\">maars.cc</a> et <a href=\"https://gotombola.co\" target=\"_blank\">gotombola.co</a>.",
+        "<b>Contexte :</b> Node.js, Jest, PHP 7.2, Symfony, React (à petites doses), Apollo, AWS (API Gateway, CloudFront, Lambda, DynamoDB, S3, SNS, SQS, RDS MySQL Aurora, SES), Terraform, Microservices, Serverless, ClickUp, GitHub, Trello"
+      ]
+    },
+    {
+      "name": "DgBirds (Air France)",
+      "position": "Développeur back-end – PHP / Symfony",
+      "startDate": "2018-07",
+      "endDate": "2019-12",
+      "summary": "DgBirds était une startup au sein du groupe Air France. Un projet intrapreneurial avec un très beau produit en mode SaaS : une boîte à outils complète pour les pilotes et le personnel au sol sur iPad.",
+      "highlights": [
+        "Développement du module « Mission Report » (API) : configuration et distribution de formulaires, ainsi que le monitoring des réponses.",
+        "Évolution et maintenance des modules « Documentation » et « Mission Activities ».",
+        "Synchronisation de groupes et utilisateurs depuis MS Active Directory (LDAP).",
+        "Définition d’une stratégie de tests, implémentation de tests unitaires et fonctionnels.",
+        "Analyse statique de code, scripts de build et setup de l’intégration continue.",
+        "Déploiement automatique de l’environnement de développement de la Single Page Application.",
+        "Évolution du setup de l’environnement de développement sous Docker.",
+        "Création de fixtures déterministes et de fake data pour identifier les goulots d’étranglement.",
+        "Refactoring du système des permissions utilisateurs.",
+        "Extraction de la logique métier depuis les contrôleurs vers des services applicatifs pour créer une API métier indépendante des détails d’implémentation (Symfony, S3, Doctrine).",
+        "Mise en place d’une stratégie pour transformer l’application Symfony fullstack en une application « API-Centric » / SPA.",
+        "Participation à la migration de MySQL 5.0 vers PostgreSQL 11.",
+        "Réécriture de requêtes SQL en utilisant les fonctionnalités avancées du SGBD : CTE récursif, trigger, vue matérialisée.",
+        "<b>Contexte :</b> Linux, Docker, Git, PHP 7.1, Vue.js, Symfony 3.4, PhpUnit, MySQL, PostgreSQL, AWS S3, Ansible, Terraform, Clean Code, Clean Architecture, SOLID Principles, Trello, Jira, GitHub, Scrutinizer"
+      ]
+    },
+    {
+      "name": "SOLEAN IT",
+      "position": "Architecte applicatif / Développeur – PHP / Symfony",
+      "startDate": "2018-02",
+      "endDate": "2018-06",
+      "summary": "Dans le cadre d’une auto-formation « Clean Code » et « Clean Architecture », une application a été réalisée pour prouver le concept sur une application.",
+      "highlights": [
+        "Développement (arrêté à 70 % du MVP) d’une application de gestion de prospects open source suivant les principes énoncés par Robert C. Martin.",
+        "Logique du domaine sous forme d’un package Composer : <a href=\"https://github.com/SO-LEAN/cleanprospecter\" target=\"_blank\">github.com/SO-LEAN/cleanprospecter</a>.",
+        "Implémentation sous Symfony : <a href=\"https://github.com/SO-LEAN/prospecterapp\" target=\"_blank\">github.com/SO-LEAN/prospecterapp</a>.",
+        "<b>Contexte :</b> Linux (Alpine), Docker, Git, Symfony 4.1, Nginx, PHP 7.2, PhpUnit, Clean Code, Clean Architecture, SOLID Principles, GitHub, CircleCI, Code Climate, Trello"
+      ]
+    },
+    {
+      "name": "ItiQiti",
+      "position": "Développeur – PHP / Symfony",
+      "startDate": "2015-10",
+      "endDate": "2018-06",
+      "summary": "Itiqiti SAS était une startup dont l’aventure a démarré en 2014, proposant des services de collecte pour les associations françaises principalement autour de jeux de tombola : organisations, éditions de tickets en ligne (WYSIWYG), tickets numériques et tirages au sort. L’aventure s’est arrêtée définitivement en 2019.",
+      "highlights": [
+        "Maintenance et évolutions de l’API RESTful centrale et de l’API publique.",
+        "Développement et maintenance de microservices asynchrones.",
+        "Développement d’applications « front » utilisant les services de l’API.",
+        "Développement d’outils pour la production.",
+        "Génération de l’environnement de développement sous Docker.",
+        "Revues de code et amélioration continue.",
+        "TDD : tests d’acceptation et unitaires.",
+        "Développement d’une API publique sous Firebase (Node.js) servant de proxy pour l’API centrale destinée à une application React Native.",
+        "<b>Contexte :</b> Linux (Debian/Alpine), Docker, Git, Symfony 2.7 / 3, Nginx, PHP 5.7, MongoDB, ZeroMQ, PhpUnit, TCPDF, PHPExcel, PHPQRCode, PhantomJS, Golang, Stripe, PayPal, Google API Client (Drive), Callr, Mandrill, Jira, GitHub, Jenkins, Scrutinizer, Travis CI, CircleCI, Firebase Cloud Functions, Scrum, Kanban"
+      ]
+    },
+    {
+      "name": "SOLEAN IT",
+      "position": "Gérant / DevOps / Développeur",
+      "startDate": "2016-11",
+      "endDate": "2017-04",
+      "summary": "Afin de répondre à des appels d’offre pour des projets au forfait, nous avons décidé de monter une usine de développement en intégrant toutes les bonnes pratiques réutilisables pour tous types de projets web. Pour prouver le concept, le site de la société a été développé ainsi. L’usine a depuis été arrêtée et n’est plus maintenue par manque de projets de ce type.",
+      "highlights": [
+        "Mise en place du laboratoire « SOLEAN LAB » de développement de la société : infrastructure de 7 serveurs chez Scaleway; 1 serveur GitLab CI + 1 Runner; 1 serveur Rancher (non-HA) pour l’orchestration des containers Docker; 2 environnements Rancher : développement (2 hosts) et production (2 hosts); monitoring des serveurs.",
+        "Développement Symfony du prototype du portail de l’entreprise avec pour objectif Yslow grade A : minification des JS, CSS; 1 fichier JS et 1 fichier CSS maximum par page; cache du serveur web, compression Gzip; fichiers statiques sur un vhost différent.",
+        "Industrialisation du projet portail : Git-flow; intégration continue, pipeline de 5 étages (build, static analysis, test, report, deploy); déploiement automatique de l’application à partir des branches principales (develop et master en préproduction), ainsi que des branches de feature et release (création dynamique d’un environnement si nécessaire).",
+        "Expérimentations : tests de montée en charge sur JMeter, tests de sécurité OpenVAS, Acunetix; stack ELK pour monitorer les logs; cache Varnish devant Nginx, modification du projet portail pour utiliser les ESI sur les éléments dynamiques.",
+        "<b>Contexte :</b> Linux, Ansible, Docker, Git, Symfony 3, Nginx, PHP 7, PhpUnit, Gulp, Browserify, Bootstrap 4.0.0-alpha.5, SASS, jQuery, GitLab CI, Rancher, New Relic, PHPCS, PHP lint, PHPCPD, PHPMD, PhpMetrics, PhpDocumentor, PHPCB"
+      ]
+    },
+    {
+      "name": "Amadeus It (Gestour)",
+      "position": "Concepteur / Développeur – PHP / Symfony",
+      "startDate": "2011-12",
+      "endDate": "2015-05",
+      "summary": "Gestour SAS, anciennement Perinfo, est une société éditrice de logiciels qui a été rachetée en 2010 par le groupe Amadeus It, leader de la vente de produits de voyage en Europe. Gestour est l'outil de gestion d'agence de voyage le plus utilisé en France.",
+      "highlights": [
+        "Études et sélection d'un framework PHP parmi les plus récents pour les futurs développements web de l'entreprise.",
+        "Évolution de la plateforme d’intégration continue.",
+        "Développement de Gestour en version web (Gestour 360) visant, à terme, à décommissionner totalement le “client riche” écrit en C++ tout en gardant le serveur existant.",
+        "Développement d’un CRM pour CroisiEurope (Gestour Sales Forces).",
+        "Développement d’une application d’analyse statistique orientée business (Gestour Analytics).",
+        "<b>Contexte :</b> Jenkins, Vagrant, Gestour Serveur API, Apache, base de données Oracle, PHP 5.3, Symfony 2.3 (LTS), Twitter Bootstrap, jQuery, Mercurial, PhpUnit, Karma, Twiglint, CSSLint, JMeter, Sami, SonarQube, Scrum"
+      ]
+    },
+    {
+      "name": "Cora informatique (Carrefour)",
+      "position": "Développeur – PHP / TYPO3",
+      "startDate": "2008-12",
+      "endDate": "2011-12",
+      "summary": "Cora informatique est le département informatique des hypermarchés Cora (anciennement Groupe Louis Delhaize) : 59 hypermarchés en France. C'est dans ce département que sont développés les outils internes du groupe ainsi que ses portails internet.",
+      "highlights": [
+        "Développement d’extensions TYPO3 et maintenance des sites du groupe.",
+        "Refonte du site cora.fr et des 59 magasins sur TYPO3, intégration et développement.",
+        "Assurer la continuité de service de l’application « solution voyages », reprise en main du code, sécurisation et maintenance de la solution.",
+        "Intégration de la solution Paybox pour les paiements en ligne sur coravoyages.fr.",
+        "Recette fonctionnelle et technique du site kido.fr réalisé par une société prestataire.",
+        "<b>Contexte :</b> PHP 5.2, TYPO3, jQuery, Apache, SVN, Paybox"
+      ]
+    },
+    {
+      "name": "SQLi",
+      "position": "Ingénieur étude et développement",
+      "startDate": "2007-03",
+      "endDate": "2007-11",
+      "summary": "Stage de fin d’études (7 mois) puis CDD (1 mois).",
+      "highlights": [
+        "Étude de besoins pour appels d’offres de sites web institutionnels (mairies).",
+        "Prototype basé sur TYPO3."
+      ]
+    },
+    {
+      "name": "Winbyus",
+      "position": "Développeur PHP",
+      "startDate": "2005-06",
+      "endDate": "2006-01",
+      "summary": "Stage d’été (3 mois) puis 5 mois en alternance.",
+      "highlights": [
+        "Développement d’une solution d’automatisation pour la création de squelettes de sites web paramétrables et modulaires : backoffice, actualité, catalogue, formulaire de contact, galerie, …",
+        "Intégration pour divers clients."
+      ]
+    },
+    {
+      "name": "Saï Studio",
+      "position": "Développeur PHP",
+      "startDate": "2004-06",
+      "endDate": "2004-09",
+      "summary": "Stage d’été.",
+      "highlights": [
+        "Intégration HTML/CSS2 à partir de maquettes PSD.",
+        "Développement d’un site associatif et d’un e-commerce en PHP."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "École supérieure d’informatique de Paris (ESI – SUPINFO)",
+      "area": "Expert en informatique et systèmes d’information",
+      "studyType": "BAC+5 (RNCP Niveau 1)",
+      "endDate": "2007"
+    },
+    {
+      "institution": "IUT de Mulhouse",
+      "area": "Génie électrique et informatique industrielle, option réseaux locaux industriels",
+      "studyType": "DUT",
+      "endDate": "2002"
+    },
+    {
+      "institution": "Lycée de Trinité",
+      "area": "Scientifique, option Technologies industrielles",
+      "studyType": "Baccalauréat",
+      "endDate": "1999"
+    }
+  ],
+  "skills": [
+    {
+      "name": "PHP & Symfony",
+      "level": "Expert",
+      "keywords": [
+        "De PHP 4 et suivantes",
+        "Symfony version 2 et suivantes",
+        "Développement d'API",
+        "API Platform",
+        "PhpUnit"
+      ]
+    },
+    {
+      "name": "JavaScript & Node.js",
+      "level": "Confirmé",
+      "keywords": [
+        "TypeScript",
+        "NestJS",
+        "Apollo GraphQL",
+        "React",
+        "Jest"
+      ]
+    },
+    {
+      "name": "DevOps & Industrialisation",
+      "level": "Confirmé",
+      "keywords": [
+        "CI/CD",
+        "Docker",
+        "AWS",
+        "Terraform",
+        "Monitoring"
+      ]
+    },
+    {
+      "name": "Base de données",
+      "level": "Expert",
+      "keywords": [
+        "Base de données relationnelles et NoSql",
+        "Postgres",
+        "MySQL",
+        "Oracle",
+        "MongoDB",
+        "DynamoDB",
+        "Elastic Search"
+      ]
+    },
+    {
+      "name": "Cloud",
+      "level": "Confirmé",
+      "keywords": [
+        "Aws"
+      ]
+    },
+    {
+      "name": "Craftsmanship",
+      "level": "Intéressé",
+      "keywords": [
+        "Architecture hexagonale",
+        "Clean Architecture",
+        "DDD",
+        "TDD",
+        "Refactoring"
+      ]
+    }
+  ],
+  "interests": [
+    {
+      "name": "Technical Books",
+      "keywords": [
+        "Working Effectively with Legacy Code - Michael C. Feather",
+        "Refactoring - Improving the Design Of Existing Code - Martin Fowler",
+        "Patterns of Enterprise Application Architecture - Martin Fowler",
+        "Implementing Domain-Driven Design - Vaughn Vernon",
+        "Design Patterns - Elements of Reusable Object-Oriented Software - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+        "The Lean Startup - Eric Ries"
+      ]
+    },
+    {
+      "name": "Kindle Books",
+      "keywords": [
+        "Domain-Driven DESIGN - Eriv Evans",
+        "Patterns of Enterprise Application Architecture - Martin Fowler",
+        "Reusable Objects Models - Martin Fowler",
+        "Writing Effective Use Case - Alistair Cockburn",
+        "Regular Expressions Cookbook - Jan Goyvaerts, Steven Levithan",
+        "The Mythical Man-Month - Frederick Brooks",
+        "Extreme Programming Explained - Kent Beck",
+        "Code Complete - Steve McConnell",
+        "Understanding the Professional Programmer - Gerald M. Weinberg",
+        "Monolith to Microservices - Sam Newman",
+        "Seven Languages in Seven Weeks - Bruce A. Tate",
+        "The Phoenix Project - Gene Kim, Kevin Behr, George Spafford",
+        "The Software Craftsman: Professionalism, Pragmatism, Pride - Sandro Mancuso",
+        "The Clean Coder - Robert C. Martin",
+        "SQL in 10 Minutes - Ben Forta",
+        "The Passionate Programmer - Chad Fowler",
+        "Designing Data-Intensive Applications - Martin Kleppmann",
+        "Restful Web APIs - Leonard Richardson, Michael Amundsen, Sam Ruby",
+        "Apprenticeship Pattern: Guidance for the Aspiring Software Craftsman - Dave Hoover, Adewale Oshineye"
+      ]
+    },
+    {
+      "name": "Sports et hobby",
+      "keywords": [
+        "Course à pied",
+        "Cyclisme"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Français",
+      "fluency": "Langue maternelle"
+    },
+    {
+      "language": "Anglais",
+      "fluency": "Professionnel"
+    }
+  ],
+  "references": [
+    {
+      "name": "David Huby - Head of Engineering chez IAD Group",
+      "reference": "Michel a travaillé pendant 2 ans chez IAD. Au-delà de ses compétences techniques, il apporte une vraie valeur dans la collaboration produit/tech en donnant du sens métier aux développements à réaliser. Il est un vrai atout pour les sociétés qui veulent construire un produit rapidement en combinant pragmatisme et qualité."
+    },
+    {
+      "name": "Thomas Haddad - Engineering Manager chez leboncoin",
+      "reference": "C’est avec tristesse que nous laissons partir ce super héros PHP après une belle mission d’un an. Véritable expert, pédagogue et toujours de bonne humeur, ce fut un réel bonheur de travailler quotidiennement avec Michel."
+    },
+    {
+      "name": "Sébastien Veigneau - Capitaine Air France et ex-Président et Co-founder de DgBirds",
+      "reference": "Michel est un professionnel qui a beaucoup de recul sur ce qu’il fait et sur l’ensemble de la solution sur laquelle il travaille. Il nous a beaucoup apporté en stabilisant un produit qui, de par le nombre d’intervenants, avait perdu en cohérence. C’est un travailleur de fond, très rigoureux, un rouleau compresseur de traitement des sujets épineux, un producteur de code stable et maintenable. Mais c’est aussi un collaborateur très agréable avec qui on a envie d’échanger et de partager des moments au sein d’une équipe. C’est avec regret que nous l’avons, pour l’instant, laissé s’impliquer dans d’autres projets après une collaboration de plus d’un an, dont je n’ai que du positif en mémoire. Pour sûr, dès qu’on peut, on sera ravi de reprofiter de ses talents. Je le recommande vivement, ayant beaucoup de respect à son égard."
+    },
+    {
+      "name": "Olivier Hoarea - Ex CTO ItiQiti",
+      "reference": "Michel est un collaborateur sur lequel on peut compter et avoir confiance au quotidien : expérimenté, compétent et tenace, humble et déterminé. Il aime trouver des solutions techniques aux problèmes les plus complexes. Il sait parfaitement s’intégrer à une équipe et y apporter son savoir-faire. Il sait apprendre et aider les autres à apprendre. Il est autonome, efficace et toujours de confiance, même dans un contexte full-remote de longue durée. Il est agréable de discuter de différents sujets avec Michel, il aime être critique mais constructif. J’attends avec impatience le jour où je pourrai de nouveau collaborer avec lui !"
+    },
+    {
+      "name": "D'autres références",
+      "reference": "Sur demande"
+    }
+  ],
+  "projects": []
+}

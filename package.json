@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "dependencies": {
+    "puppeteer": "^24.2.1",
+    "resumed": "^4.1.0",
+    "theme-boiler-plate": "file:./theme-boiler-plate",
+    "theme-french": "file:./theme-french"
+  },
+  "scripts": {
+    "rbp": "cat resume-french.json > resume.json && yarn resumed --theme theme-boiler-plate",
+    "rfrench": "cat resume-french.json > resume.json && yarn resumed --theme theme-french",
+    "2pdf": "node convert-to-pdf.js"
+  }
+}

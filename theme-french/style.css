@@ -1,0 +1,221 @@
+/* -------------------------------------------------------------------------- */
+/* RESET DE BASE                                                              */
+/* -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 20px;
+}
+
+a,
+a:visited {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------------- */
+/* HEADER PRINCIPAL                                                           */
+/* -------------------------------------------------------------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 1rem;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.photo {
+    flex-shrink: 0;
+}
+.photo img {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+}
+
+.contact {
+    font-size: 0.9rem;
+    color: #333;
+}
+.contact div {
+    margin: 0.3rem 0;
+}
+
+.header-right {
+    text-align: right;
+}
+.header-right h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #777;
+}
+
+/* -------------------------------------------------------------------------- */
+/* SECTIONS GÉNÉRALES                                                         */
+/* -------------------------------------------------------------------------- */
+section {
+    margin-bottom: 1.5rem;
+}
+
+section h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #444;
+    border-left: 4px solid #007ACC;
+    padding-left: 8px;
+    margin-bottom: 0.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* SECTION "SUMMARY"                                                          */
+/* -------------------------------------------------------------------------- */
+.summary {
+    margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* EXPÉRIENCE PROFESSIONNELLE                                                */
+/* -------------------------------------------------------------------------- */
+.work-item {
+    margin-bottom: 1.2rem;
+}
+.work-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ccc; /* Liseret gris sous la zone d'entête */
+    padding-bottom: 5px;
+}
+.experience-date {
+    font-size: 0.9rem;  /* Taille réduite */
+    font-weight: bold;
+    color: #555;
+}
+.experience-info {
+    flex: 1;
+}
+.positionTitle {
+    font-size: 1rem;
+    color: #777;
+}
+.companyName {
+    font-size: 1.1rem; /* Augmentation de la taille */
+    font-weight: bold;
+    color: #333;
+    margin-left: auto;
+}
+.experience-summary {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* FORMATION                                                                  */
+/* -------------------------------------------------------------------------- */
+.education-item {
+    margin-bottom: 1.2rem;
+}
+.education-header {
+    display: flex;
+    align-items: flex-start; /* Aligne la date en haut */
+    gap: 10px;
+}
+.education-date {
+    font-size: 0.9rem; /* Taille réduite */
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px;
+}
+.education-info {
+    display: flex;
+    flex-direction: column;
+}
+.education-title {
+    font-size: 1rem;
+    color: #333;
+}
+.institution {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* -------------------------------------------------------------------------- */
+/* AUTRES SECTIONS : COMPÉTENCES, LANGUES, INTÉRÊTS, PROJETS, RÉFÉRENCES      */
+/* -------------------------------------------------------------------------- */
+.skills,
+.languages,
+.interests,
+.references,
+.projects {
+    margin-bottom: 1.5rem;
+}
+ul {
+    list-style-type: square;
+    list-style-position: outside;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+.skills li,
+.languages li {
+    margin: 0.3rem 0;
+}
+.interest {
+    margin-bottom: 0.8rem;
+}
+.references article {
+    margin-bottom: 0.5rem;
+}
+.projects article {
+    margin-bottom: 1rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* IMPRESSION                                                                 */
+/* -------------------------------------------------------------------------- */
+@media print {
+    body {
+        margin: 0;
+        padding: 1rem;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .header {
+        border-bottom: 1px solid #aaa;
+    }
+    .header-right h2 {
+        font-size: 1rem;
+    }
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .work-item,
+    .education-item,
+    .education,
+    .references {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
