@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>
+            Michel MAIER
+         - CV
+    </title>
+    <style>
+            /* -------------------------------------------------------------------------- */
+/* RESET DE BASE                                                              */
+/* -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 20px;
+}
+
+a,
+a:visited {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------------- */
+/* HEADER PRINCIPAL                                                           */
+/* -------------------------------------------------------------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 1rem;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.photo {
+    flex-shrink: 0;
+}
+.photo img {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+}
+
+.contact {
+    font-size: 0.9rem;
+    color: #333;
+}
+.contact div {
+    margin: 0.3rem 0;
+}
+
+.header-right {
+    text-align: right;
+}
+.header-right h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #777;
+}
+
+/* -------------------------------------------------------------------------- */
+/* SECTIONS GÉNÉRALES                                                         */
+/* -------------------------------------------------------------------------- */
+section {
+    margin-bottom: 1.5rem;
+}
+
+section h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #444;
+    border-left: 4px solid #007ACC;
+    padding-left: 8px;
+    margin-bottom: 0.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* SECTION "SUMMARY"                                                          */
+/* -------------------------------------------------------------------------- */
+.summary {
+    margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* EXPÉRIENCE PROFESSIONNELLE                                                */
+/* -------------------------------------------------------------------------- */
+.work-item {
+    margin-bottom: 1.2rem;
+}
+.work-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ccc; /* Liseret gris sous la zone d'entête */
+    padding-bottom: 5px;
+}
+.experience-date {
+    font-size: 0.9rem;  /* Taille réduite */
+    font-weight: bold;
+    color: #555;
+}
+.experience-info {
+    flex: 1;
+}
+.positionTitle {
+    font-size: 1rem;
+    color: #777;
+}
+.companyName {
+    font-size: 1.1rem; /* Augmentation de la taille */
+    font-weight: bold;
+    color: #333;
+    margin-left: auto;
+}
+.experience-summary {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* FORMATION                                                                  */
+/* -------------------------------------------------------------------------- */
+.education-item {
+    margin-bottom: 1.2rem;
+}
+.education-header {
+    display: flex;
+    align-items: flex-start; /* Aligne la date en haut */
+    gap: 10px;
+}
+.education-date {
+    font-size: 0.9rem; /* Taille réduite */
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px;
+}
+.education-info {
+    display: flex;
+    flex-direction: column;
+}
+.education-title {
+    font-size: 1rem;
+    color: #333;
+}
+.institution {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* -------------------------------------------------------------------------- */
+/* AUTRES SECTIONS : COMPÉTENCES, LANGUES, INTÉRÊTS, PROJETS, RÉFÉRENCES      */
+/* -------------------------------------------------------------------------- */
+.skills,
+.languages,
+.interests,
+.references,
+.projects {
+    margin-bottom: 1.5rem;
+}
+ul {
+    list-style-type: square;
+    list-style-position: outside;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+.skills li,
+.languages li {
+    margin: 0.3rem 0;
+}
+.interest {
+    margin-bottom: 0.8rem;
+}
+.references article {
+    margin-bottom: 0.5rem;
+}
+.projects article {
+    margin-bottom: 1rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* IMPRESSION                                                                 */
+/* -------------------------------------------------------------------------- */
+@media print {
+    body {
+        margin: 0;
+        padding: 1rem;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .header {
+        border-bottom: 1px solid #aaa;
+    }
+    .header-right h2 {
+        font-size: 1rem;
+    }
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .work-item,
+    .education-item,
+    .education,
+    .references {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+    </style>
+    <!-- Optionnel: Google Fonts, Font Awesome... -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-left">
+                <div class="photo">
+                    <img src="michel-maier.jpg" alt="Photo de Michel MAIER" />
+                </div>
+            <div class="contact">
+                <h1>Michel MAIER</h1>
+                    <div><i class="fas fa-envelope"></i> michel@solean-it.com</div>
+                    <div><i class="fas fa-phone"></i> (+33) 6.13.56.19.40</div>
+                    <div><i class="fas fa-globe"></i> <a href="https://fr.linkedin.com/in/maier-michel">https://fr.linkedin.com/in/maier-michel</a></div>
+                    <div><i class="fas fa-map-marker-alt"></i>
+                        20 avenue du Neuhof,
+                        67100
+                        Strasbourg
+                    </div>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <h2>Développeur Web Senior<br/>Développeur principal<br/>Architecte</h2>
+        </div>
+    </header>
+
+    <section class="summary">
+        <h3>Profil</h3>
+        <p>Développeur web expérimenté avec plus de <b>17 ans d'expérience</b>, dont 13 sous le framework Symfony (version 2 et suivantes). Passionné par les bonnes pratiques de développement, l’industrialisation et l’architecture logicielle. Les missions sont majoritairement réalisées à distance, depuis un siège situé en ZFU à Strasbourg.<br/>Je suis mobile et me déplace régulièrement chez le client.</p>
+    </section>
+
+    <section class="work">
+        <h3>Expériences professionnelles</h3>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        12/2024 - Aujourd'hui
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur fullstack Typescript</h4>
+                    </div>
+                    <div class="companyName">
+                        Sanofi Accelerator
+                    </div>
+                </div>
+                <p class="experience-summary">Intégré à l'équipe GenAI, je travaille sur une application qui permet au équipes métier de générer des fichiers depuis des LLMS.</p>
+                    <ul>
+                            <li>Développement de features (backend et frontend) au sein d'une SPA.</li>
+                            <li>Développement d'un event system permettant le déclenchement d'action par effet de bords.</li>
+                            <li>Optimisation de microservice de génération de document docx et pdf.</li>
+                            <li><b>Contexte :</b> Node.js, TypeScript, ReactJS, NestJS, GraphQL, Docker, AWS ECS, Kanban</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        12/2023 - 10/2024
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur back-end – PHP / Symfony</h4>
+                    </div>
+                    <div class="companyName">
+                        IAD
+                    </div>
+                </div>
+                <p class="experience-summary">Dans le cadre de la rénovation de ses outils et de son expansion à l'international, I@D, leader dans le secteur immobilier, a entrepris un vaste projet de modernisation. Le défi majeur consiste à refondre leurs plateformes existantes pour les adapter aux standards internationaux tout en intégrant des solutions innovantes. Ce projet en cours vise à soutenir la croissance rapide du réseau I@D, particulièrement sur le marché français, mais également à l'international avec l’ouverture des concessions UK et US.</p>
+                    <ul>
+                            <li>Développement backend en suivant la vision de la core-team dans une architecture hexagonale (Clean Architecture) et une approche DDD</li>
+                            <li>Intégration à la squad Grow (5 devs back + 2 devs front), afin de travailler sur la brique candidature pour les conseillers des nouvelles concessions UK et US.</li>
+                            <li>Intégration à la squad Match (3 devs back + 1 dev front) afin de participer au développement des projets Buyer lead, brique CRM de suivi des leads provenant des différentes plateformes (Leboncoin, Seloger, etc.) pour les qualifier et les transformer en projets d’achat.</li>
+                            <li>Développement du nouveau projet d’achat, un point d’entrée unique pour gérer les critères des acquéreurs et faire le suivi des biens proposés : notes, visites, baisses de prix...</li>
+                            <li>Développement d’un moteur de rapprochement automatique permettant de faire coïncider les biens immobiliers du réseau avec les critères de recherche. La première étape a été de développer un moteur de recherche simple, facilitant le business des ventes croisées, notamment pour les biens non publiés sur internet.</li>
+                            <li><b>Contexte :</b> Linux Alpine, Docker, Git, PHP 7.2 / PHP 8, Symfony 3.4, 5 et 6, Postgres, PhpUnit, API Platform, AWS (S3, ECS, Lambda, SQS, MariaDB, DocumentDB), Jira, GitHub, Architecture hexagonale, Clean Code, DDD, monolithe modulaire.</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        09/2021 - 09/2022
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur back-end – PHP / Symfony</h4>
+                    </div>
+                    <div class="companyName">
+                        Leboncoin (Adevinta)
+                    </div>
+                </div>
+                <p class="experience-summary">On ne présente plus le pure player Leboncoin, ce fameux site d’annonces que tout le monde connaît. Suite au rachat du groupe L’argus, la feature team Import récupère (fork) une application de multidiffusion d’annonces automobiles. Le challenge est de la mettre en production dans l’écosystème (ou presque) du groupe et de diffuser vers le site Leboncoin.fr.</p>
+                    <ul>
+                            <li>Amélioration de l’environnement de développement.</li>
+                            <li>Optimisation de l’image Docker, la faisant passer de plus de 1 Go à quelques centaines de mégaoctets.</li>
+                            <li>Mise en place de tests fonctionnels sur les principales fonctions de l’application (import/export) et smoke tests sur les interfaces CRUD de configuration.</li>
+                            <li>Optimisations et refactoring de certains pans de l’application : architecture hexagonale, application des bonnes pratiques, tests unitaires, montée de version de PHP et Symfony.</li>
+                            <li>Développement d’une API pour automatiser les branchements des clients depuis le service de contractualisation.</li>
+                            <li>Préparations et migrations des comptes pros du multi-diffuseur (prestataire historique) vers l'outil.</li>
+                            <li>Intégration de nouveaux logiciels (DMS) dans l'outil, création de nouvelles règles de mapping et de transformation.</li>
+                            <li>Documentation et élaboration de schémas explicatifs des différentes briques fonctionnelles de l’application, et présentation fonctionnelle aux nouveaux membres de l’équipe et au service client.</li>
+                            <li>Réunion d’architecture pour le découpage du monolithe en microservices, en vue d’une réécriture en Go et du passage d’une exécution planifiée (crons) à un fonctionnement événementiel pour se rapprocher du « temps réel ».</li>
+                            <li><b>Contexte :</b> Linux Alpine, Docker, Git, PHP 7.2 / PHP 8, Symfony 3.4 / 5, MariaDB, MongoDB, Kubernetes, PhpUnit, Sonata Admin, AWS (S3, ECS, Batch, Lambda, SQS, RDS, MariaDB, DocumentDB), Jira, GitHub, Architecture hexagonale, Clean Code</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        05/2021 - 07/2021
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">DevOps / Coaching technique</h4>
+                    </div>
+                    <div class="companyName">
+                        Agence DPS (Syneido)
+                    </div>
+                </div>
+                <p class="experience-summary">Suite à une réorganisation en interne, la société DPS m’a contacté afin d’industrialiser leurs process en mettant en place la CI et la CD. La mission s'avérera en réalité bien plus riche que décrite.</p>
+                    <ul>
+                            <li>Dockerisation de l’environnement de développement à l’image de la production.</li>
+                            <li>Présentation de différentes solutions d’intégration continue (pros/cons) et mise en place de l’intégration continue et du déploiement continu d’applications Symfony.</li>
+                            <li>Organisation d’ateliers techniques (paramétrage et utilisation de Xdebug, présentation de Gitflow, utilisation de Docker, configuration de Windows Subsystem for Linux (WSL)).</li>
+                            <li>Backup, dockerisation et déploiement de leur outil de gestion de projet (Redmine) sur un serveur devenu inaccessible.</li>
+                            <li>Migration du site <a href="http://www.suzuki.fr" target="_blank">suzuki.fr</a> d’un hébergement dédié vers une instance Platform.sh dédiée.</li>
+                            <li><b>Contexte :</b> Linux, Docker, Git, PHP 7.2, Symfony, Ansible, Ansible Vault, Ansistrano, GitHub Actions, Redmine, GitHub, Platform.sh</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        10/2020 - 04/2021
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur back-end PHP / JS – Terraform</h4>
+                    </div>
+                    <div class="companyName">
+                        Diverses startups
+                    </div>
+                </div>
+                <p class="experience-summary">À partir d’octobre 2020, j'ai découvert une nouvelle stack et participé à la mise en place de plateformes web, au setup de projets et à des migrations vers AWS.</p>
+                    <ul>
+                            <li>Passage d'une application monolithique en PHP/Symfony (solution de calcul de dallage béton, norme DTU 13-3) vers le cloud AWS en mode serverless, avec PHP s’exécutant dans des Lambdas. Les calculs sont exécutés en parallèle par le "moteur de calcul", entraînant de grosses performances.</li>
+                            <li>Wrapping d'une API REST legacy via un serveur Apollo GraphQL afin d'être consommée par un site Gatsby pour la refonte complète du site <a href="https://www.lunii.com" target="_blank">lunii.com</a> avec des fonctions e-commerce (produits/panier).</li>
+                            <li>Participation au setup AWS des plateformes <a href="https://www.maars.cc" target="_blank">maars.cc</a> et <a href="https://gotombola.co" target="_blank">gotombola.co</a>.</li>
+                            <li><b>Contexte :</b> Node.js, Jest, PHP 7.2, Symfony, React (à petites doses), Apollo, AWS (API Gateway, CloudFront, Lambda, DynamoDB, S3, SNS, SQS, RDS MySQL Aurora, SES), Terraform, Microservices, Serverless, ClickUp, GitHub, Trello</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        07/2018 - 12/2019
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur back-end – PHP / Symfony</h4>
+                    </div>
+                    <div class="companyName">
+                        DgBirds (Air France)
+                    </div>
+                </div>
+                <p class="experience-summary">DgBirds était une startup au sein du groupe Air France. Un projet intrapreneurial avec un très beau produit en mode SaaS : une boîte à outils complète pour les pilotes et le personnel au sol sur iPad.</p>
+                    <ul>
+                            <li>Développement du module « Mission Report » (API) : configuration et distribution de formulaires, ainsi que le monitoring des réponses.</li>
+                            <li>Évolution et maintenance des modules « Documentation » et « Mission Activities ».</li>
+                            <li>Synchronisation de groupes et utilisateurs depuis MS Active Directory (LDAP).</li>
+                            <li>Définition d’une stratégie de tests, implémentation de tests unitaires et fonctionnels.</li>
+                            <li>Analyse statique de code, scripts de build et setup de l’intégration continue.</li>
+                            <li>Déploiement automatique de l’environnement de développement de la Single Page Application.</li>
+                            <li>Évolution du setup de l’environnement de développement sous Docker.</li>
+                            <li>Création de fixtures déterministes et de fake data pour identifier les goulots d’étranglement.</li>
+                            <li>Refactoring du système des permissions utilisateurs.</li>
+                            <li>Extraction de la logique métier depuis les contrôleurs vers des services applicatifs pour créer une API métier indépendante des détails d’implémentation (Symfony, S3, Doctrine).</li>
+                            <li>Mise en place d’une stratégie pour transformer l’application Symfony fullstack en une application « API-Centric » / SPA.</li>
+                            <li>Participation à la migration de MySQL 5.0 vers PostgreSQL 11.</li>
+                            <li>Réécriture de requêtes SQL en utilisant les fonctionnalités avancées du SGBD : CTE récursif, trigger, vue matérialisée.</li>
+                            <li><b>Contexte :</b> Linux, Docker, Git, PHP 7.1, Vue.js, Symfony 3.4, PhpUnit, MySQL, PostgreSQL, AWS S3, Ansible, Terraform, Clean Code, Clean Architecture, SOLID Principles, Trello, Jira, GitHub, Scrutinizer</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        02/2018 - 06/2018
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Architecte applicatif / Développeur – PHP / Symfony</h4>
+                    </div>
+                    <div class="companyName">
+                        SOLEAN IT
+                    </div>
+                </div>
+                <p class="experience-summary">Dans le cadre d’une auto-formation « Clean Code » et « Clean Architecture », une application a été réalisée pour prouver le concept sur une application.</p>
+                    <ul>
+                            <li>Développement (arrêté à 70 % du MVP) d’une application de gestion de prospects open source suivant les principes énoncés par Robert C. Martin.</li>
+                            <li>Logique du domaine sous forme d’un package Composer : <a href="https://github.com/SO-LEAN/cleanprospecter" target="_blank">github.com/SO-LEAN/cleanprospecter</a>.</li>
+                            <li>Implémentation sous Symfony : <a href="https://github.com/SO-LEAN/prospecterapp" target="_blank">github.com/SO-LEAN/prospecterapp</a>.</li>
+                            <li><b>Contexte :</b> Linux (Alpine), Docker, Git, Symfony 4.1, Nginx, PHP 7.2, PhpUnit, Clean Code, Clean Architecture, SOLID Principles, GitHub, CircleCI, Code Climate, Trello</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        10/2015 - 06/2018
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur – PHP / Symfony</h4>
+                    </div>
+                    <div class="companyName">
+                        ItiQiti
+                    </div>
+                </div>
+                <p class="experience-summary">Itiqiti SAS était une startup dont l’aventure a démarré en 2014, proposant des services de collecte pour les associations françaises principalement autour de jeux de tombola : organisations, éditions de tickets en ligne (WYSIWYG), tickets numériques et tirages au sort. L’aventure s’est arrêtée définitivement en 2019.</p>
+                    <ul>
+                            <li>Maintenance et évolutions de l’API RESTful centrale et de l’API publique.</li>
+                            <li>Développement et maintenance de microservices asynchrones.</li>
+                            <li>Développement d’applications « front » utilisant les services de l’API.</li>
+                            <li>Développement d’outils pour la production.</li>
+                            <li>Génération de l’environnement de développement sous Docker.</li>
+                            <li>Revues de code et amélioration continue.</li>
+                            <li>TDD : tests d’acceptation et unitaires.</li>
+                            <li>Développement d’une API publique sous Firebase (Node.js) servant de proxy pour l’API centrale destinée à une application React Native.</li>
+                            <li><b>Contexte :</b> Linux (Debian/Alpine), Docker, Git, Symfony 2.7 / 3, Nginx, PHP 5.7, MongoDB, ZeroMQ, PhpUnit, TCPDF, PHPExcel, PHPQRCode, PhantomJS, Golang, Stripe, PayPal, Google API Client (Drive), Callr, Mandrill, Jira, GitHub, Jenkins, Scrutinizer, Travis CI, CircleCI, Firebase Cloud Functions, Scrum, Kanban</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        11/2016 - 04/2017
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Gérant / DevOps / Développeur</h4>
+                    </div>
+                    <div class="companyName">
+                        SOLEAN IT
+                    </div>
+                </div>
+                <p class="experience-summary">Afin de répondre à des appels d’offre pour des projets au forfait, nous avons décidé de monter une usine de développement en intégrant toutes les bonnes pratiques réutilisables pour tous types de projets web. Pour prouver le concept, le site de la société a été développé ainsi. L’usine a depuis été arrêtée et n’est plus maintenue par manque de projets de ce type.</p>
+                    <ul>
+                            <li>Mise en place du laboratoire « SOLEAN LAB » de développement de la société : infrastructure de 7 serveurs chez Scaleway; 1 serveur GitLab CI + 1 Runner; 1 serveur Rancher (non-HA) pour l’orchestration des containers Docker; 2 environnements Rancher : développement (2 hosts) et production (2 hosts); monitoring des serveurs.</li>
+                            <li>Développement Symfony du prototype du portail de l’entreprise avec pour objectif Yslow grade A : minification des JS, CSS; 1 fichier JS et 1 fichier CSS maximum par page; cache du serveur web, compression Gzip; fichiers statiques sur un vhost différent.</li>
+                            <li>Industrialisation du projet portail : Git-flow; intégration continue, pipeline de 5 étages (build, static analysis, test, report, deploy); déploiement automatique de l’application à partir des branches principales (develop et master en préproduction), ainsi que des branches de feature et release (création dynamique d’un environnement si nécessaire).</li>
+                            <li>Expérimentations : tests de montée en charge sur JMeter, tests de sécurité OpenVAS, Acunetix; stack ELK pour monitorer les logs; cache Varnish devant Nginx, modification du projet portail pour utiliser les ESI sur les éléments dynamiques.</li>
+                            <li><b>Contexte :</b> Linux, Ansible, Docker, Git, Symfony 3, Nginx, PHP 7, PhpUnit, Gulp, Browserify, Bootstrap 4.0.0-alpha.5, SASS, jQuery, GitLab CI, Rancher, New Relic, PHPCS, PHP lint, PHPCPD, PHPMD, PhpMetrics, PhpDocumentor, PHPCB</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        12/2011 - 05/2015
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Concepteur / Développeur – PHP / Symfony</h4>
+                    </div>
+                    <div class="companyName">
+                        Amadeus It (Gestour)
+                    </div>
+                </div>
+                <p class="experience-summary">Gestour SAS, anciennement Perinfo, est une société éditrice de logiciels qui a été rachetée en 2010 par le groupe Amadeus It, leader de la vente de produits de voyage en Europe. Gestour est l'outil de gestion d'agence de voyage le plus utilisé en France.</p>
+                    <ul>
+                            <li>Études et sélection d'un framework PHP parmi les plus récents pour les futurs développements web de l'entreprise.</li>
+                            <li>Évolution de la plateforme d’intégration continue.</li>
+                            <li>Développement de Gestour en version web (Gestour 360) visant, à terme, à décommissionner totalement le “client riche” écrit en C++ tout en gardant le serveur existant.</li>
+                            <li>Développement d’un CRM pour CroisiEurope (Gestour Sales Forces).</li>
+                            <li>Développement d’une application d’analyse statistique orientée business (Gestour Analytics).</li>
+                            <li><b>Contexte :</b> Jenkins, Vagrant, Gestour Serveur API, Apache, base de données Oracle, PHP 5.3, Symfony 2.3 (LTS), Twitter Bootstrap, jQuery, Mercurial, PhpUnit, Karma, Twiglint, CSSLint, JMeter, Sami, SonarQube, Scrum</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        12/2008 - 12/2011
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur – PHP / TYPO3</h4>
+                    </div>
+                    <div class="companyName">
+                        Cora informatique (Carrefour)
+                    </div>
+                </div>
+                <p class="experience-summary">Cora informatique est le département informatique des hypermarchés Cora (anciennement Groupe Louis Delhaize) : 59 hypermarchés en France. C'est dans ce département que sont développés les outils internes du groupe ainsi que ses portails internet.</p>
+                    <ul>
+                            <li>Développement d’extensions TYPO3 et maintenance des sites du groupe.</li>
+                            <li>Refonte du site cora.fr et des 59 magasins sur TYPO3, intégration et développement.</li>
+                            <li>Assurer la continuité de service de l’application « solution voyages », reprise en main du code, sécurisation et maintenance de la solution.</li>
+                            <li>Intégration de la solution Paybox pour les paiements en ligne sur coravoyages.fr.</li>
+                            <li>Recette fonctionnelle et technique du site kido.fr réalisé par une société prestataire.</li>
+                            <li><b>Contexte :</b> PHP 5.2, TYPO3, jQuery, Apache, SVN, Paybox</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        03/2007 - 11/2007
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Ingénieur étude et développement</h4>
+                    </div>
+                    <div class="companyName">
+                        SQLi
+                    </div>
+                </div>
+                <p class="experience-summary">Stage de fin d’études (7 mois) puis CDD (1 mois).</p>
+                    <ul>
+                            <li>Étude de besoins pour appels d’offres de sites web institutionnels (mairies).</li>
+                            <li>Prototype basé sur TYPO3.</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        06/2005 - 01/2006
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur PHP</h4>
+                    </div>
+                    <div class="companyName">
+                        Winbyus
+                    </div>
+                </div>
+                <p class="experience-summary">Stage d’été (3 mois) puis 5 mois en alternance.</p>
+                    <ul>
+                            <li>Développement d’une solution d’automatisation pour la création de squelettes de sites web paramétrables et modulaires : backoffice, actualité, catalogue, formulaire de contact, galerie, …</li>
+                            <li>Intégration pour divers clients.</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        06/2004 - 09/2004
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur PHP</h4>
+                    </div>
+                    <div class="companyName">
+                        Saï Studio
+                    </div>
+                </div>
+                <p class="experience-summary">Stage d’été.</p>
+                    <ul>
+                            <li>Intégration HTML/CSS2 à partir de maquettes PSD.</li>
+                            <li>Développement d’un site associatif et d’un e-commerce en PHP.</li>
+                    </ul>
+            </article>
+    </section>
+
+    <section class="education">
+        <h3>Formation</h3>
+            <article class="education-item">
+                <div class="education-header">
+                    <div class="education-date">
+                        2007
+                    </div>
+                    <div class="education-info">
+                        <h4 class="education-title">BAC+5 (RNCP Niveau 1) - Expert en informatique et systèmes d’information</h4>
+                        <div class="institution">École supérieure d’informatique de Paris (ESI – SUPINFO)</div>
+                    </div>
+                </div>
+            </article>
+            <article class="education-item">
+                <div class="education-header">
+                    <div class="education-date">
+                        2002
+                    </div>
+                    <div class="education-info">
+                        <h4 class="education-title">DUT - Génie électrique et informatique industrielle, option réseaux locaux industriels</h4>
+                        <div class="institution">IUT de Mulhouse</div>
+                    </div>
+                </div>
+            </article>
+            <article class="education-item">
+                <div class="education-header">
+                    <div class="education-date">
+                        1999
+                    </div>
+                    <div class="education-info">
+                        <h4 class="education-title">Baccalauréat - Scientifique, option Technologies industrielles</h4>
+                        <div class="institution">Lycée de Trinité</div>
+                    </div>
+                </div>
+            </article>
+    </section>
+
+    <section class="skills">
+        <h3>Compétences</h3>
+        <ul>
+                <li>
+                    <strong>PHP &amp; Symfony</strong> (Expert)
+                        :
+                            De PHP 4 et suivantes, 
+                            Symfony version 2 et suivantes, 
+                            Développement d&#x27;API, 
+                            API Platform, 
+                            PhpUnit
+                </li>
+                <li>
+                    <strong>JavaScript &amp; Node.js</strong> (Confirmé)
+                        :
+                            TypeScript, 
+                            NestJS, 
+                            Apollo GraphQL, 
+                            React, 
+                            Jest
+                </li>
+                <li>
+                    <strong>DevOps &amp; Industrialisation</strong> (Confirmé)
+                        :
+                            CI/CD, 
+                            Docker, 
+                            AWS, 
+                            Terraform, 
+                            Monitoring
+                </li>
+                <li>
+                    <strong>Base de données</strong> (Expert)
+                        :
+                            Base de données relationnelles et NoSql, 
+                            Postgres, 
+                            MySQL, 
+                            Oracle, 
+                            MongoDB, 
+                            DynamoDB, 
+                            Elastic Search
+                </li>
+                <li>
+                    <strong>Cloud</strong> (Confirmé)
+                        :
+                            Aws
+                </li>
+                <li>
+                    <strong>Craftsmanship</strong> (Intéressé)
+                        :
+                            Architecture hexagonale, 
+                            Clean Architecture, 
+                            DDD, 
+                            TDD, 
+                            Refactoring
+                </li>
+        </ul>
+    </section>
+
+    <section class="languages">
+        <h3>Langues</h3>
+        <ul>
+                <li>
+                    <strong>Français :</strong> Langue maternelle
+                </li>
+                <li>
+                    <strong>Anglais :</strong> Professionnel
+                </li>
+        </ul>
+    </section>
+
+    <section class="interests">
+        <h3>Ma bibliothèque</h3>
+            <article class="interest">
+                <strong>Technical Books</strong>
+                    <ul>
+                            <li>Working Effectively with Legacy Code - Michael C. Feather</li>
+                            <li>Refactoring - Improving the Design Of Existing Code - Martin Fowler</li>
+                            <li>Patterns of Enterprise Application Architecture - Martin Fowler</li>
+                            <li>Implementing Domain-Driven Design - Vaughn Vernon</li>
+                            <li>Design Patterns - Elements of Reusable Object-Oriented Software - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides</li>
+                            <li>...</li>
+                    </ul>
+            </article>
+            <article class="interest">
+                <strong>Kindle Books</strong>
+                    <ul>
+                            <li>Domain-Driven DESIGN - Eriv Evans</li>
+                            <li>Patterns of Enterprise Application Architecture - Martin Fowler</li>
+                            <li>Reusable Objects Models - Martin Fowler</li>
+                            <li>Writing Effective Use Case - Alistair Cockburn</li>
+                            <li>Regular Expressions Cookbook - Jan Goyvaerts, Steven Levithan</li>
+                            <li>...</li>
+                    </ul>
+            </article>
+            <article class="interest">
+                <strong>Sports et hobby</strong>
+                    <ul>
+                            <li>Course à pied</li>
+                            <li>Cyclisme</li>
+                    </ul>
+            </article>
+    </section>
+
+    <section class="references">
+        <h3>Références</h3>
+            <article>
+                <strong>David Huby - Head of Engineering chez IAD Group</strong> : Michel a travaillé pendant 2 ans chez IAD. Au-delà de ses compétences techniques, il apporte une vraie valeur dans la collaboration produit/tech en donnant du sens métier aux développements à réaliser. Il est un vrai atout pour les sociétés qui veulent construire un produit rapidement en combinant pragmatisme et qualité.
+            </article>
+            <article>
+                <strong>Thomas Haddad - Engineering Manager chez leboncoin</strong> : C’est avec tristesse que nous laissons partir ce super héros PHP après une belle mission d’un an. Véritable expert, pédagogue et toujours de bonne humeur, ce fut un réel bonheur de travailler quotidiennement avec Michel.
+            </article>
+            <article>
+                <strong>Sébastien Veigneau - Capitaine Air France et ex-Président et Co-founder de DgBirds</strong> : Michel est un professionnel qui a beaucoup de recul sur ce qu’il fait et sur l’ensemble de la solution sur laquelle il travaille. Il nous a beaucoup apporté en stabilisant un produit qui, de par le nombre d’intervenants, avait perdu en cohérence. C’est un travailleur de fond, très rigoureux, un rouleau compresseur de traitement des sujets épineux, un producteur de code stable et maintenable. Mais c’est aussi un collaborateur très agréable avec qui on a envie d’échanger et de partager des moments au sein d’une équipe. C’est avec regret que nous l’avons, pour l’instant, laissé s’impliquer dans d’autres projets après une collaboration de plus d’un an, dont je n’ai que du positif en mémoire. Pour sûr, dès qu’on peut, on sera ravi de reprofiter de ses talents. Je le recommande vivement, ayant beaucoup de respect à son égard.
+            </article>
+            <article>
+                <strong>Olivier Hoarea - Ex CTO ItiQiti</strong> : Michel est un collaborateur sur lequel on peut compter et avoir confiance au quotidien : expérimenté, compétent et tenace, humble et déterminé. Il aime trouver des solutions techniques aux problèmes les plus complexes. Il sait parfaitement s’intégrer à une équipe et y apporter son savoir-faire. Il sait apprendre et aider les autres à apprendre. Il est autonome, efficace et toujours de confiance, même dans un contexte full-remote de longue durée. Il est agréable de discuter de différents sujets avec Michel, il aime être critique mais constructif. J’attends avec impatience le jour où je pourrai de nouveau collaborer avec lui !
+            </article>
+            <article>
+                <strong>D&#x27;autres références</strong> : Sur demande
+            </article>
+    </section>
+
+
+</body>
+</html>
