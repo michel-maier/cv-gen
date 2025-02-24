@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>
@@ -8,7 +8,7 @@
     </title>
     <style>
             /* -------------------------------------------------------------------------- */
-/* RESET DE BASE                                                              */
+/* BASE RESET                                                               */
 /* -------------------------------------------------------------------------- */
 * {
     margin: 0;
@@ -34,7 +34,7 @@ a:visited {
 }
 
 /* -------------------------------------------------------------------------- */
-/* HEADER PRINCIPAL                                                           */
+/* MAIN HEADER                                                              */
 /* -------------------------------------------------------------------------- */
 .header {
     display: flex;
@@ -81,7 +81,7 @@ a:visited {
 }
 
 /* -------------------------------------------------------------------------- */
-/* SECTIONS GÉNÉRALES                                                         */
+/* GENERAL SECTIONS                                                         */
 /* -------------------------------------------------------------------------- */
 section {
     margin-bottom: 1.5rem;
@@ -97,14 +97,14 @@ section h3 {
 }
 
 /* -------------------------------------------------------------------------- */
-/* SECTION "SUMMARY"                                                          */
+/* PROFILE / SUMMARY                                                        */
 /* -------------------------------------------------------------------------- */
 .summary {
     margin-bottom: 1.5rem;
 }
 
 /* -------------------------------------------------------------------------- */
-/* EXPÉRIENCE PROFESSIONNELLE                                                */
+/* PROFESSIONAL EXPERIENCE                                                  */
 /* -------------------------------------------------------------------------- */
 .work-item {
     margin-bottom: 1.2rem;
@@ -113,11 +113,11 @@ section h3 {
     display: flex;
     align-items: center;
     gap: 10px;
-    border-bottom: 1px solid #ccc; /* Liseret gris sous la zone d'entête */
+    border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
 }
 .experience-date {
-    font-size: 0.9rem;  /* Taille réduite */
+    font-size: 0.9rem;
     font-weight: bold;
     color: #555;
 }
@@ -129,7 +129,7 @@ section h3 {
     color: #777;
 }
 .companyName {
-    font-size: 1.1rem; /* Augmentation de la taille */
+    font-size: 1.1rem;
     font-weight: bold;
     color: #333;
     margin-left: auto;
@@ -141,18 +141,18 @@ section h3 {
 }
 
 /* -------------------------------------------------------------------------- */
-/* FORMATION                                                                  */
+/* EDUCATION                                                                */
 /* -------------------------------------------------------------------------- */
 .education-item {
     margin-bottom: 1.2rem;
 }
 .education-header {
     display: flex;
-    align-items: flex-start; /* Aligne la date en haut */
+    align-items: flex-start;
     gap: 10px;
 }
 .education-date {
-    font-size: 0.9rem; /* Taille réduite */
+    font-size: 0.9rem;
     font-weight: bold;
     color: #555;
     margin-right: 10px;
@@ -171,7 +171,7 @@ section h3 {
 }
 
 /* -------------------------------------------------------------------------- */
-/* AUTRES SECTIONS : COMPÉTENCES, LANGUES, INTÉRÊTS, PROJETS, RÉFÉRENCES      */
+/* OTHER SECTIONS: SKILLS, LANGUAGES, INTERESTS, PROJECTS, REFERENCES         */
 /* -------------------------------------------------------------------------- */
 .skills,
 .languages,
@@ -201,7 +201,7 @@ ul {
 }
 
 /* -------------------------------------------------------------------------- */
-/* IMPRESSION                                                                 */
+/* PRINTING                                                                 */
 /* -------------------------------------------------------------------------- */
 @media print {
     body {
@@ -230,7 +230,7 @@ ul {
 }
 
     </style>
-    <!-- Optionnel: Google Fonts, Font Awesome... -->
+    <!-- Optional: Google Fonts, Font Awesome... -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
 </head>
 <body>
@@ -238,7 +238,7 @@ ul {
     <header class="header">
         <div class="header-left">
                 <div class="photo">
-                    <img src="michel-maier.jpg" alt="Photo de Michel MAIER" />
+                    <img src="michel-maier.jpg" alt="Photo of Michel MAIER" />
                 </div>
             <div class="contact">
                 <h1>Michel MAIER</h1>
@@ -259,16 +259,16 @@ ul {
     </header>
 
     <section class="summary">
-        <h3>Profil</h3>
+        <h3>Profile</h3>
         <p>Experienced web developer with over <b>17 years of experience</b>, including 13 years working with the Symfony framework (version 2 and later). Passionate about best development practices, industrialisation and software architecture. Most assignments are carried out remotely from a headquarters located in a ZFU in Strasbourg.<br/>I am mobile and frequently travel to client sites.</p>
     </section>
 
     <section class="work">
-        <h3>Expériences professionnelles</h3>
+        <h3>Professional Experience</h3>
             <article class="work-item">
                 <div class="work-header">
                     <div class="experience-date">
-                        12/2024 - Aujourd'hui
+                        12/2024 - Present
                     </div>
                     <div class="experience-info">
                         <h4 class="positionTitle">Fullstack Typescript Developer</h4>
@@ -572,7 +572,7 @@ ul {
     </section>
 
     <section class="education">
-        <h3>Formation</h3>
+        <h3>Education</h3>
             <article class="education-item">
                 <div class="education-header">
                     <div class="education-date">
@@ -609,7 +609,7 @@ ul {
     </section>
 
     <section class="skills">
-        <h3>Compétences</h3>
+        <h3>Skills</h3>
         <ul>
                 <li>
                     <strong>PHP &amp; Symfony</strong> (Expert)
@@ -667,19 +667,19 @@ ul {
     </section>
 
     <section class="languages">
-        <h3>Langues</h3>
+        <h3>Languages</h3>
         <ul>
                 <li>
-                    <strong>French :</strong> Native language
+                    <strong>French:</strong> Native language
                 </li>
                 <li>
-                    <strong>English :</strong> Professional
+                    <strong>English:</strong> Professional
                 </li>
         </ul>
     </section>
 
     <section class="interests">
-        <h3>Mes centres d'intérêt</h3>
+        <h3>Interests</h3>
             <article class="interest">
                 <strong>Technical Books</strong>
                     <ul>
@@ -712,21 +712,21 @@ ul {
     </section>
 
     <section class="references">
-        <h3>Références</h3>
+        <h3>References</h3>
             <article>
-                <strong>David Huby - Head of Engineering at IAD Group</strong> : Michel worked for 2 years at IAD. Beyond his technical skills, he brings real value to product/tech collaboration by providing business insight into the developments to be carried out. He is a true asset for companies that want to build a product quickly by combining pragmatism and quality.
+                <strong>David Huby - Head of Engineering at IAD Group</strong>: Michel worked for 2 years at IAD. Beyond his technical skills, he brings real value to product/tech collaboration by providing business insight into the developments to be carried out. He is a true asset for companies that want to build a product quickly by combining pragmatism and quality.
             </article>
             <article>
-                <strong>Thomas Haddad - Engineering Manager at Leboncoin</strong> : It is with sadness that we see this PHP superhero leave after a great one-year mission. A true expert, an excellent mentor and always in good spirits, it was a real pleasure working with Michel on a daily basis.
+                <strong>Thomas Haddad - Engineering Manager at Leboncoin</strong>: It is with sadness that we see this PHP superhero leave after a great one-year mission. A true expert, an excellent mentor and always in good spirits, it was a real pleasure working with Michel on a daily basis.
             </article>
             <article>
-                <strong>Sébastien Veigneau - Air France Captain and former President and Co-founder of DgBirds</strong> : Michel is a professional with a broad perspective on his work and on the overall solution he contributes to. He has greatly helped us stabilise a product that, due to the number of stakeholders, had lost its coherence. He is a diligent worker, extremely meticulous – a veritable powerhouse when tackling complex issues – and produces stable, maintainable code. Moreover, he is a very pleasant colleague with whom you enjoy exchanging ideas and sharing moments within a team. It is with regret that we have, for now, allowed him to move on to other projects after more than a year of collaboration, of which I have only positive memories. Without a doubt, we will be delighted to work with him again whenever possible. I highly recommend him, holding him in high regard.
+                <strong>Sébastien Veigneau - Air France Captain and former President and Co-founder of DgBirds</strong>: Michel is a professional with a broad perspective on his work and on the overall solution he contributes to. He has greatly helped us stabilise a product that, due to the number of stakeholders, had lost its coherence. He is a diligent worker, extremely meticulous – a veritable powerhouse when tackling complex issues – and produces stable, maintainable code. Moreover, he is a very pleasant colleague with whom you enjoy exchanging ideas and sharing moments within a team. It is with regret that we have, for now, allowed him to move on to other projects after more than a year of collaboration, of which I have only positive memories. Without a doubt, we will be delighted to work with him again whenever possible. I highly recommend him, holding him in high regard.
             </article>
             <article>
-                <strong>Olivier Hoarea - Former CTO of ItiQiti</strong> : Michel is a colleague you can count on and trust on a daily basis: experienced, competent, and tenacious, yet humble and determined. He enjoys finding technical solutions to the most complex problems, integrates perfectly into a team and contributes his expertise. He is self-reliant, efficient and consistently reliable, even in long-term fully remote contexts. It is a pleasure to discuss various topics with Michel; he is both critical and constructive. I look forward to the day when I can collaborate with him again!
+                <strong>Olivier Hoarea - Former CTO of ItiQiti</strong>: Michel is a colleague you can count on and trust on a daily basis: experienced, competent, and tenacious, yet humble and determined. He enjoys finding technical solutions to the most complex problems, integrates perfectly into a team and contributes his expertise. He is self-reliant, efficient and consistently reliable, even in long-term fully remote contexts. It is a pleasure to discuss various topics with Michel; he is both critical and constructive. I look forward to the day when I can collaborate with him again!
             </article>
             <article>
-                <strong>Other references</strong> : On request
+                <strong>Other references</strong>: On request
             </article>
     </section>
 
