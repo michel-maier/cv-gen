@@ -4,11 +4,13 @@
     "puppeteer": "^24.2.1",
     "resumed": "^4.1.0",
     "theme-boiler-plate": "file:./theme-boiler-plate",
-    "theme-french": "file:./theme-french"
+    "theme-french": "file:./theme-french",
+    "theme-english": "file:./theme-english"
   },
   "scripts": {
     "rbp": "cat resume-french.json > resume.json && yarn resumed --theme theme-boiler-plate",
-    "rfrench": "cat resume-french.json > resume.json && yarn resumed --theme theme-french",
+    "rfrench": "cat resume-french.json > resume.json && yarn resumed --theme theme-french -o resume_fr.html",
+    "renglish": "cat resume-english.json > resume.json && yarn resumed --theme theme-english -o resume_en.html",
     "2pdf": "node convert-to-pdf.js"
   }
 }

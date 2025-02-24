@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        {{#if resume.basics}}
+            {{resume.basics.name}}
+        {{/if}} - CV
+    </title>
+    <style>
+            {{{css}}}
+    </style>
+    <!-- Optional: Google Fonts, Font Awesome... -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+</head>
+<body>
+
+{{!-- HEADER --}}
+{{#if resume.basics}}
+    <header class="header">
+        <div class="header-left">
+            {{#if resume.basics.image}}
+                <div class="photo">
+                    <img src="{{resume.basics.image}}" alt="Photo of {{resume.basics.name}}" />
+                </div>
+            {{/if}}
+            <div class="contact">
+                <h1>{{resume.basics.name}}</h1>
+                {{#if resume.basics.email}}
+                    <div><i class="fas fa-envelope"></i> {{resume.basics.email}}</div>
+                {{/if}}
+                {{#if resume.basics.phone}}
+                    <div><i class="fas fa-phone"></i> {{resume.basics.phone}}</div>
+                {{/if}}
+                {{#if resume.basics.url}}
+                    <div><i class="fas fa-globe"></i> <a href="{{resume.basics.url}}">{{resume.basics.url}}</a></div>
+                {{/if}}
+                {{#if resume.basics.location}}
+                    <div><i class="fas fa-map-marker-alt"></i>
+                        {{resume.basics.location.address}},
+                        {{resume.basics.location.postalCode}}
+                        {{resume.basics.location.city}}
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+
+        <div class="header-right">
+            <h2>{{{resume.basics.label}}}</h2>
+        </div>
+    </header>
+{{/if}}
+
+{{!-- PROFILE / SUMMARY --}}
+{{#if resume.basics.summary}}
+    <section class="summary">
+        <h3>Profile</h3>
+        <p>{{{resume.basics.summary}}}</p>
+    </section>
+{{/if}}
+
+{{!-- PROFESSIONAL EXPERIENCE --}}
+{{#if resume.work}}
+    <section class="work">
+        <h3>Professional Experience</h3>
+        {{#each resume.work}}
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        {{formatDate startDate}} - {{#if endDate}}{{formatDate endDate}}{{else}}Present{{/if}}
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">{{position}}</h4>
+                    </div>
+                    <div class="companyName">
+                        {{name}}
+                    </div>
+                </div>
+                <p class="experience-summary">{{{summary}}}</p>
+                {{#if highlights}}
+                    <ul>
+                        {{#each highlights}}
+                            <li>{{{this}}}</li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+            </article>
+        {{/each}}
+    </section>
+{{/if}}
+
+{{!-- EDUCATION --}}
+{{#if resume.education}}
+    <section class="education">
+        <h3>Education</h3>
+        {{#each resume.education}}
+            <article class="education-item">
+                <div class="education-header">
+                    <div class="education-date">
+                        {{#if startDate}}{{formatDate startDate}} - {{formatDate endDate}}{{else}}{{endDate}}{{/if}}
+                    </div>
+                    <div class="education-info">
+                        <h4 class="education-title">{{studyType}} - {{area}}</h4>
+                        <div class="institution">{{institution}}</div>
+                    </div>
+                </div>
+            </article>
+        {{/each}}
+    </section>
+{{/if}}
+
+{{!-- SKILLS --}}
+{{#if resume.skills}}
+    <section class="skills">
+        <h3>Skills</h3>
+        <ul>
+            {{#each resume.skills}}
+                <li>
+                    <strong>{{name}}</strong> ({{level}})
+                    {{#if keywords}}
+                        :
+                        {{#each keywords}}
+                            {{this}}{{#unless @last}}, {{/unless}}
+                        {{/each}}
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+{{/if}}
+
+{{!-- LANGUAGES --}}
+{{#if resume.languages}}
+    <section class="languages">
+        <h3>Languages</h3>
+        <ul>
+            {{#each resume.languages}}
+                <li>
+                    <strong>{{language}}:</strong> {{fluency}}
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+{{/if}}
+
+{{!-- INTERESTS --}}
+{{#if resume.interests}}
+    <section class="interests">
+        <h3>Interests</h3>
+        {{#each resume.interests}}
+            <article class="interest">
+                <strong>{{name}}</strong>
+                {{#if keywords}}
+                    <ul>
+                        {{#each (limit keywords 5)}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                        {{#ifMoreThan keywords 5}}
+                            <li>...</li>
+                        {{/ifMoreThan}}
+                    </ul>
+                {{/if}}
+            </article>
+        {{/each}}
+    </section>
+{{/if}}
+
+{{!-- REFERENCES --}}
+{{#if resume.references}}
+    <section class="references">
+        <h3>References</h3>
+        {{#each resume.references}}
+            <article>
+                <strong>{{name}}</strong>: {{reference}}
+            </article>
+        {{/each}}
+    </section>
+{{/if}}
+
+{{!-- PROJECTS --}}
+{{#if resume.projects}}
+    <section class="projects">
+        <h3>Projects</h3>
+        {{#each resume.projects}}
+            <article>
+                <h4>{{name}}</h4>
+                {{#if startDate}}
+                    <div class="date">
+                        ({{formatDate startDate}} - {{formatDate endDate}})
+                    </div>
+                {{/if}}
+                {{#if description}}
+                    <p>{{{description}}}</p>
+                {{/if}}
+                {{#if highlights}}
+                    <ul>
+                        {{#each highlights}}
+                            <li>{{{this}}}</li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+            </article>
+        {{/each}}
+    </section>
+{{/if}}
+
+</body>
+</html>

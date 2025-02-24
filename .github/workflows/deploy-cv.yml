@@ -1,0 +1,61 @@
+name: Build and Deploy CV
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build French and English resumes
+        run: |
+          yarn rfrench
+          yarn renglish
+
+      - name: Convert French resume to PDF using Puppeteer
+        run: yarn 2pdf resume_fr.html resume_michelmaier_fr.pdf
+
+      - name: Convert English resume to PDF using Puppeteer
+        run: yarn 2pdf resume_en.html resume_michelmaier_en.pdf
+
+      - name: Convert French resume to DOCX using Pandoc
+        uses: docker://pandoc/core:3.5
+        with:
+          args: "resume_fr.html -o resume_michelmaier_fr.docx"
+
+      - name: Convert English resume to DOCX using Pandoc
+        uses: docker://pandoc/core:3.5
+        with:
+          args: "resume_en.html -o resume_michelmaier_en.docx"
+
+      - name: Prepare GitHub Pages content
+        run: |
+          mkdir -p public/fr public/en
+          cp resume_fr.html public/fr/
+          cp michel-maier.jpg public/fr/
+          cp resume_michelmaier_fr.pdf public/fr/
+          cp resume_michelmaier_fr.docx public/fr/
+
+          cp resume_en.html public/en/
+          cp michel-maier.jpg public/en/
+          cp resume_michelmaier_en.pdf public/en/
+          cp resume_michelmaier_en.docx public/en/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_PAGES_TOKEN }}
+          publish_dir: ./public
