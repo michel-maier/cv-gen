@@ -24,6 +24,7 @@
   "work": [
     {
       "name": "Sanofi Accelerator",
+      "location": "Paris, FR (télétravail partiel)",
       "position": "Développeur fullstack Typescript",
       "startDate": "2024-12",
       "summary": "Intégré à l'équipe GenAI, je travaille sur une application qui permet au équipes métier de générer des fichiers depuis des LLMS.",
@@ -36,6 +37,7 @@
     },
     {
       "name": "IAD",
+      "location": "Paris, FR (télétravail)",
       "position": "Développeur back-end – PHP / Symfony",
       "startDate": "2023-12",
       "endDate": "2024-10",
@@ -51,6 +53,7 @@
     },
     {
       "name": "Leboncoin (Adevinta)",
+      "location": "Paris, FR (télétravail partiel)",
       "position": "Développeur back-end – PHP / Symfony",
       "startDate": "2021-09",
       "endDate": "2022-09",
@@ -70,6 +73,7 @@
     },
     {
       "name": "Agence DPS (Syneido)",
+      "location": "Paris, FR (remote)",
       "position": "DevOps / Coaching technique",
       "startDate": "2021-05",
       "endDate": "2021-07",
@@ -85,6 +89,7 @@
     },
     {
       "name": "Diverses startups",
+      "location": "Strasbourg, FR (télétravail)",
       "position": "Développeur back-end PHP / JS – Terraform",
       "startDate": "2020-10",
       "endDate": "2021-04",
@@ -98,6 +103,7 @@
     },
     {
       "name": "DgBirds (Air France)",
+      "location": "Tremblay en France, FR (télétravail)",
       "position": "Développeur back-end – PHP / Symfony",
       "startDate": "2018-07",
       "endDate": "2019-12",
@@ -121,6 +127,7 @@
     },
     {
       "name": "SOLEAN IT",
+      "location": "Strasbourg, FR",
       "position": "Architecte applicatif / Développeur – PHP / Symfony",
       "startDate": "2018-02",
       "endDate": "2018-06",
@@ -134,6 +141,7 @@
     },
     {
       "name": "ItiQiti",
+      "location": "Paris, FR (télétravail)",
       "position": "Développeur – PHP / Symfony",
       "startDate": "2015-10",
       "endDate": "2018-06",
@@ -152,6 +160,7 @@
     },
     {
       "name": "SOLEAN IT",
+      "location": "Strasbourg, FR",
       "position": "Gérant / DevOps / Développeur",
       "startDate": "2016-11",
       "endDate": "2017-04",
@@ -166,6 +175,7 @@
     },
     {
       "name": "Amadeus It (Gestour)",
+      "location": "Strasbourg, FR",
       "position": "Concepteur / Développeur – PHP / Symfony",
       "startDate": "2011-12",
       "endDate": "2015-05",
@@ -181,6 +191,7 @@
     },
     {
       "name": "Cora informatique (Carrefour)",
+      "location": "Metz, FR",
       "position": "Développeur – PHP / TYPO3",
       "startDate": "2008-12",
       "endDate": "2011-12",
@@ -196,6 +207,7 @@
     },
     {
       "name": "SQLi",
+      "location": "Strasbourg, FR",
       "position": "Ingénieur étude et développement",
       "startDate": "2007-03",
       "endDate": "2007-11",
@@ -207,6 +219,7 @@
     },
     {
       "name": "Winbyus",
+      "location": "Strasbourg, FR",
       "position": "Développeur PHP",
       "startDate": "2005-06",
       "endDate": "2006-01",
@@ -218,6 +231,7 @@
     },
     {
       "name": "Saï Studio",
+      "location": "Strasbourg, FR",
       "position": "Développeur PHP",
       "startDate": "2004-06",
       "endDate": "2004-09",
@@ -242,7 +256,7 @@
       "endDate": "2002"
     },
     {
-      "institution": "Lycée de Trinité",
+      "institution": "Lycée de Trinité, Martinique",
       "area": "Scientifique, option Technologies industrielles",
       "studyType": "Baccalauréat",
       "endDate": "1999"
@@ -374,11 +388,11 @@
       "reference": "Michel a travaillé pendant 2 ans chez IAD. Au-delà de ses compétences techniques, il apporte une vraie valeur dans la collaboration produit/tech en donnant du sens métier aux développements à réaliser. Il est un vrai atout pour les sociétés qui veulent construire un produit rapidement en combinant pragmatisme et qualité."
     },
     {
-      "name": "Thomas Haddad - Engineering Manager chez leboncoin",
+      "name": "Thomas Haddad - Head of Engineering chez leboncoin",
       "reference": "C’est avec tristesse que nous laissons partir ce super héros PHP après une belle mission d’un an. Véritable expert, pédagogue et toujours de bonne humeur, ce fut un réel bonheur de travailler quotidiennement avec Michel."
     },
     {
-      "name": "Sébastien Veigneau - Capitaine Air France et ex-Président et Co-founder de DgBirds",
+      "name": "Sébastien Veigneau - Capitaine Air France et ex-Président / Co-founder de DgBirds",
       "reference": "Michel est un professionnel qui a beaucoup de recul sur ce qu’il fait et sur l’ensemble de la solution sur laquelle il travaille. Il nous a beaucoup apporté en stabilisant un produit qui, de par le nombre d’intervenants, avait perdu en cohérence. C’est un travailleur de fond, très rigoureux, un rouleau compresseur de traitement des sujets épineux, un producteur de code stable et maintenable. Mais c’est aussi un collaborateur très agréable avec qui on a envie d’échanger et de partager des moments au sein d’une équipe. C’est avec regret que nous l’avons, pour l’instant, laissé s’impliquer dans d’autres projets après une collaboration de plus d’un an, dont je n’ai que du positif en mémoire. Pour sûr, dès qu’on peut, on sera ravi de reprofiter de ses talents. Je le recommande vivement, ayant beaucoup de respect à son égard."
     },
     {

@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------- */
-/* RESET DE BASE                                                              */
+/* BASE RESET                                                                 */
 /* -------------------------------------------------------------------------- */
 * {
     margin: 0;
@@ -25,7 +25,7 @@ a:visited {
 }
 
 /* -------------------------------------------------------------------------- */
-/* HEADER PRINCIPAL                                                           */
+/* MAIN HEADER                                                                */
 /* -------------------------------------------------------------------------- */
 .header {
     display: flex;
@@ -72,7 +72,7 @@ a:visited {
 }
 
 /* -------------------------------------------------------------------------- */
-/* SECTIONS GÉNÉRALES                                                         */
+/* GENERAL SECTIONS                                                         */
 /* -------------------------------------------------------------------------- */
 section {
     margin-bottom: 1.5rem;
@@ -88,14 +88,14 @@ section h3 {
 }
 
 /* -------------------------------------------------------------------------- */
-/* SECTION "SUMMARY"                                                          */
+/* PROFILE / SUMMARY                                                          */
 /* -------------------------------------------------------------------------- */
 .summary {
     margin-bottom: 1.5rem;
 }
 
 /* -------------------------------------------------------------------------- */
-/* EXPÉRIENCE PROFESSIONNELLE                                                */
+/* PROFESSIONAL EXPERIENCE                                                    */
 /* -------------------------------------------------------------------------- */
 .work-item {
     margin-bottom: 1.2rem;
@@ -104,11 +104,11 @@ section h3 {
     display: flex;
     align-items: center;
     gap: 10px;
-    border-bottom: 1px solid #ccc; /* Liseret gris sous la zone d'entête */
+    border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
 }
 .experience-date {
-    font-size: 0.9rem;  /* Taille réduite */
+    font-size: 0.9rem;
     font-weight: bold;
     color: #555;
 }
@@ -119,11 +119,27 @@ section h3 {
     font-size: 1rem;
     color: #777;
 }
+.company-info {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 .companyName {
-    font-size: 1.1rem; /* Augmentation de la taille */
+    font-size: 1.1rem;
     font-weight: bold;
     color: #333;
-    margin-left: auto;
+}
+.work-location {
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2px;
+}
+.work-location i {
+    color: #007ACC;
 }
 .experience-summary {
     font-style: italic;
@@ -132,18 +148,18 @@ section h3 {
 }
 
 /* -------------------------------------------------------------------------- */
-/* FORMATION                                                                  */
+/* EDUCATION                                                                  */
 /* -------------------------------------------------------------------------- */
 .education-item {
     margin-bottom: 1.2rem;
 }
 .education-header {
     display: flex;
-    align-items: flex-start; /* Aligne la date en haut */
+    align-items: flex-start;
     gap: 10px;
 }
 .education-date {
-    font-size: 0.9rem; /* Taille réduite */
+    font-size: 0.9rem;
     font-weight: bold;
     color: #555;
     margin-right: 10px;
@@ -162,7 +178,7 @@ section h3 {
 }
 
 /* -------------------------------------------------------------------------- */
-/* AUTRES SECTIONS : COMPÉTENCES, LANGUES, INTÉRÊTS, PROJETS, RÉFÉRENCES      */
+/* OTHER SECTIONS: SKILLS, LANGUAGES, INTERESTS, PROJECTS, REFERENCES         */
 /* -------------------------------------------------------------------------- */
 .skills,
 .languages,
@@ -192,7 +208,7 @@ ul {
 }
 
 /* -------------------------------------------------------------------------- */
-/* IMPRESSION                                                                 */
+/* PRINTING                                                                   */
 /* -------------------------------------------------------------------------- */
 @media print {
     body {

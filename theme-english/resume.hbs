@@ -72,8 +72,13 @@
                     <div class="experience-info">
                         <h4 class="positionTitle">{{position}}</h4>
                     </div>
-                    <div class="companyName">
-                        {{name}}
+                    <div class="company-info">
+                        <div class="companyName">{{name}}</div>
+                        {{#if location}}
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> {{location}}
+                            </div>
+                        {{/if}}
                     </div>
                 </div>
                 <p class="experience-summary">{{{summary}}}</p>

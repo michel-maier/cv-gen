@@ -24,6 +24,7 @@
   "work": [
     {
       "name": "Sanofi Accelerator",
+      "location": "Paris, FR (partial remote)",
       "position": "Fullstack Typescript Developer",
       "startDate": "2024-12",
       "summary": "As part of the GenAI team, I work on an application that enables business teams to generate files from LLMs.",
@@ -36,6 +37,7 @@
     },
     {
       "name": "IAD",
+      "location": "Paris, FR (remote)",
       "position": "Back-end Developer – PHP / Symfony",
       "startDate": "2023-12",
       "endDate": "2024-10",
@@ -51,6 +53,7 @@
     },
     {
       "name": "Leboncoin (Adevinta)",
+      "location": "Paris, FR (partial remote)",
       "position": "Back-end Developer – PHP / Symfony",
       "startDate": "2021-09",
       "endDate": "2022-09",
@@ -70,6 +73,7 @@
     },
     {
       "name": "Agence DPS (Syneido)",
+      "location": "Lille, FR (remote)",
       "position": "DevOps / Technical Coaching",
       "startDate": "2021-05",
       "endDate": "2021-07",
@@ -85,6 +89,7 @@
     },
     {
       "name": "Various Startups",
+      "location": "Strasbourg, FR (remote)",
       "position": "Back-end Developer – PHP / JS – Terraform",
       "startDate": "2020-10",
       "endDate": "2021-04",
@@ -98,6 +103,7 @@
     },
     {
       "name": "DgBirds (Air France)",
+      "location": "Tremblay en France, FR (remote)",
       "position": "Back-end Developer – PHP / Symfony",
       "startDate": "2018-07",
       "endDate": "2019-12",
@@ -121,7 +127,8 @@
     },
     {
       "name": "SOLEAN IT",
-      "position": "Application Architect / Developer – PHP / Symfony",
+      "location": "Strasbourg, FR",
+      "position": "Architect / Developer – PHP / Symfony",
       "startDate": "2018-02",
       "endDate": "2018-06",
       "summary": "As part of a self-training programme in 'Clean Code' and 'Clean Architecture', an application was developed to demonstrate the concept.",
@@ -134,6 +141,7 @@
     },
     {
       "name": "ItiQiti",
+      "location": "Paris, FR (remote)",
       "position": "Developer – PHP / Symfony",
       "startDate": "2015-10",
       "endDate": "2018-06",
@@ -152,6 +160,7 @@
     },
     {
       "name": "SOLEAN IT",
+      "location": "Strasbourg, FR",
       "position": "Manager / DevOps / Developer",
       "startDate": "2016-11",
       "endDate": "2017-04",
@@ -166,6 +175,7 @@
     },
     {
       "name": "Amadeus It (Gestour)",
+      "location": "Strasbourg, FR",
       "position": "Designer / Developer – PHP / Symfony",
       "startDate": "2011-12",
       "endDate": "2015-05",
@@ -181,6 +191,7 @@
     },
     {
       "name": "Cora Informatique (Carrefour)",
+      "location": "Metz, FR",
       "position": "Developer – PHP / TYPO3",
       "startDate": "2008-12",
       "endDate": "2011-12",
@@ -196,6 +207,7 @@
     },
     {
       "name": "SQLi",
+      "location": "Strasbourg, FR",
       "position": "Research and Development Engineer",
       "startDate": "2007-03",
       "endDate": "2007-11",
@@ -207,6 +219,7 @@
     },
     {
       "name": "Winbyus",
+      "location": "Strasbourg, FR",
       "position": "PHP Developer",
       "startDate": "2005-06",
       "endDate": "2006-01",
@@ -218,6 +231,7 @@
     },
     {
       "name": "Saï Studio",
+      "location": "Strasbourg, FR",
       "position": "PHP Developer",
       "startDate": "2004-06",
       "endDate": "2004-09",
@@ -242,7 +256,7 @@
       "endDate": "2002"
     },
     {
-      "institution": "Trinité High School",
+      "institution": "Trinité High School, Martinique",
       "area": "Scientific, specialising in Industrial Technologies",
       "studyType": "Baccalaureate",
       "endDate": "1999"
@@ -365,7 +379,7 @@
     },
     {
       "language": "English",
-      "fluency": "Professional"
+      "fluency": "Intermediate"
     }
   ],
   "references": [
@@ -374,11 +388,11 @@
       "reference": "Michel worked for 2 years at IAD. Beyond his technical skills, he brings real value to product/tech collaboration by providing business insight into the developments to be carried out. He is a true asset for companies that want to build a product quickly by combining pragmatism and quality."
     },
     {
-      "name": "Thomas Haddad - Engineering Manager at Leboncoin",
+      "name": "Thomas Haddad - Head of Engineering at Leboncoin",
       "reference": "It is with sadness that we see this PHP superhero leave after a great one-year mission. A true expert, an excellent mentor and always in good spirits, it was a real pleasure working with Michel on a daily basis."
     },
     {
-      "name": "Sébastien Veigneau - Air France Captain and former President and Co-founder of DgBirds",
+      "name": "Sébastien Veigneau - Air France Captain and former President / Co-founder of DgBirds",
       "reference": "Michel is a professional with a broad perspective on his work and on the overall solution he contributes to. He has greatly helped us stabilise a product that, due to the number of stakeholders, had lost its coherence. He is a diligent worker, extremely meticulous – a veritable powerhouse when tackling complex issues – and produces stable, maintainable code. Moreover, he is a very pleasant colleague with whom you enjoy exchanging ideas and sharing moments within a team. It is with regret that we have, for now, allowed him to move on to other projects after more than a year of collaboration, of which I have only positive memories. Without a doubt, we will be delighted to work with him again whenever possible. I highly recommend him, holding him in high regard."
     },
     {
