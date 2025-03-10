@@ -116,24 +116,47 @@ section h3 {
     border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
 }
+
 .experience-date {
     font-size: 0.9rem;
     font-weight: bold;
     color: #555;
 }
+
 .experience-info {
-    flex: 1;
+    flex: 1;  /* Laisse le poste occuper la place centrale */
 }
+
 .positionTitle {
     font-size: 1rem;
     color: #777;
 }
+
+.company-info {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .companyName {
     font-size: 1.1rem;
     font-weight: bold;
     color: #333;
-    margin-left: auto;
 }
+
+.work-location {
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2px;
+}
+.work-location i {
+    color: #007ACC;
+}
+
 .experience-summary {
     font-style: italic;
     color: #444;
@@ -273,8 +296,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">Fullstack Typescript Developer</h4>
                     </div>
-                    <div class="companyName">
-                        Sanofi Accelerator
+                    <div class="company-info">
+                        <div class="companyName">Sanofi Accelerator</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Paris, FR (partial remote)
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">As part of the GenAI team, I work on an application that enables business teams to generate files from LLMs.</p>
@@ -293,8 +319,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">Back-end Developer – PHP / Symfony</h4>
                     </div>
-                    <div class="companyName">
-                        IAD
+                    <div class="company-info">
+                        <div class="companyName">IAD</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Paris, FR (remote)
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">As part of the overhaul of its tools and international expansion, I@D – a leader in the real estate sector – has embarked on a large-scale modernisation project. The major challenge is to redesign their existing platforms to meet international standards while integrating innovative solutions. This ongoing project aims to support the rapid growth of the I@D network, particularly in the French market, as well as internationally with the opening of UK and US branches.</p>
@@ -315,8 +344,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">Back-end Developer – PHP / Symfony</h4>
                     </div>
-                    <div class="companyName">
-                        Leboncoin (Adevinta)
+                    <div class="company-info">
+                        <div class="companyName">Leboncoin (Adevinta)</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Paris, FR (partial remote)
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">The well-known classified ads website Leboncoin needs no introduction. Following the acquisition of the L’argus group, the Import feature team forked an application for the multi-diffusion of automotive ads. The challenge was to deploy it within (almost) the entire group ecosystem and broadcast it to Leboncoin.fr.</p>
@@ -341,8 +373,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">DevOps / Technical Coaching</h4>
                     </div>
-                    <div class="companyName">
-                        Agence DPS (Syneido)
+                    <div class="company-info">
+                        <div class="companyName">Agence DPS (Syneido)</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Lille, FR (remote)
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">Following an internal reorganisation, DPS contacted me to industrialise their processes by implementing CI and CD. The mission turned out to be far richer than initially described.</p>
@@ -363,8 +398,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">Back-end Developer – PHP / JS – Terraform</h4>
                     </div>
-                    <div class="companyName">
-                        Various Startups
+                    <div class="company-info">
+                        <div class="companyName">Various Startups</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Strasbourg, FR (remote)
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">From October 2020, I discovered a new stack and participated in the implementation of web platforms, project setups, and migrations to AWS.</p>
@@ -383,8 +421,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">Back-end Developer – PHP / Symfony</h4>
                     </div>
-                    <div class="companyName">
-                        DgBirds (Air France)
+                    <div class="company-info">
+                        <div class="companyName">DgBirds (Air France)</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Tremblay en France, FR (remote)
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">DgBirds was a startup within the Air France group. It was an intrapreneurial project offering an excellent SaaS product – a comprehensive toolkit for pilots and ground staff on iPad.</p>
@@ -411,10 +452,13 @@ ul {
                         02/2018 - 06/2018
                     </div>
                     <div class="experience-info">
-                        <h4 class="positionTitle">Application Architect / Developer – PHP / Symfony</h4>
+                        <h4 class="positionTitle">Architect / Developer – PHP / Symfony</h4>
                     </div>
-                    <div class="companyName">
-                        SOLEAN IT
+                    <div class="company-info">
+                        <div class="companyName">SOLEAN IT</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Strasbourg, FR
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">As part of a self-training programme in 'Clean Code' and 'Clean Architecture', an application was developed to demonstrate the concept.</p>
@@ -433,8 +477,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">Developer – PHP / Symfony</h4>
                     </div>
-                    <div class="companyName">
-                        ItiQiti
+                    <div class="company-info">
+                        <div class="companyName">ItiQiti</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Paris, FR (remote)
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">Itiqiti SAS was a startup that began in 2014, offering collection services for French associations primarily centred around raffle games – including organisation, online ticket creation (WYSIWYG), digital tickets and draws. The venture came to a definitive end in 2019.</p>
@@ -458,8 +505,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">Manager / DevOps / Developer</h4>
                     </div>
-                    <div class="companyName">
-                        SOLEAN IT
+                    <div class="company-info">
+                        <div class="companyName">SOLEAN IT</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Strasbourg, FR
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">To respond to tenders for fixed-price projects, we set up a development factory incorporating all the best practices reusable for all types of web projects. To prove the concept, the company website was developed in this manner. The factory has since been discontinued and is no longer maintained due to a lack of such projects.</p>
@@ -479,8 +529,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">Designer / Developer – PHP / Symfony</h4>
                     </div>
-                    <div class="companyName">
-                        Amadeus It (Gestour)
+                    <div class="company-info">
+                        <div class="companyName">Amadeus It (Gestour)</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Strasbourg, FR
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">Gestour SAS, formerly Perinfo, is a software publisher that was acquired in 2010 by the Amadeus It group, a leader in the sale of travel products in Europe. Gestour is the most widely used travel agency management tool in France.</p>
@@ -501,8 +554,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">Developer – PHP / TYPO3</h4>
                     </div>
-                    <div class="companyName">
-                        Cora Informatique (Carrefour)
+                    <div class="company-info">
+                        <div class="companyName">Cora Informatique (Carrefour)</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Metz, FR
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">Cora Informatique is the IT department of the Cora hypermarkets (formerly Groupe Louis Delhaize): 59 hypermarkets in France. This department develops the group's internal tools as well as its web portals.</p>
@@ -523,8 +579,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">Research and Development Engineer</h4>
                     </div>
-                    <div class="companyName">
-                        SQLi
+                    <div class="company-info">
+                        <div class="companyName">SQLi</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Strasbourg, FR
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">Final year internship (7 months) followed by a fixed-term contract (1 month).</p>
@@ -541,8 +600,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">PHP Developer</h4>
                     </div>
-                    <div class="companyName">
-                        Winbyus
+                    <div class="company-info">
+                        <div class="companyName">Winbyus</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Strasbourg, FR
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">Summer internship (3 months) followed by 5 months in a work-study programme.</p>
@@ -559,8 +621,11 @@ ul {
                     <div class="experience-info">
                         <h4 class="positionTitle">PHP Developer</h4>
                     </div>
-                    <div class="companyName">
-                        Saï Studio
+                    <div class="company-info">
+                        <div class="companyName">Saï Studio</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Strasbourg, FR
+                            </div>
                     </div>
                 </div>
                 <p class="experience-summary">Summer internship.</p>
@@ -602,7 +667,7 @@ ul {
                     </div>
                     <div class="education-info">
                         <h4 class="education-title">Baccalaureate - Scientific, specialising in Industrial Technologies</h4>
-                        <div class="institution">Trinité High School</div>
+                        <div class="institution">Trinité High School, Martinique</div>
                     </div>
                 </div>
             </article>
@@ -673,7 +738,7 @@ ul {
                     <strong>French:</strong> Native language
                 </li>
                 <li>
-                    <strong>English:</strong> Professional
+                    <strong>English:</strong> Intermediate
                 </li>
         </ul>
     </section>
@@ -717,10 +782,10 @@ ul {
                 <strong>David Huby - Head of Engineering at IAD Group</strong>: Michel worked for 2 years at IAD. Beyond his technical skills, he brings real value to product/tech collaboration by providing business insight into the developments to be carried out. He is a true asset for companies that want to build a product quickly by combining pragmatism and quality.
             </article>
             <article>
-                <strong>Thomas Haddad - Engineering Manager at Leboncoin</strong>: It is with sadness that we see this PHP superhero leave after a great one-year mission. A true expert, an excellent mentor and always in good spirits, it was a real pleasure working with Michel on a daily basis.
+                <strong>Thomas Haddad - Head of Engineering at Leboncoin</strong>: It is with sadness that we see this PHP superhero leave after a great one-year mission. A true expert, an excellent mentor and always in good spirits, it was a real pleasure working with Michel on a daily basis.
             </article>
             <article>
-                <strong>Sébastien Veigneau - Air France Captain and former President and Co-founder of DgBirds</strong>: Michel is a professional with a broad perspective on his work and on the overall solution he contributes to. He has greatly helped us stabilise a product that, due to the number of stakeholders, had lost its coherence. He is a diligent worker, extremely meticulous – a veritable powerhouse when tackling complex issues – and produces stable, maintainable code. Moreover, he is a very pleasant colleague with whom you enjoy exchanging ideas and sharing moments within a team. It is with regret that we have, for now, allowed him to move on to other projects after more than a year of collaboration, of which I have only positive memories. Without a doubt, we will be delighted to work with him again whenever possible. I highly recommend him, holding him in high regard.
+                <strong>Sébastien Veigneau - Air France Captain and former President / Co-founder of DgBirds</strong>: Michel is a professional with a broad perspective on his work and on the overall solution he contributes to. He has greatly helped us stabilise a product that, due to the number of stakeholders, had lost its coherence. He is a diligent worker, extremely meticulous – a veritable powerhouse when tackling complex issues – and produces stable, maintainable code. Moreover, he is a very pleasant colleague with whom you enjoy exchanging ideas and sharing moments within a team. It is with regret that we have, for now, allowed him to move on to other projects after more than a year of collaboration, of which I have only positive memories. Without a doubt, we will be delighted to work with him again whenever possible. I highly recommend him, holding him in high regard.
             </article>
             <article>
                 <strong>Olivier Hoareau - Former CTO of ItiQiti</strong>: Michel is a colleague you can count on and trust on a daily basis: experienced, competent, and tenacious, yet humble and determined. He enjoys finding technical solutions to the most complex problems, integrates perfectly into a team and contributes his expertise. He is self-reliant, efficient and consistently reliable, even in long-term fully remote contexts. It is a pleasure to discuss various topics with Michel; he is both critical and constructive. I look forward to the day when I can collaborate with him again!
