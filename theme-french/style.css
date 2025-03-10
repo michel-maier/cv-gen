@@ -235,3 +235,8 @@ ul {
         break-inside: avoid;
     }
 }
+
+@page {
+    size: A4;
+    margin: 0.3in;
+}

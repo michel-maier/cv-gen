@@ -18,7 +18,8 @@ const path = require('path');
     path: outputPath,
     format: 'A4',
     printBackground: true,
-    margin: { top: '0.5in', right: '0.5in', bottom: '0.5in', left: '0.5in' }
+    margin: { top: '0.3in', right: '0.3in', bottom: '0.3in', left: '0.3in' },
+    scale: 1,
   });
   await browser.close();
 })();
