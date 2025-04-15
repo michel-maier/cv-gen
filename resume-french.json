@@ -73,7 +73,7 @@
     },
     {
       "name": "Agence DPS (Syneido)",
-      "location": "Paris, FR (remote)",
+      "location": "Paris, FR (télétravail)",
       "position": "DevOps / Coaching technique",
       "startDate": "2021-05",
       "endDate": "2021-07",
@@ -343,7 +343,7 @@
     {
       "name": "Kindle Books",
       "keywords": [
-        "Domain-Driven DESIGN - Eriv Evans",
+        "Domain-Driven DESIGN - Eric Evans",
         "Patterns of Enterprise Application Architecture - Martin Fowler",
         "Reusable Objects Models - Martin Fowler",
         "Writing Effective Use Case - Alistair Cockburn",
