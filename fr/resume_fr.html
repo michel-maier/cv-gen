@@ -301,12 +301,15 @@ ul {
                             </div>
                     </div>
                 </div>
-                <p class="experience-summary">Intégré à l'équipe GenAI, je travaille sur une application qui permet aux équipes métier de générer des fichiers à partir de LLMs.</p>
+                <p class="experience-summary">Dans un premier temps, j'ai été intégré à une feature team en tant que développeur fullstack afin de participer à l’évolution fonctionnelle de l’outil existant. Celui-ci implémente deux cas d’usage de génération de documents par IA, pour des besoins distincts. Il a été décidé de faire évoluer cette solution vers un outil générique et extensible, configurable sans recourir à des développements spécifiques. La seconde partie de ma mission s'est concentrée sur le refactoring du backend et le découpage progressif du monolithe. Ce monolithe, basé sur NestJS et déployé dans un container ECS, est en cours de démantèlement : le code est progressivement extrait vers des microservices serverless (AWS Lambda).</p>
                     <ul>
-                            <li>Développement de features (backend et frontend) au sein d'une SPA.</li>
-                            <li>Développement d'un système d'événements permettant le déclenchement d'actions par effets de bord.</li>
-                            <li>Optimisation de microservice de génération de document docx et pdf.</li>
-                            <li><b>Contexte :</b> Node.js, TypeScript, ReactJS, NestJS, GraphQL, Docker, AWS ECS, Kanban</li>
+                            <li>Développement fullstack de nouvelles fonctionnalités : backend (NestJS) / frontend (React).</li>
+                            <li>Conception et implémentation d’un système d’événements pour automatiser et généraliser certains post-traitements.</li>
+                            <li>Analyse et identification de développements spécifiques ayant divergé, en vue de leur généralisation.</li>
+                            <li>Extraction de fonctionnalités vers des microservices serverless dans le respect des principes d’architecture logicielle (architecture hexagonale, tests automatisés).</li>
+                            <li>Utilisation intensive des services AWS : DynamoDB, S3, Step Functions, etc.</li>
+                            <li>Infrastructure as Code : paramétrage de l’infrastructure AWS via Terraform.</li>
+                            <li><b>Contexte :</b> Node.js, TypeScript, ReactJS, NestJS, GraphQL, Docker, ECS, Lambda, Step Function, DynamoDB, Scrum, Kanban, Terraform, LLMs</li>
                     </ul>
             </article>
             <article class="work-item">
@@ -326,10 +329,10 @@ ul {
                 </div>
                 <p class="experience-summary">Dans le cadre de la rénovation de ses outils et de son expansion à l'international, I@D, leader dans le secteur immobilier, a entrepris un vaste projet de modernisation. Le défi majeur consiste à refondre leurs plateformes existantes pour les adapter aux standards internationaux tout en intégrant des solutions innovantes. Ce projet en cours vise à soutenir la croissance rapide du réseau I@D, particulièrement sur le marché français, mais également à l'international avec l’ouverture des concessions UK et US.</p>
                     <ul>
-                            <li>Développement backend en suivant la vision de la core-team dans une architecture hexagonale (Clean Architecture) et une approche DDD</li>
+                            <li>Développement backend en suivant la vision de la core-team dans une architecture hexagonale (Clean Architecture) et une approche DDD.</li>
                             <li>Intégration à la squad Grow (5 devs back + 2 devs front), afin de travailler sur la brique candidature pour les conseillers des nouvelles concessions UK et US.</li>
                             <li>Intégration à la squad Match (3 devs back + 1 dev front) afin de participer au développement des projets Buyer lead, brique CRM de suivi des leads provenant des différentes plateformes (Leboncoin, Seloger, etc.) pour les qualifier et les transformer en projets d’achat.</li>
-                            <li>Développement du nouveau projet d’achat : un point d’entrée unique pour gérer les critères des acquéreurs et assurer le suivi des biens proposés (notes, visites, baisses de prix, etc.).</li>
+                            <li>Développement du nouveau "projet d’achat" : un point d’entrée unique pour gérer les critères des acquéreurs et assurer le suivi des biens proposés (notes, visites, baisses de prix, etc.).</li>
                             <li>Développement d’un moteur de rapprochement automatique permettant de faire coïncider les biens immobiliers du réseau avec les critères de recherche. La première étape a été de développer un moteur de recherche simple, facilitant le business des ventes croisées, notamment pour les biens non publiés sur internet.</li>
                             <li><b>Contexte :</b> Linux Alpine, Docker, Git, PHP 7.2 / PHP 8, Symfony 3.4, 5 et 6, Postgres, PhpUnit, API Platform, AWS (S3, ECS, Lambda, SQS, MariaDB, DocumentDB), Jira, GitHub, Architecture hexagonale, Clean Code, DDD, monolithe modulaire.</li>
                     </ul>
@@ -459,7 +462,7 @@ ul {
                             </div>
                     </div>
                 </div>
-                <p class="experience-summary">Dans le cadre d’une auto-formation « Clean Code » et « Clean Architecture », une application a été réalisée pour prouver le concept sur une application.</p>
+                <p class="experience-summary">Dans le cadre d’une auto-formation « Clean Code » et « Clean Architecture », une application a été réalisée dans le cadre d’une preuve de concept..</p>
                     <ul>
                             <li>Développement (arrêté à 70 % du MVP) d’une application de gestion de prospects open source suivant les principes énoncés par Robert C. Martin.</li>
                             <li>Logique du domaine sous forme d’un package Composer : <a href="https://github.com/SO-LEAN/cleanprospecter" target="_blank">github.com/SO-LEAN/cleanprospecter</a>.</li>
@@ -514,7 +517,7 @@ ul {
                     <ul>
                             <li>Mise en place du laboratoire « SOLEAN LAB » de développement de la société : infrastructure de 7 serveurs chez Scaleway; 1 serveur GitLab CI + 1 Runner; 1 serveur Rancher (non-HA) pour l’orchestration des containers Docker; 2 environnements Rancher : développement (2 hosts) et production (2 hosts); monitoring des serveurs.</li>
                             <li>Développement Symfony du prototype du portail de l’entreprise avec pour objectif Yslow grade A : minification des JS, CSS; 1 fichier JS et 1 fichier CSS maximum par page; cache du serveur web, compression Gzip; fichiers statiques sur un vhost différent.</li>
-                            <li>Industrialisation du projet portail : Git-flow; intégration continue, pipeline de 5 étages (build, static analysis, test, report, deploy); déploiement automatique de l’application à partir des branches principales (develop et master en préproduction), ainsi que des branches de feature et release (création dynamique d’un environnement si nécessaire).</li>
+                            <li>Industrialisation du projet portail : Git Flow; intégration continue, pipeline de 5 étages (build, static analysis, test, report, deploy); déploiement automatique de l’application à partir des branches principales (develop et master en préproduction), ainsi que des branches de feature et release (création dynamique d’un environnement si nécessaire).</li>
                             <li>Expérimentations : tests de montée en charge sur JMeter, tests de sécurité OpenVAS, Acunetix; stack ELK pour monitorer les logs; cache Varnish devant Nginx, modification du projet portail pour utiliser les ESI sur les éléments dynamiques.</li>
                             <li><b>Contexte :</b> Linux, Ansible, Docker, Git, Symfony 3, Nginx, PHP 7, PhpUnit, Gulp, Browserify, Bootstrap 4.0.0-alpha.5, SASS, jQuery, GitLab CI, Rancher, New Relic, PHPCS, PHP lint, PHPCPD, PHPMD, PhpMetrics, PhpDocumentor, PHPCB</li>
                     </ul>
