@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "puppeteer": "^24.2.1",
+    "puppeteer": "^24.31.0",
     "resumed": "^4.1.0",
     "theme-boiler-plate": "file:./theme-boiler-plate",
     "theme-french": "file:./theme-french",
