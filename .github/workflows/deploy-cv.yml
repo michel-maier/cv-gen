@@ -45,7 +45,7 @@ jobs:
         run: |
           mkdir -p public/fr public/en
           cp resume_fr.html public/fr/
-          cp michel-maier.jpg public/fr/
+          cp michel-maier.png public/fr/
           cp resume_michelmaier_fr.pdf public/fr/
           cp resume_michelmaier_fr.docx public/fr/
 
