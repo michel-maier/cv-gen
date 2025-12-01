@@ -4,8 +4,8 @@
     "puppeteer": "^24.31.0",
     "resumed": "^4.1.0",
     "theme-boiler-plate": "file:./theme-boiler-plate",
-    "theme-french": "file:./theme-french",
-    "theme-english": "file:./theme-english"
+    "theme-english": "file:./theme-english",
+    "theme-french": "file:./theme-french"
   },
   "scripts": {
     "rbp": "cat resume-french.json > resume.json && yarn resumed --theme theme-boiler-plate",

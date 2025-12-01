@@ -3,3 +3,4 @@ node_modules
 *.html
 resume.json
 *.pdf
+.yarn/*
