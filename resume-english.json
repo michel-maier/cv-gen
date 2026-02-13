@@ -5,7 +5,7 @@
     "image": "michel-maier.png",
     "email": "michel@solean-it.com",
     "phone": "(+33) 6.13.56.19.40",
-    "url": "https://fr.linkedin.com/in/maier-michel",
+    "url": "https://php-freelance.com/",
     "summary": "Experienced web developer with over <b>17 years of experience</b>, including 13 years working with the Symfony framework (version 2 and later). Passionate about best development practices, industrialisation and software architecture. Most assignments are carried out remotely from a headquarters located in a ZFU in Strasbourg.<br/>I am mobile and frequently travel to client sites.",
     "location": {
       "address": "20 avenue du Neuhof",
@@ -27,6 +27,7 @@
       "location": "Paris, FR (partial remote)",
       "position": "Fullstack TypeScript Developer",
       "startDate": "2024-12",
+      "endDate": "2025-11",
       "summary": "Initially joined a feature team as a fullstack developer to contribute to the functional evolution of an internal tool. This tool originally supported two distinct AI-driven document generation use cases. The goal was to transform it into a generic and extensible platform, allowing for configuration-based evolution rather than dedicated development. The second part of the mission focused on backend refactoring and the gradual decomposition of the monolith. This monolith, based on NestJS and deployed in an ECS container, is being dismantled, with the code progressively extracted into serverless microservices (AWS Lambda).",
       "highlights": [
         "Fullstack development of new features: backend (NestJS) / frontend (React).",
