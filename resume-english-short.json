@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "compact": true
+  },
+  "basics": {
+    "name": "Michel MAIER",
+    "label": "Senior Fullstack Developer<br/><span class=\"label-sub\">Backend, Cloud & AI</span><br/><span class=\"label-sub\">TypeScript · PHP/Symfony · AWS serverless</span><br/><span class=\"label-sub\">19 years of experience</span>",
+    "image": "michel-maier-2026.png",
+    "email": "michel@solean-it.com",
+    "phone": "(+33) 6.13.56.19.40",
+    "url": "https://php-freelance.com/",
+    "summary": "For <b>nineteen years</b> I have been designing and taking over back-ends and cloud platforms, between serverless on AWS in TypeScript and the modernisation of PHP/Symfony monoliths step by step rather than through a rewrite.<br/>I work on systems that are already in production. I learn them, I make them safe to change with tests, then I split them up or scale them without interrupting your business. I also embed AI in them, to speed up your teams and improve your users' experience.<br/><b>Available from October 2026</b>, working remotely from Strasbourg.",
+    "location": {
+      "city": "Strasbourg",
+      "countryCode": "FR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "maier-michel",
+        "url": "https://fr.linkedin.com/in/maier-michel"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "GoTombola",
+      "location": "Ansacq, FR",
+      "position": "Fullstack TypeScript Developer – Cloud & AI",
+      "startDate": "2026-01",
+      "summary": "A SaaS platform for raffles and fundraising, serving small charities as well as high-visibility campaigns: the <a href=\"https://www.tombola-unicef.org/\" target=\"_blank\">UNICEF 10 KM solidarity raffle</a>, or the one run by the <a href=\"https://soutenir.psg.fr/fr/\" target=\"_blank\">Paris Saint-Germain endowment fund</a>. Working as a pair with the CTO, who has been hiring me back since 2015, we delivered in seven months the product's turning point: moving away from configuration-driven site generation towards AI-assisted generation in HTML, without touching the API contract.",
+      "highlights": [
+        "<b>Context:</b> TypeScript, Node.js, React, Electron, Jest, GraphQL / AppSync, AWS (Lambda, Step Functions, DynamoDB, S3, CloudFront, CodeArtifact), Terraform, Docker, Claude Agent SDK, MCP, Ollama"
+      ]
+    },
+    {
+      "name": "Sanofi Accelerator",
+      "location": "Paris, FR",
+      "position": "Fullstack TypeScript Developer",
+      "startDate": "2024-12",
+      "endDate": "2025-11",
+      "summary": "Sanofi's Accelerator builds internal AI-driven document generation tools. Embedded in a feature team as a fullstack developer, I evolved the existing tool, which served two distinct document use cases, then prepared its transformation into a generic platform configurable without dedicated development, an effort that started as my assignment was ending. The second part of my work focused on backend refactoring and the dismantling of the NestJS monolith deployed in an ECS container, whose code is being extracted into serverless microservices.",
+      "highlights": [
+        "<b>Context:</b> Node.js, TypeScript, React, NestJS, GraphQL, Docker, ECS, Lambda, Step Functions, DynamoDB, Terraform, LLMs"
+      ]
+    },
+    {
+      "name": "IAD",
+      "location": "Paris, FR",
+      "position": "Back-end Developer – PHP / Symfony",
+      "startDate": "2022-12",
+      "endDate": "2024-10",
+      "summary": "IAD is the leading network of self-employed estate agents in France, with close to 14,000 advisors domestically and more than 17,000 worldwide. As part of the overhaul of its tools and its expansion into the UK and the US, the company embarked on the modernisation of its platforms. I worked two years on that programme, in hexagonal architecture and with a DDD approach, on a modular monolith.",
+      "highlights": [
+        "<b>Context:</b> Docker, PHP 7.2 / 8, Symfony 3.4 to 6, Postgres, PhpUnit, API Platform, AWS, hexagonal architecture, DDD"
+      ]
+    },
+    {
+      "name": "Leboncoin (Adevinta)",
+      "location": "Paris, FR",
+      "position": "Back-end Developer – PHP / Symfony",
+      "startDate": "2021-09",
+      "endDate": "2022-09",
+      "summary": "After the acquisition of the L'Argus group, Leboncoin's Import feature team forked an application for the multi-posting of automotive classified ads, written elsewhere, with no test safety net and only patchy documentation. The stake was to bring multi-posting in-house and stop paying their incumbent provider for it. My assignment was to make that application usable: understand it, secure it with tests, run it inside the group's ecosystem and publish to Leboncoin.fr. A textbook case of taking over legacy code, and the kind of assignment I have specialised in since.",
+      "highlights": [
+        "<b>Context:</b> Docker, PHP 7.2 / 8, Symfony 3.4 / 5, MariaDB, MongoDB, Kubernetes, PhpUnit, AWS, hexagonal architecture"
+      ]
+    },
+    {
+      "name": "Agence DPS (Syneido)",
+      "location": "Paris, FR",
+      "position": "DevOps / Technical Coaching",
+      "startDate": "2021-05",
+      "endDate": "2021-07"
+    },
+    {
+      "name": "Lunii · Maars · GoTombola",
+      "location": "Strasbourg, FR",
+      "position": "Back-end Developer – PHP / JS / Terraform",
+      "startDate": "2020-10",
+      "endDate": "2021-04"
+    },
+    {
+      "name": "DgBirds (Air France)",
+      "location": "Tremblay en France, FR",
+      "position": "Back-end Developer – PHP / Symfony",
+      "startDate": "2018-07",
+      "endDate": "2019-12"
+    },
+    {
+      "name": "ItiQiti",
+      "location": "Paris, FR",
+      "position": "Developer – PHP / Symfony",
+      "startDate": "2015-10",
+      "endDate": "2018-06"
+    },
+    {
+      "name": "Amadeus IT (Gestour)",
+      "location": "Strasbourg, FR",
+      "position": "Designer / Developer – PHP / Symfony",
+      "startDate": "2011-12",
+      "endDate": "2015-05"
+    },
+    {
+      "name": "Cora Informatique (Carrefour)",
+      "location": "Metz, FR",
+      "position": "Developer – PHP / TYPO3",
+      "startDate": "2008-12",
+      "endDate": "2011-12"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Paris Graduate School of Computer Science (ESI – SUPINFO)",
+      "studyType": "Master's degree (Level 1 RNCP)",
+      "endDate": "2007"
+    },
+    {
+      "institution": "IUT de Mulhouse",
+      "studyType": "University Technology Diploma (DUT)",
+      "endDate": "2002"
+    }
+  ],
+  "skills": [
+    {
+      "name": "TypeScript & Node.js",
+      "keywords": [
+        "TypeScript",
+        "Node.js",
+        "NestJS",
+        "React",
+        "GraphQL / Apollo / AppSync",
+        "Electron",
+        "Jest"
+      ]
+    },
+    {
+      "name": "AWS & Serverless",
+      "keywords": [
+        "Lambda",
+        "Step Functions",
+        "DynamoDB",
+        "S3 & CloudFront",
+        "AppSync",
+        "SQS / SNS / EventBridge",
+        "ECS & containers",
+        "Terraform",
+        "CI/CD & Docker"
+      ]
+    },
+    {
+      "name": "Applied AI",
+      "keywords": [
+        "LLMs in production",
+        "Claude Code",
+        "Claude Agent SDK",
+        "MCP",
+        "Ollama",
+        "Multi-provider abstraction"
+      ]
+    },
+    {
+      "name": "PHP & Symfony",
+      "keywords": [
+        "Symfony 2 to 6",
+        "Legacy modernisation",
+        "Domain extraction",
+        "PHP version upgrades",
+        "API Platform",
+        "PhpUnit"
+      ]
+    },
+    {
+      "name": "Architecture & craft",
+      "keywords": [
+        "Hexagonal Architecture",
+        "Clean Architecture",
+        "DDD & bounded contexts",
+        "Strangler fig",
+        "TDD",
+        "Refactoring under tests"
+      ]
+    }
+  ],
+  "projects": [],
+  "interests": [],
+  "languages": [
+    {
+      "language": "French",
+      "fluency": "Native language"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional working proficiency"
+    }
+  ],
+  "references": [
+    {
+      "name": "David Huby",
+      "reference": "Head of Engineering, IAD"
+    },
+    {
+      "name": "Thomas Haddad",
+      "reference": "Head of Engineering, leboncoin"
+    },
+    {
+      "name": "Sébastien Veigneau",
+      "reference": "Air France Captain, co-founder of DgBirds"
+    },
+    {
+      "name": "Olivier Hoareau",
+      "reference": "CTO of GoTombola, former CTO of ItiQiti"
+    }
+  ]
+}

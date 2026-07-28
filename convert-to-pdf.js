@@ -1,6 +1,11 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
 
+// Usage: node convert-to-pdf.js [input.html] [output.pdf]
+//
+// The print margin is not set here: every theme declares its own `@page` rule
+// (0.3in for the resumes, 0 for the brochures so their colour bands reach the
+// edge) and that rule wins over anything passed to page.pdf.
 (async () => {
   const inputPath = process.argv[2] || 'resume.html';
   const absoluteInputPath = path.isAbsolute(inputPath)
@@ -18,7 +23,6 @@ const path = require('path');
     path: outputPath,
     format: 'A4',
     printBackground: true,
-    margin: { top: '0.3in', right: '0.3in', bottom: '0.3in', left: '0.3in' },
     scale: 1,
   });
   await browser.close();

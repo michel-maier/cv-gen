@@ -1,15 +1,13 @@
 {
   "basics": {
     "name": "Michel MAIER",
-    "label": "Développeur Web Senior<br/>Développeur principal<br/>Architecte",
+    "label": "Développeur senior fullstack<br/><span class=\"label-sub\">Backend, Cloud & IA</span><br/><span class=\"label-sub\">TypeScript · PHP/Symfony · AWS serverless</span><br/><span class=\"label-sub\">19 ans d'expérience</span>",
     "image": "michel-maier-2026.png",
     "email": "michel@solean-it.com",
     "phone": "(+33) 6.13.56.19.40",
     "url": "https://php-freelance.com/fr/",
-    "summary": "Développeur web expérimenté avec plus de <b>17 ans d'expérience</b>, dont 13 avec le framework Symfony (version 2 et suivantes). Passionné par les bonnes pratiques de développement, l’industrialisation et l’architecture logicielle. Les missions sont majoritairement réalisées à distance, depuis un siège situé en ZFU à Strasbourg. Je suis mobile et me déplace régulièrement chez le client.",
+    "summary": "Depuis <b>dix-neuf ans</b>, je conçois et je reprends des back-ends et des plateformes cloud. Deux terrains me vont particulièrement bien : les architectures serverless sur AWS en TypeScript, et la modernisation de monolithes PHP/Symfony, que je fais évoluer par étapes plutôt que par réécriture complète.<br/>Ce qui a changé depuis un an, c'est ma façon de produire. Je pilote des agents de code au quotidien, Claude Code en tête, et j'intègre des modèles de langage dans les produits que je livre, y compris des modèles exécutés en local lorsque le code ne doit pas sortir de chez le client. Le gain de vitesse est réel, à condition de garder la main sur l'architecture, la revue et les tests. C'est ainsi qu'en binôme avec le directeur technique de GoTombola, nous avons livré en sept mois une application desktop, un daemon d'agents et un pipeline de déploiement multi-tenant complet.<br/>Concrètement, j'interviens sur des systèmes déjà en production. Je les comprends, je les sécurise par des tests, puis je les découpe ou je les fais monter en charge sans interrompre votre activité. J'y intègre aussi l'IA, pour accélérer vos équipes et améliorer l'expérience de vos utilisateurs.<br/><b>Disponible à partir d'octobre 2026</b>, en télétravail depuis Strasbourg avec des déplacements réguliers chez le client.<br/><b>Agréé CII</b> : pour une PME dont le projet est éligible, mes prestations ouvrent droit à un crédit d'impôt de 20 %.",
     "location": {
-      "address": "20 avenue du Neuhof",
-      "postalCode": "67100",
       "city": "Strasbourg",
       "countryCode": "FR"
     },
@@ -23,174 +21,146 @@
   },
   "work": [
     {
+      "name": "GoTombola",
+      "location": "Ansacq, FR",
+      "position": "Développeur fullstack TypeScript – Cloud & IA",
+      "startDate": "2026-01",
+      "summary": "GoTombola est une plateforme SaaS de tombolas et de collecte qui outille aussi bien de petites associations que des campagnes à forte visibilité : la tombola solidaire du <a href=\"https://www.tombola-unicef.org/\" target=\"_blank\">10 KM UNICEF</a>, ou celle du <a href=\"https://soutenir.psg.fr/fr/\" target=\"_blank\">fonds de dotation du Paris Saint-Germain</a> au profit de l'hôpital Necker. J'avais participé au setup AWS initial de la plateforme en 2020, et son CTO m'a rappelé cinq ans plus tard pour construire son outillage de production : nous travaillons ensemble par intermittence depuis 2015, il connaît ma façon de travailler et sait sur quoi il peut compter. Le travail se fait en binôme avec lui sur un monorepo de plus d'une centaine de paquets, avec un usage intensif de Claude Code encadré par la revue et par l'exigence de couverture de tests du dépôt. À deux, nous avons livré en sept mois le virage du produit : quitter la génération de sites par configuration pour une génération assistée par IA en HTML, sans toucher au contrat d'API. J'ai construit l'atelier desktop qui produit ces sites, la couche d'agents qui le pilote et le pipeline de déploiement multi-tenant qui les met en ligne ; les parties dynamiques restent servies par des widgets réutilisables appelant les mêmes web services.",
+      "highlights": [
+        "<b>Produire un site ne demande plus de développeur</b> : GoStudio, l'application desktop Electron / React / TypeScript que j'ai développée, remplace un montage et une publication qui se faisaient jusque-là à la main. L'équipe monte un site sans écrire de code, avec éditeur de règlement de tombola, explorateur de dépôt à statut Git, médiathèque et prévisualisation multi-device fidèle à la production, en cinq langues.",
+        "Moteur de composition d'e-mails transactionnels : les gabarits Handlebars sont générés par l'IA à l'exécution, le produit n'embarquant que le contrat, et une chaîne de compilation en produit les artefacts minifiés à déployer. Prévisualisation fidèle par client de messagerie, cascade de traduction par région, jeux de données nommés, envois de test via Amazon SES ou SMTP.",
+        "Import d'un site existant depuis une URL, réécrit en jobs Helios parallèles (scan, puis build, rendu et localisation) autour d'une machine à états côté daemon : service de rendu Playwright pour les pages nécessitant un navigateur, résolution des redirections de crawl, réécriture des URL vers le domaine cible. Les modules d'ingestion ont été extraits d'Electron pour tourner en Node pur dans les workers.",
+        "Conception de la couche agentique « Helios » : un daemon HTTP + SSE avec file de jobs SQLite, pool de workers, verrous par projet et authentification par jeton, qui survit à la fermeture de l'application et auquel celle-ci peut se reconnecter. Il porte le cycle de vie des demandes de modification, où le LLM analyse la demande, l'exécute sur le dépôt et rédige son propre changelog en écriture exclusive. Une abstraction de fournisseur permet de changer de modèle sans toucher au reste du code : Claude via le Claude Agent SDK, et Ollama pour l'exécution locale hors-ligne, packagé dans un système d'extensions indépendant de l'application hôte (runtime isolé, catalogue de modèles, installation à la carte avec estimation de la VRAM requise et réglage de la fenêtre de contexte).",
+        "Construction du pipeline de déploiement multi-tenant de bout en bout : deux Step Functions et deux Lambdas conteneurisées, mise en miroir des sources pilotée par un manifeste MD5 (les ETags SSE-KMS étant opaques), build et déploiement via un registre npm privé CodeArtifact, invalidation CloudFront et redirections servies depuis un CloudFront KeyValueStore, le tout provisionné en Terraform. Deux topologies calquées sur le modèle commercial : domaine et bucket dédiés pour les clients premium, multiplexage par préfixe de chemin sur un domaine mutualisé pour les autres, avec sa propre state machine et sa Lambda isolée. Les archives par commit permettent de <b>redéployer une version précise</b> après coup, avec dead-letter queue et alarme CloudWatch sur les échecs.",
+        "Suivi de déploiement en temps réel via une mutation et une souscription AppSync en résolveurs APPSYNC_JS, ce qui a permis de retirer entièrement l'AWS SDK du poste client : plus aucun identifiant AWS ne quitte le serveur.",
+        "Bascule de la configuration projet vers un registre de tenants DynamoDB comme source de vérité unique, avec une chaîne de migration de schéma versionnée côté client capable de reprendre là où elle s'est arrêtée, et extraction de paquets réutilisables pour que les deux Lambdas ne divergent jamais : la résolution de la cible de déploiement isolée dans un paquet sans aucune dépendance, et la brique d'envoi vers le CDN dont les accès AWS sont injectés.",
+        "Discipline de test tenue sur tout le périmètre : le dépôt impose <b>100 % de couverture des lignes et des fichiers</b> avant tout changement de comportement, ce qui est la contrepartie indispensable d'un développement assisté par IA.",
+        "<b>Contexte :</b> TypeScript, Node.js, React, Electron, Vite, Jest, GraphQL / AppSync (APPSYNC_JS), AWS (Lambda, Step Functions, DynamoDB, S3, CloudFront, KeyValueStore, SQS, ECR, CodeArtifact, CodeCommit, Cognito, SES), Terraform, Docker, Claude Agent SDK, MCP, Ollama, moon / monorepo, Git"
+      ]
+    },
+    {
       "name": "Sanofi Accelerator",
-      "location": "Paris, FR (télétravail partiel)",
-      "position": "Développeur fullstack Typescript",
+      "location": "Paris, FR",
+      "position": "Développeur fullstack TypeScript",
       "startDate": "2024-12",
       "endDate": "2025-11",
-      "summary": "Dans un premier temps, j'ai été intégré à une feature team en tant que développeur fullstack afin de participer à l’évolution fonctionnelle de l’outil existant. Celui-ci implémente deux cas d’usage de génération de documents par IA, pour des besoins distincts. Il a été décidé de faire évoluer cette solution vers un outil générique et extensible, configurable sans recourir à des développements spécifiques. La seconde partie de ma mission s'est concentrée sur le refactoring du backend et le découpage progressif du monolithe. Ce monolithe, basé sur NestJS et déployé dans un container ECS, est en cours de démantèlement : le code est progressivement extrait vers des microservices serverless (AWS Lambda).",
+      "summary": "L'Accelerator de Sanofi développe des outils internes de génération de documents par IA. Intégré à une feature team comme développeur fullstack, j'ai fait évoluer l'outil existant, qui servait deux cas d'usage documentaires distincts, puis préparé sa transformation en plateforme générique configurable sans développement spécifique, chantier démarré à la fin de ma mission. La seconde partie de mon intervention a porté sur le refactoring du backend et le démantèlement du monolithe NestJS déployé en container ECS, dont le code est extrait vers des microservices serverless.",
       "highlights": [
-        "Développement fullstack de nouvelles fonctionnalités : backend (NestJS) / frontend (React).",
-        "Conception et implémentation d’un système d’événements pour automatiser et généraliser certains post-traitements.",
-        "Analyse et identification de développements spécifiques ayant divergé, en vue de leur généralisation.",
-        "Extraction de fonctionnalités vers des microservices serverless dans le respect des principes d’architecture logicielle (architecture hexagonale, tests automatisés).",
-        "Utilisation intensive des services AWS : DynamoDB, S3, Step Functions, etc.",
-        "Infrastructure as Code : paramétrage de l’infrastructure AWS via Terraform.",
-        "<b>Contexte :</b> Node.js, TypeScript, ReactJS, NestJS, GraphQL, Docker, ECS, Lambda, Step Function, DynamoDB, Scrum, Kanban, Terraform, LLMs"
+        "Conception et implémentation d'un système d'événements pour automatiser et généraliser les post-traitements documentaires : c'est le socle technique sur lequel la plateforme configurable a été bâtie.",
+        "Développement fullstack de nouvelles fonctionnalités sur un produit de génération de documents par LLM : backend NestJS et frontend React.",
+        "Extraction de fonctionnalités du monolithe vers des microservices serverless, en architecture hexagonale et sous tests automatisés.",
+        "Analyse des développements spécifiques ayant divergé entre les deux cas d'usage, et proposition du socle commun permettant de les généraliser.",
+        "Usage intensif des services AWS managés : DynamoDB, S3, Step Functions.",
+        "Infrastructure as Code : paramétrage de l'infrastructure AWS via Terraform.",
+        "<b>Contexte :</b> Node.js, TypeScript, ReactJS, NestJS, GraphQL, Docker, ECS, Lambda, Step Functions, DynamoDB, Terraform, LLMs, Scrum, Kanban"
       ]
     },
     {
       "name": "IAD",
-      "location": "Paris, FR (télétravail)",
+      "location": "Paris, FR",
       "position": "Développeur back-end – PHP / Symfony",
       "startDate": "2022-12",
       "endDate": "2024-10",
-      "summary": "Dans le cadre de la rénovation de ses outils et de son expansion à l'international, I@D, leader dans le secteur immobilier, a entrepris un vaste projet de modernisation. Le défi majeur consiste à refondre leurs plateformes existantes pour les adapter aux standards internationaux tout en intégrant des solutions innovantes. Ce projet en cours vise à soutenir la croissance rapide du réseau I@D, particulièrement sur le marché français, mais également à l'international avec l’ouverture des concessions UK et US.",
+      "summary": "IAD est le premier réseau de mandataires immobiliers en France, avec près de 14 000 conseillers dans l'Hexagone et plus de 17 000 dans le monde. Dans le cadre de la refonte de ses outils et de son expansion au Royaume-Uni et aux États-Unis, l'entreprise a engagé la modernisation de ses plateformes. J'ai travaillé deux ans sur ce chantier, en architecture hexagonale et approche DDD, sur un monolithe modulaire.",
       "highlights": [
-        "Développement backend en suivant la vision de la core-team dans une architecture hexagonale (Clean Architecture) et une approche DDD.",
-        "Intégration à la squad Grow (5 devs back + 2 devs front), afin de travailler sur la brique candidature pour les conseillers des nouvelles concessions UK et US.",
-        "Intégration à la squad Match (3 devs back + 1 dev front) afin de participer au développement des projets Buyer lead, brique CRM de suivi des leads provenant des différentes plateformes (Leboncoin, Seloger, etc.) pour les qualifier et les transformer en projets d’achat.",
-        "Développement du nouveau \"projet d’achat\" : un point d’entrée unique pour gérer les critères des acquéreurs et assurer le suivi des biens proposés (notes, visites, baisses de prix, etc.).",
-        "Développement d’un moteur de rapprochement automatique permettant de faire coïncider les biens immobiliers du réseau avec les critères de recherche. La première étape a été de développer un moteur de recherche simple, facilitant le business des ventes croisées, notamment pour les biens non publiés sur internet.",
-        "<b>Contexte :</b> Linux Alpine, Docker, Git, PHP 7.2 / PHP 8, Symfony 3.4, 5 et 6, Postgres, PhpUnit, API Platform, AWS (S3, ECS, Lambda, SQS, MariaDB, DocumentDB), Jira, GitHub, Architecture hexagonale, Clean Code, DDD, monolithe modulaire."
+        "Développement d'un moteur de rapprochement automatique entre les biens du réseau et les critères de recherche des acquéreurs, en commençant par un moteur de recherche simple destiné à débloquer les ventes croisées, en particulier sur les biens non publiés sur internet.",
+        "Développement du « projet d'achat », point d'entrée unique où l'on gère les critères d'un acquéreur et où l'on suit les biens qui lui sont proposés : notes, visites, baisses de prix.",
+        "Développement de la brique CRM Buyer Lead : qualification des leads issus des plateformes d'annonces (Leboncoin, SeLoger) et transformation en projets d'achat suivis.",
+        "Développement de la brique de candidature des conseillers pour l'ouverture des concessions britannique et américaine.",
+        "Développement en architecture hexagonale et DDD, au sein de deux squads produit successives : Grow (5 développeurs back, 2 front) sur la brique de candidature, puis Match (3 back, 1 front) sur le CRM et le rapprochement.",
+        "<b>Contexte :</b> Linux Alpine, Docker, Git, PHP 7.2 / PHP 8, Symfony 3.4, 5 et 6, Postgres, PhpUnit, API Platform, AWS (S3, ECS, Lambda, SQS, MariaDB, DocumentDB), Jira, GitHub, Architecture hexagonale, Clean Code, DDD, monolithe modulaire"
       ]
     },
     {
       "name": "Leboncoin (Adevinta)",
-      "location": "Paris, FR (télétravail partiel)",
+      "location": "Paris, FR",
       "position": "Développeur back-end – PHP / Symfony",
       "startDate": "2021-09",
       "endDate": "2022-09",
-      "summary": "Leboncoin est un acteur majeur des sites d'annonces en ligne, bien connu du grand public. Suite au rachat du groupe L’argus, la feature team Import récupère (fork) une application de multidiffusion d’annonces automobiles. Le challenge est de la mettre en production dans l’écosystème (ou presque) du groupe et de diffuser vers le site Leboncoin.fr.",
+      "summary": "Après le rachat du groupe L'Argus, la feature team Import de Leboncoin a récupéré par fork une application de multidiffusion d'annonces automobiles, écrite ailleurs, sans filet de tests et documentée de façon parcellaire. L'enjeu était d'internaliser la multidiffusion pour cesser de la payer à leur prestataire historique. Ma mission a été de rendre cette application exploitable : la comprendre, la sécuriser par des tests, la faire tourner dans l'écosystème du groupe et diffuser vers Leboncoin.fr. Un cas d'école de reprise de legacy, et le type de mission que je pratique depuis.",
       "highlights": [
-        "Amélioration de l’environnement de développement.",
-        "Optimisation de l’image Docker, la faisant passer de plus de 1 Go à quelques centaines de mégaoctets.",
-        "Mise en place de tests fonctionnels sur les principales fonctions de l’application (import/export) et smoke tests sur les interfaces CRUD de configuration.",
-        "Optimisations et refactoring de certains pans de l’application : architecture hexagonale, application des bonnes pratiques, tests unitaires, montée de version de PHP et Symfony.",
-        "Développement d’une API pour automatiser les branchements des clients depuis le service de contractualisation.",
-        "Préparation et migration des comptes professionnels du multi-diffuseur (prestataire historique) vers le nouvel outil.",
-        "Intégration de nouveaux logiciels (DMS) dans l'outil, création de nouvelles règles de mapping et de transformation.",
-        "Documentation et élaboration de schémas explicatifs des différentes briques fonctionnelles de l’application, et présentation fonctionnelle aux nouveaux membres de l’équipe et au service client.",
-        "Réunion d’architecture pour le découpage du monolithe en microservices, en vue d’une réécriture en Go et du passage d’une exécution planifiée (crons) à un fonctionnement événementiel pour se rapprocher du « temps réel ».",
-        "<b>Contexte :</b> Linux Alpine, Docker, Git, PHP 7.2 / PHP 8, Symfony 3.4 / 5, MariaDB, MongoDB, Kubernetes, PhpUnit, Sonata Admin, AWS (S3, ECS, Batch, Lambda, SQS, RDS, MariaDB, DocumentDB), Jira, GitHub, Architecture hexagonale, Clean Code"
+        "Préparation et migration des comptes professionnels depuis le multidiffuseur historique vers le nouvel outil, la première vague livrée en trois mois : chaque compte migré sortait du périmètre facturé à leur prestataire historique.",
+        "Mise en place de tests fonctionnels sur les fonctions critiques de l'application (import et export) et de smoke tests sur les interfaces de configuration, pour protéger les chemins critiques avant toute modification.",
+        "Optimisations et refactoring de plusieurs pans de l'application vers une architecture hexagonale, sous tests unitaires, avec montée de version de PHP et de Symfony.",
+        "Optimisation de l'image Docker, ramenée de plus de 1 Go à quelques centaines de mégaoctets.",
+        "Développement d'une API pour automatiser le branchement des clients depuis le service de contractualisation, en remplacement d'une opération manuelle.",
+        "Intégration de nouveaux logiciels métier (DMS) et écriture des règles de mapping associées.",
+        "Documentation et schémas des briques fonctionnelles pour compléter une documentation existante parcellaire, puis transmission à l'équipe et au service client.",
+        "<b>Contexte :</b> Linux Alpine, Docker, Git, PHP 7.2 / PHP 8, Symfony 3.4 / 5, MariaDB, MongoDB, Kubernetes, PhpUnit, Sonata Admin, AWS (S3, ECS, Batch, Lambda, SQS, RDS, MariaDB, DocumentDB), Jira, GitHub, Architecture hexagonale, Clean Code"
       ]
     },
     {
       "name": "Agence DPS (Syneido)",
-      "location": "Paris, FR (télétravail)",
+      "location": "Paris, FR",
       "position": "DevOps / Coaching technique",
       "startDate": "2021-05",
       "endDate": "2021-07",
-      "summary": "Suite à une réorganisation en interne, la société DPS m’a contacté afin d’industrialiser leurs process en mettant en place la CI et la CD. La mission s'avérera en réalité bien plus riche que décrite.",
+      "summary": "Après une réorganisation interne, DPS m'a fait venir pour industrialiser ses process en mettant en place l'intégration et le déploiement continus. La mission s'est avérée bien plus large que son cadrage initial, avec une part importante de transmission à l'équipe.",
       "highlights": [
-        "Dockerisation de l’environnement de développement à l’image de la production.",
-        "Présentation de différentes solutions d’intégration continue (pros/cons) et mise en place de l’intégration continue et du déploiement continu d’applications Symfony.",
-        "Organisation d’ateliers techniques (paramétrage et utilisation de Xdebug, présentation de Gitflow, utilisation de Docker, configuration de Windows Subsystem for Linux (WSL)).",
-        "Backup, dockerisation et déploiement de leur outil de gestion de projet (Redmine) sur un serveur devenu inaccessible.",
-        "Migration du site <a href=\"http://www.suzuki.fr\" target=\"_blank\">suzuki.fr</a> d’un hébergement dédié vers une instance Platform.sh dédiée.",
-        "<b>Contexte :</b> Linux, Docker, Git, PHP 7.2, Symfony, Ansible, Ansible Vault, Ansistrano, GitHub Actions, Redmine, GitHub, Platform.sh"
+        "Dockerisation de l'environnement de développement à l'image de la production, puis mise en place de l'intégration et du déploiement continus des applications Symfony, après comparaison argumentée de plusieurs solutions.",
+        "Animation d'ateliers techniques auprès de l'équipe : paramétrage et usage de Xdebug, Gitflow, Docker, configuration de WSL.",
+        "Sauvegarde, dockerisation et redéploiement de leur outil de gestion de projet Redmine, hébergé sur un serveur devenu inaccessible.",
+        "Migration du site <a href=\"https://www.suzuki.fr\" target=\"_blank\">suzuki.fr</a> d'un hébergement dédié vers une instance Platform.sh.",
+        "<b>Contexte :</b> Linux, Docker, Git, PHP 7.2, Symfony, Ansible, Ansible Vault, Ansistrano, GitHub Actions, Redmine, GitHub, Platform.sh"
       ]
     },
     {
-      "name": "Diverses startups",
-      "location": "Strasbourg, FR (télétravail)",
-      "position": "Développeur back-end PHP / JS – Terraform",
+      "name": "Lunii · Maars · GoTombola",
+      "location": "Strasbourg, FR",
+      "position": "Développeur back-end – PHP / JS / Terraform",
       "startDate": "2020-10",
       "endDate": "2021-04",
-      "summary": "À partir d’octobre 2020, j'ai découvert une nouvelle stack et participé à la mise en place de plateformes web, au setup de projets et à des migrations vers AWS.",
+      "summary": "Trois missions freelance menées en parallèle, et la période charnière où j'ai basculé vers le cloud AWS, le serverless et l'infrastructure as code. C'est là que j'ai participé au setup AWS initial de gotombola.co, produit sur lequel je suis revenu cinq ans plus tard.",
       "highlights": [
-        "Passage d'une application monolithique en PHP/Symfony (solution de calcul de dallage béton, norme DTU 13-3) vers le cloud AWS en mode serverless, avec PHP s’exécutant dans des Lambdas. Les calculs sont exécutés en parallèle par le \"moteur de calcul\", entraînant de grosses performances.",
-        "Wrapping d'une API REST legacy via un serveur Apollo GraphQL afin d'être consommée par un site Gatsby pour la refonte complète du site <a href=\"https://www.lunii.com\" target=\"_blank\">lunii.com</a> avec des fonctions e-commerce (produits/panier).",
+        "Migration d'une application monolithique PHP/Symfony de calcul de dallage béton (norme DTU 13-3) vers AWS en serverless, avec PHP exécuté dans des Lambdas : les calculs du moteur sont parallélisés, ce qui change l'ordre de grandeur des temps de réponse.",
+        "Encapsulation d'une API REST legacy derrière un serveur Apollo GraphQL, pour la refonte complète de <a href=\"https://www.lunii.com\" target=\"_blank\">lunii.com</a> sous Gatsby, fonctions e-commerce comprises.",
         "Participation au setup AWS des plateformes <a href=\"https://www.maars.cc\" target=\"_blank\">maars.cc</a> et <a href=\"https://gotombola.co\" target=\"_blank\">gotombola.co</a>.",
-        "<b>Contexte :</b> Node.js, Jest, PHP 7.2, Symfony, React (à petites doses), Apollo, AWS (API Gateway, CloudFront, Lambda, DynamoDB, S3, SNS, SQS, RDS MySQL Aurora, SES), Terraform, Microservices, Serverless, ClickUp, GitHub, Trello"
+        "<b>Contexte :</b> Node.js, Jest, PHP 7.2, Symfony, React, Apollo, AWS (API Gateway, CloudFront, Lambda, DynamoDB, S3, SNS, SQS, RDS MySQL Aurora, SES), Terraform, Microservices, Serverless, ClickUp, GitHub, Trello"
       ]
     },
     {
       "name": "DgBirds (Air France)",
-      "location": "Tremblay en France, FR (télétravail)",
+      "location": "Tremblay en France, FR",
       "position": "Développeur back-end – PHP / Symfony",
       "startDate": "2018-07",
       "endDate": "2019-12",
-      "summary": "DgBirds était une startup au sein du groupe Air France. Un projet intrapreneurial avec un très beau produit en mode SaaS : une boîte à outils complète pour les pilotes et le personnel au sol sur iPad.",
+      "summary": "DgBirds était un projet intrapreneurial au sein du groupe Air France : une boîte à outils SaaS sur iPad pour les pilotes et le personnel au sol. Le produit était beau mais avait perdu en cohérence après le passage de nombreux intervenants. Mon travail a consisté à le stabiliser et à en reprendre l'architecture sans interrompre les livraisons.",
       "highlights": [
-        "Développement du module « Mission Report » (API) : configuration et distribution de formulaires, ainsi que le monitoring des réponses.",
-        "Évolution et maintenance des modules « Documentation » et « Mission Activities ».",
-        "Synchronisation de groupes et utilisateurs depuis MS Active Directory (LDAP).",
-        "Définition d’une stratégie de tests, implémentation de tests unitaires et fonctionnels.",
-        "Analyse statique de code, scripts de build et setup de l’intégration continue.",
-        "Déploiement automatique de l’environnement de développement de la Single Page Application.",
-        "Évolution du setup de l’environnement de développement sous Docker.",
-        "Création de fixtures déterministes et de fake data pour identifier les goulots d’étranglement.",
-        "Refactoring du système des permissions utilisateurs.",
-        "Extraction de la logique métier depuis les contrôleurs vers des services applicatifs pour créer une API métier indépendante des détails d’implémentation (Symfony, S3, Doctrine).",
-        "Mise en place d’une stratégie pour transformer l’application Symfony fullstack en une application « API-Centric » / SPA.",
-        "Participation à la migration de MySQL 5.0 vers PostgreSQL 11.",
-        "Réécriture de requêtes SQL en utilisant les fonctionnalités avancées du SGBD : CTE récursif, trigger, vue matérialisée.",
-        "<b>Contexte :</b> Linux, Docker, Git, PHP 7.1, Vue.js, Symfony 3.4, PhpUnit, MySQL, PostgreSQL, AWS S3, Ansible, Terraform, Clean Code, Clean Architecture, SOLID Principles, Trello, Jira, GitHub, Scrutinizer"
-      ]
-    },
-    {
-      "name": "SOLEAN IT",
-      "location": "Strasbourg, FR",
-      "position": "Architecte applicatif / Développeur – PHP / Symfony",
-      "startDate": "2018-02",
-      "endDate": "2018-06",
-      "summary": "Dans le cadre d’une auto-formation « Clean Code » et « Clean Architecture », une application a été réalisée dans le cadre d’une preuve de concept..",
-      "highlights": [
-        "Développement (arrêté à 70 % du MVP) d’une application de gestion de prospects open source suivant les principes énoncés par Robert C. Martin.",
-        "Logique du domaine sous forme d’un package Composer : <a href=\"https://github.com/SO-LEAN/cleanprospecter\" target=\"_blank\">github.com/SO-LEAN/cleanprospecter</a>.",
-        "Implémentation sous Symfony : <a href=\"https://github.com/SO-LEAN/prospecterapp\" target=\"_blank\">github.com/SO-LEAN/prospecterapp</a>.",
-        "<b>Contexte :</b> Linux (Alpine), Docker, Git, Symfony 4.1, Nginx, PHP 7.2, PhpUnit, Clean Code, Clean Architecture, SOLID Principles, GitHub, CircleCI, Code Climate, Trello"
+        "Extraction de la logique métier hors des contrôleurs vers des services applicatifs, pour obtenir une API métier indépendante des détails d'implémentation (Symfony, Doctrine, S3).",
+        "Définition et mise en œuvre de la stratégie de transformation de l'application Symfony fullstack en application API-centric consommée par une SPA.",
+        "Développement du module « Mission Report » (formulaires distribués aux équipages et suivi des réponses), évolution des modules « Documentation » et « Mission Activities », refactoring du système de permissions.",
+        "Définition d'une stratégie de tests, puis implémentation des tests unitaires et fonctionnels, analyse statique de code et intégration continue.",
+        "Migration de MySQL 5.0 vers PostgreSQL 11, et réécriture des requêtes lourdes avec les fonctionnalités avancées du SGBD : CTE récursifs, triggers, vues matérialisées.",
+        "<b>Contexte :</b> Linux, Docker, Git, PHP 7.1, Vue.js, Symfony 3.4, PhpUnit, MySQL, PostgreSQL, AWS S3, Ansible, Terraform, LDAP, Clean Architecture, SOLID, Jira, GitHub"
       ]
     },
     {
       "name": "ItiQiti",
-      "location": "Paris, FR (télétravail)",
+      "location": "Paris, FR",
       "position": "Développeur – PHP / Symfony",
       "startDate": "2015-10",
       "endDate": "2018-06",
-      "summary": "Itiqiti SAS était une startup dont l’aventure a démarré en 2014, proposant des services de collecte pour les associations françaises principalement autour de jeux de tombola : organisations, éditions de tickets en ligne (WYSIWYG), tickets numériques et tirages au sort. L’aventure s’est arrêtée définitivement en 2019.",
+      "summary": "Itiqiti SAS était une startup de services de collecte pour les associations françaises, articulée autour des jeux de tombola : organisation, édition de tickets en ligne en WYSIWYG, tickets numériques et tirages au sort. Trois ans en full-remote, sur une architecture de microservices asynchrones.",
       "highlights": [
-        "Maintenance et évolutions de l’API RESTful centrale et de l’API publique.",
-        "Développement et maintenance de microservices asynchrones.",
-        "Développement d’applications « front » utilisant les services de l’API.",
-        "Développement d’outils pour la production.",
-        "Génération de l’environnement de développement sous Docker.",
-        "Revues de code et amélioration continue.",
-        "TDD : tests d’acceptation et unitaires.",
-        "Développement d’une API publique sous Firebase (Node.js) servant de proxy pour l’API centrale destinée à une application React Native.",
-        "<b>Contexte :</b> Linux (Debian/Alpine), Docker, Git, Symfony 2.7 / 3, Nginx, PHP 5.7, MongoDB, ZeroMQ, PhpUnit, TCPDF, PHPExcel, PHPQRCode, PhantomJS, Golang, Stripe, PayPal, Google API Client (Drive), Callr, Mandrill, Jira, GitHub, Jenkins, Scrutinizer, Travis CI, CircleCI, Firebase Cloud Functions, Scrum, Kanban"
+        "Maintenance et évolutions de l'API RESTful centrale et de l'API publique.",
+        "Développement et maintenance de microservices asynchrones, et d'outils destinés à l'exploitation.",
+        "Développement d'une API publique sous Firebase (Node.js) servant de proxy vers l'API centrale pour une application React Native.",
+        "TDD : tests d'acceptation et tests unitaires, revues de code et amélioration continue.",
+        "<b>Contexte :</b> Linux (Debian/Alpine), Docker, Git, Symfony 2.7 / 3, Nginx, PHP 5.7, MongoDB, ZeroMQ, PhpUnit, Golang, Stripe, PayPal, Firebase Cloud Functions, Jenkins, Jira, GitHub, Scrum, Kanban"
       ]
     },
     {
-      "name": "SOLEAN IT",
-      "location": "Strasbourg, FR",
-      "position": "Gérant / DevOps / Développeur",
-      "startDate": "2016-11",
-      "endDate": "2017-04",
-      "summary": "Afin de répondre à des appels d’offre pour des projets au forfait, nous avons décidé de monter une usine de développement en intégrant toutes les bonnes pratiques réutilisables pour tous types de projets web. Pour prouver le concept, le site de la société a été développé ainsi. L’usine a depuis été arrêtée et n’est plus maintenue par manque de projets de ce type.",
-      "highlights": [
-        "Mise en place du laboratoire « SOLEAN LAB » de développement de la société : infrastructure de 7 serveurs chez Scaleway; 1 serveur GitLab CI + 1 Runner; 1 serveur Rancher (non-HA) pour l’orchestration des containers Docker; 2 environnements Rancher : développement (2 hosts) et production (2 hosts); monitoring des serveurs.",
-        "Développement Symfony du prototype du portail de l’entreprise avec pour objectif Yslow grade A : minification des JS, CSS; 1 fichier JS et 1 fichier CSS maximum par page; cache du serveur web, compression Gzip; fichiers statiques sur un vhost différent.",
-        "Industrialisation du projet portail : Git Flow; intégration continue, pipeline de 5 étages (build, static analysis, test, report, deploy); déploiement automatique de l’application à partir des branches principales (develop et master en préproduction), ainsi que des branches de feature et release (création dynamique d’un environnement si nécessaire).",
-        "Expérimentations : tests de montée en charge sur JMeter, tests de sécurité OpenVAS, Acunetix; stack ELK pour monitorer les logs; cache Varnish devant Nginx, modification du projet portail pour utiliser les ESI sur les éléments dynamiques.",
-        "<b>Contexte :</b> Linux, Ansible, Docker, Git, Symfony 3, Nginx, PHP 7, PhpUnit, Gulp, Browserify, Bootstrap 4.0.0-alpha.5, SASS, jQuery, GitLab CI, Rancher, New Relic, PHPCS, PHP lint, PHPCPD, PHPMD, PhpMetrics, PhpDocumentor, PHPCB"
-      ]
-    },
-    {
-      "name": "Amadeus It (Gestour)",
+      "name": "Amadeus IT (Gestour)",
       "location": "Strasbourg, FR",
       "position": "Concepteur / Développeur – PHP / Symfony",
       "startDate": "2011-12",
       "endDate": "2015-05",
-      "summary": "Gestour SAS, anciennement Perinfo, est une société éditrice de logiciels qui a été rachetée en 2010 par le groupe Amadeus It, leader de la vente de produits de voyage en Europe. Gestour est l'outil de gestion d'agence de voyage le plus utilisé en France.",
+      "summary": "Gestour SAS, anciennement Perinfo, éditait l'outil de gestion d'agence de voyage le plus utilisé en France, déployé dans <b>1 500 points de vente</b>, avant son rachat en 2010 par Amadeus IT, leader européen de la distribution de produits de voyage. Trois ans et demi passés à porter vers le web un produit historique en client riche C++, sans toucher au serveur existant.",
       "highlights": [
-        "Études et sélection d'un framework PHP parmi les plus récents pour les futurs développements web de l'entreprise.",
-        "Évolution de la plateforme d’intégration continue.",
-        "Développement de Gestour en version web (Gestour 360) visant, à terme, à décommissionner totalement le “client riche” écrit en C++ tout en gardant le serveur existant.",
-        "Développement d’un CRM pour CroisiEurope (Gestour Sales Forces).",
-        "Développement d’une application d’analyse statistique orientée business (Gestour Analytics).",
-        "<b>Contexte :</b> Jenkins, Vagrant, Gestour Serveur API, Apache, base de données Oracle, PHP 5.3, Symfony 2.3 (LTS), Twitter Bootstrap, jQuery, Mercurial, PhpUnit, Karma, Twiglint, CSSLint, JMeter, Sami, SonarQube, Scrum"
+        "Développement de Gestour 360, la version web du produit, avec pour cible le décommissionnement complet du client riche C++ tout en conservant le serveur métier existant.",
+        "Étude et sélection du framework PHP retenu pour tous les développements web de l'entreprise, et évolution de la plateforme d'intégration continue.",
+        "Développement d'un CRM pour CroisiEurope (Gestour Sales Forces) et d'une application d'analyse statistique orientée métier (Gestour Analytics).",
+        "<b>Contexte :</b> Jenkins, Vagrant, API serveur Gestour, Apache, Oracle, PHP 5.3, Symfony 2.3 LTS, jQuery, Mercurial, PhpUnit, JMeter, SonarQube, Scrum"
       ]
     },
     {
@@ -199,173 +169,171 @@
       "position": "Développeur – PHP / TYPO3",
       "startDate": "2008-12",
       "endDate": "2011-12",
-      "summary": "Cora informatique est le département informatique des hypermarchés Cora (anciennement Groupe Louis Delhaize) : 59 hypermarchés en France. C'est dans ce département que sont développés les outils internes du groupe ainsi que ses portails internet.",
+      "summary": "Cora informatique est le département informatique des hypermarchés Cora, 59 magasins en France à l'époque, où sont développés les outils internes du groupe et ses portails internet.",
       "highlights": [
-        "Développement d’extensions TYPO3 et maintenance des sites du groupe.",
-        "Refonte du site cora.fr et des 59 magasins sur TYPO3, intégration et développement.",
-        "Assurer la continuité de service de l’application « solution voyages », reprise en main du code, sécurisation et maintenance de la solution.",
-        "Intégration de la solution Paybox pour les paiements en ligne sur coravoyages.fr.",
-        "Recette fonctionnelle et technique du site kido.fr réalisé par une société prestataire.",
-        "<b>Contexte :</b> PHP 5.2, TYPO3, jQuery, Apache, SVN, Paybox"
-      ]
-    },
-    {
-      "name": "SQLi",
-      "location": "Strasbourg, FR",
-      "position": "Ingénieur étude et développement",
-      "startDate": "2007-03",
-      "endDate": "2007-11",
-      "summary": "Stage de fin d’études (7 mois) puis CDD (1 mois).",
-      "highlights": [
-        "Étude de besoins pour appels d’offres de sites web institutionnels (mairies).",
-        "Prototype basé sur TYPO3."
-      ]
-    },
-    {
-      "name": "Winbyus",
-      "location": "Strasbourg, FR",
-      "position": "Développeur PHP",
-      "startDate": "2005-06",
-      "endDate": "2006-01",
-      "summary": "Stage d’été (3 mois) puis 5 mois en alternance.",
-      "highlights": [
-        "Développement d’une solution d’automatisation pour la création de squelettes de sites web paramétrables et modulaires : backoffice, actualité, catalogue, formulaire de contact, galerie, …",
-        "Intégration pour divers clients."
-      ]
-    },
-    {
-      "name": "Saï Studio",
-      "location": "Strasbourg, FR",
-      "position": "Développeur PHP",
-      "startDate": "2004-06",
-      "endDate": "2004-09",
-      "summary": "Stage d’été.",
-      "highlights": [
-        "Intégration HTML/CSS2 à partir de maquettes PSD.",
-        "Développement d’un site associatif et d’un e-commerce en PHP."
+        "Refonte du site cora.fr et des sites de <b>chacun des magasins</b> sous TYPO3 : intégration et développement.",
+        "Reprise en main du code de l'application « solution voyages » pour en assurer la continuité de service, sa sécurisation puis sa maintenance, et intégration de la solution de paiement en ligne Paybox sur coravoyages.fr.",
+        "Développement d'extensions TYPO3, maintenance des sites du groupe, et recette du site kido.fr réalisé par un prestataire externe.",
+        "<b>Contexte :</b> PHP 5.2, TYPO3, jQuery, Apache, SVN, Paybox"
       ]
     }
   ],
   "education": [
     {
-      "institution": "École supérieure d’informatique de Paris (ESI – SUPINFO)",
-      "area": "Expert en informatique et systèmes d’information",
+      "institution": "École supérieure d'informatique de Paris (ESI – SUPINFO)",
+      "area": "Expert en informatique et systèmes d'information",
       "studyType": "BAC+5 (RNCP Niveau 1)",
       "endDate": "2007"
     },
     {
       "institution": "IUT de Mulhouse",
-      "area": "Génie électrique et informatique industrielle, option réseaux locaux industriels",
+      "area": "Génie électrique et informatique industrielle",
       "studyType": "DUT",
       "endDate": "2002"
-    },
+    }
+  ],
+  "certificates": [
     {
-      "institution": "Lycée de Trinité, Martinique",
-      "area": "Scientifique, option Technologies industrielles",
-      "studyType": "Baccalauréat",
-      "endDate": "1999"
+      "name": "Agrément CII (Crédit d'Impôt Innovation)",
+      "issuer": "Ministère de l'Enseignement supérieur et de la Recherche",
+      "summary": "pour une PME dont le projet est éligible, mes prestations entrent dans la base du crédit d'impôt, soit <b>20 % de mes honoraires récupérés par le client</b>."
     }
   ],
   "skills": [
     {
+      "name": "TypeScript & Node.js",
+      "level": "Expert",
+      "keywords": [
+        "TypeScript",
+        "Node.js",
+        "NestJS",
+        "React",
+        "GraphQL / Apollo / AppSync",
+        "Electron",
+        "Jest"
+      ]
+    },
+    {
+      "name": "AWS & Serverless",
+      "level": "Expert",
+      "keywords": [
+        "Lambda",
+        "Step Functions",
+        "DynamoDB",
+        "S3 & CloudFront",
+        "AppSync",
+        "SQS / SNS / EventBridge",
+        "ECS & conteneurs",
+        "Terraform",
+        "CI/CD & Docker"
+      ]
+    },
+    {
+      "name": "IA appliquée",
+      "level": "Confirmé",
+      "keywords": [
+        "Intégration de LLM en production",
+        "Agents de code pilotés (Claude Code)",
+        "Claude Agent SDK",
+        "MCP (Model Context Protocol)",
+        "Modèles locaux (Ollama)",
+        "Abstraction multi-fournisseurs"
+      ]
+    },
+    {
       "name": "PHP & Symfony",
       "level": "Expert",
       "keywords": [
-        "De PHP 4 et suivantes",
-        "Symfony version 2 et suivantes",
-        "Développement d'API",
+        "Symfony 2 à 6",
+        "Modernisation de legacy",
+        "Extraction de logique métier",
+        "Montées de version PHP",
         "API Platform",
         "PhpUnit"
       ]
     },
     {
-      "name": "JavaScript & Node.js",
-      "level": "Confirmé",
-      "keywords": [
-        "TypeScript",
-        "NestJS",
-        "Apollo GraphQL",
-        "React",
-        "Jest"
-      ]
-    },
-    {
-      "name": "DevOps & Industrialisation",
-      "level": "Confirmé",
-      "keywords": [
-        "CI/CD",
-        "Docker",
-        "AWS",
-        "Terraform",
-        "Monitoring"
-      ]
-    },
-    {
-      "name": "Base de données",
+      "name": "Architecture & craft",
       "level": "Expert",
-      "keywords": [
-        "Base de données relationnelles et NoSql",
-        "Postgres",
-        "MySQL",
-        "Oracle",
-        "MongoDB",
-        "DynamoDB",
-        "Elastic Search"
-      ]
-    },
-    {
-      "name": "Cloud",
-      "level": "Confirmé",
-      "keywords": [
-        "Aws"
-      ]
-    },
-    {
-      "name": "Craftsmanship",
-      "level": "Intéressé",
       "keywords": [
         "Architecture hexagonale",
         "Clean Architecture",
-        "DDD",
+        "DDD & bounded contexts",
+        "Découpage de monolithe (strangler fig)",
         "TDD",
-        "Refactoring"
+        "Refactoring sous tests"
+      ]
+    },
+    {
+      "name": "Bases de données",
+      "level": "Confirmé",
+      "keywords": [
+        "PostgreSQL",
+        "MySQL / MariaDB",
+        "Oracle",
+        "MongoDB",
+        "DynamoDB",
+        "Elasticsearch"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Modernisation de legacy PHP",
+      "description": "Méthode de refactoring progressif que je propose en mission, documentée publiquement : protéger d'abord les chemins critiques par des tests fonctionnels, extraire la logique métier en cas d'usage explicites, identifier les bounded contexts, introduire des ports et adaptateurs, puis enrichir le modèle du domaine. Pas de réécriture big-bang, une amélioration mesurable alignée sur la roadmap produit : <a href=\"https://php-freelance.com/php-refactoring/\" target=\"_blank\">php-freelance.com/php-refactoring</a>.",
+      "keywords": [
+        "Strangler fig",
+        "Méthode Mikado",
+        "Anti-corruption layer",
+        "Bounded contexts",
+        "CQRS",
+        "Tests de non-régression"
+      ],
+      "url": "https://php-freelance.com/php-refactoring/"
+    },
+    {
+      "name": "CleanProspecter",
+      "startDate": "2018-02",
+      "endDate": "2018-06",
+      "description": "Preuve de concept open source, écrite pour éprouver en pratique les principes de Clean Code et de Clean Architecture de Robert C. Martin sur une application de gestion de prospects. Le développement a été arrêté à 70 % du MVP, l'objectif étant la démonstration architecturale : la logique du domaine est isolée dans un package Composer indépendant du framework, l'implémentation Symfony n'en étant qu'un détail. <a href=\"https://github.com/SO-LEAN/cleanprospecter\" target=\"_blank\">github.com/SO-LEAN/cleanprospecter</a> et <a href=\"https://github.com/SO-LEAN/prospecterapp\" target=\"_blank\">github.com/SO-LEAN/prospecterapp</a>.",
+      "keywords": [
+        "Clean Architecture",
+        "SOLID",
+        "Symfony 4.1",
+        "PHP 7.2",
+        "PhpUnit",
+        "Docker",
+        "CircleCI",
+        "Code Climate"
+      ],
+      "url": "https://github.com/SO-LEAN/cleanprospecter"
+    },
+    {
+      "name": "SOLEAN LAB, usine de développement",
+      "startDate": "2016-11",
+      "endDate": "2017-04",
+      "description": "Usine de développement montée dans ma propre société pour répondre à des appels d'offres au forfait, en parallèle de ma mission ItiQiti : 7 serveurs chez Scaleway, GitLab CI, Rancher, deux environnements et le monitoring. Le portail de la société a servi de preuve de concept industrialisée de bout en bout, avec un pipeline à 5 étapes et un environnement créé dynamiquement par branche, et de terrain d'expérimentation : charge, sécurité, ELK, Varnish et ESI. Arrêtée depuis, faute de projets au forfait.",
+      "keywords": [
+        "GitLab CI",
+        "Rancher",
+        "Docker",
+        "Ansible",
+        "Symfony 3",
+        "Varnish / ESI",
+        "ELK",
+        "JMeter"
       ]
     }
   ],
   "interests": [
     {
-      "name": "Technical Books",
+      "name": "Lectures techniques",
       "keywords": [
-        "Working Effectively with Legacy Code - Michael C. Feather",
-        "Refactoring - Improving the Design Of Existing Code - Martin Fowler",
-        "Patterns of Enterprise Application Architecture - Martin Fowler",
-        "Implementing Domain-Driven Design - Vaughn Vernon",
-        "Design Patterns - Elements of Reusable Object-Oriented Software - Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
-        "The Lean Startup - Eric Ries"
-      ]
-    },
-    {
-      "name": "Kindle Books",
-      "keywords": [
-        "Domain-Driven DESIGN - Eric Evans",
-        "Patterns of Enterprise Application Architecture - Martin Fowler",
-        "Reusable Objects Models - Martin Fowler",
-        "Writing Effective Use Case - Alistair Cockburn",
-        "Regular Expressions Cookbook - Jan Goyvaerts, Steven Levithan",
-        "The Mythical Man-Month - Frederick Brooks",
-        "Extreme Programming Explained - Kent Beck",
-        "Code Complete - Steve McConnell",
-        "Understanding the Professional Programmer - Gerald M. Weinberg",
+        "Working Effectively with Legacy Code - Michael C. Feathers",
+        "Refactoring: Improving the Design of Existing Code - Martin Fowler",
+        "Domain-Driven Design - Eric Evans",
         "Monolith to Microservices - Sam Newman",
-        "Seven Languages in Seven Weeks - Bruce A. Tate",
-        "The Phoenix Project - Gene Kim, Kevin Behr, George Spafford",
-        "The Software Craftsman: Professionalism, Pragmatism, Pride - Sandro Mancuso",
-        "The Clean Coder - Robert C. Martin",
-        "SQL in 10 Minutes - Ben Forta",
-        "The Passionate Programmer - Chad Fowler",
-        "Designing Data-Intensive Applications - Martin Kleppmann",
-        "Restful Web APIs - Leonard Richardson, Michael Amundsen, Sam Ruby",
-        "Apprenticeship Pattern: Guidance for the Aspiring Software Craftsman - Dave Hoover, Adewale Oshineye"
+        "Designing Data-Intensive Applications - Martin Kleppmann"
       ]
     },
     {
@@ -389,24 +357,23 @@
   "references": [
     {
       "name": "David Huby - Head of Engineering chez IAD Group",
-      "reference": "Michel a travaillé pendant 2 ans chez IAD. Au-delà de ses compétences techniques, il apporte une vraie valeur dans la collaboration produit/tech en donnant du sens métier aux développements à réaliser. Il est un vrai atout pour les sociétés qui veulent construire un produit rapidement en combinant pragmatisme et qualité."
+      "reference": "Au-delà de ses compétences techniques, il apporte une vraie valeur dans la collaboration produit/tech en donnant du sens métier aux développements à réaliser. Il est un vrai atout pour les sociétés qui veulent construire un produit rapidement en combinant pragmatisme et qualité."
     },
     {
       "name": "Thomas Haddad - Head of Engineering chez leboncoin",
-      "reference": "C’est avec tristesse que nous laissons partir ce super héros PHP après une belle mission d’un an. Véritable expert, pédagogue et toujours de bonne humeur, ce fut un réel bonheur de travailler quotidiennement avec Michel."
+      "reference": "C'est avec tristesse que nous laissons partir ce super héros PHP après une belle mission d'un an. Véritable expert, pédagogue et toujours de bonne humeur, ce fut un réel bonheur de travailler quotidiennement avec Michel."
     },
     {
       "name": "Sébastien Veigneau - Capitaine Air France et ex-Président / Co-founder de DgBirds",
-      "reference": "Michel est un professionnel qui a beaucoup de recul sur ce qu’il fait et sur l’ensemble de la solution sur laquelle il travaille. Il nous a beaucoup apporté en stabilisant un produit qui, de par le nombre d’intervenants, avait perdu en cohérence. C’est un travailleur de fond, très rigoureux, un rouleau compresseur de traitement des sujets épineux, un producteur de code stable et maintenable. Mais c’est aussi un collaborateur très agréable avec qui on a envie d’échanger et de partager des moments au sein d’une équipe. C’est avec regret que nous l’avons, pour l’instant, laissé s’impliquer dans d’autres projets après une collaboration de plus d’un an, dont je n’ai que du positif en mémoire. Pour sûr, dès qu’on peut, on sera ravi de reprofiter de ses talents. Je le recommande vivement, ayant beaucoup de respect à son égard."
+      "reference": "Il nous a beaucoup apporté en stabilisant un produit qui, de par le nombre d'intervenants, avait perdu en cohérence. Un travailleur de fond, très rigoureux, un rouleau compresseur de traitement des sujets épineux, un producteur de code stable et maintenable. Je le recommande vivement, ayant beaucoup de respect à son égard."
     },
     {
-      "name": "Olivier Hoareau - Ex CTO ItiQiti",
-      "reference": "Michel est un collaborateur sur lequel on peut compter et avoir confiance au quotidien : expérimenté, compétent et tenace, humble et déterminé. Il aime trouver des solutions techniques aux problèmes les plus complexes. Il sait parfaitement s’intégrer à une équipe et y apporter son savoir-faire. Il sait apprendre et aider les autres à apprendre. Il est autonome, efficace et toujours de confiance, même dans un contexte full-remote de longue durée. Il est agréable de discuter de différents sujets avec Michel, il aime être critique mais constructif. J’attends avec impatience le jour où je pourrai de nouveau collaborer avec lui !"
+      "name": "Olivier Hoareau - CTO de GoTombola, ex-CTO d'ItiQiti (nous travaillons ensemble depuis 2015)",
+      "reference": "Un collaborateur sur lequel on peut compter au quotidien : expérimenté, compétent et tenace, humble et déterminé. Il aime trouver des solutions techniques aux problèmes les plus complexes, et il est autonome et efficace même dans un contexte full-remote de longue durée."
     },
     {
       "name": "D'autres références",
       "reference": "Sur demande"
     }
-  ],
-  "projects": []
+  ]
 }

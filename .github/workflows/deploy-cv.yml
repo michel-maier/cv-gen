@@ -4,32 +4,68 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+# Two pushes in a row would race for the gh-pages branch; the newer commit wins.
+concurrency:
+  group: deploy-cv
+  cancel-in-progress: true
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - name: Cache the Chromium download
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: puppeteer-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --immutable
 
-      - name: Build French and English resumes
+      - name: Validate the resumes against the JSON Resume schema
+        run: yarn validate
+
+      # Each script writes its source to resume.json then renders it, so they
+      # have to run one after the other.
+      - name: Build the resumes and the brochures
         run: |
           yarn rfrench
           yarn renglish
+          yarn rfrench-short
+          yarn renglish-short
+          yarn pfrench
+          yarn penglish
 
       - name: Convert French resume to PDF using Puppeteer
         run: yarn 2pdf resume_fr.html resume_michelmaier_fr.pdf
 
       - name: Convert English resume to PDF using Puppeteer
         run: yarn 2pdf resume_en.html resume_michelmaier_en.pdf
+
+      - name: Convert short French resume to PDF using Puppeteer
+        run: yarn 2pdf resume_fr_short.html resume_michelmaier_fr_short.pdf
+
+      - name: Convert short English resume to PDF using Puppeteer
+        run: yarn 2pdf resume_en_short.html resume_michelmaier_en_short.pdf
+
+      # The brochure themes set `@page { margin: 0 }` so their colour bands reach
+      # the edge of the paper.
+      - name: Convert French brochure to PDF using Puppeteer
+        run: yarn 2pdf plaquette_fr.html plaquette_michelmaier_fr.pdf
+
+      - name: Convert English brochure to PDF using Puppeteer
+        run: yarn 2pdf plaquette_en.html plaquette_michelmaier_en.pdf
 
       - name: Convert French resume to DOCX using Pandoc
         uses: docker://pandoc/core:3.5
@@ -41,21 +77,53 @@ jobs:
         with:
           args: "resume_en.html -o resume_michelmaier_en.docx"
 
+      - name: Convert short French resume to DOCX using Pandoc
+        uses: docker://pandoc/core:3.5
+        with:
+          args: "resume_fr_short.html -o resume_michelmaier_fr_short.docx"
+
+      - name: Convert short English resume to DOCX using Pandoc
+        uses: docker://pandoc/core:3.5
+        with:
+          args: "resume_en_short.html -o resume_michelmaier_en_short.docx"
+
       - name: Prepare GitHub Pages content
         run: |
-          mkdir -p public/fr public/en
+          mkdir -p public/fr/logos public/en/logos
+
           cp resume_fr.html public/fr/
+          cp resume_fr_short.html public/fr/
+          cp plaquette_fr.html public/fr/
           cp michel-maier-2026.png public/fr/
           cp resume_michelmaier_fr.pdf public/fr/
           cp resume_michelmaier_fr.docx public/fr/
+          cp resume_michelmaier_fr_short.pdf public/fr/
+          cp resume_michelmaier_fr_short.docx public/fr/
+          cp plaquette_michelmaier_fr.pdf public/fr/
 
           cp resume_en.html public/en/
+          cp resume_en_short.html public/en/
+          cp plaquette_en.html public/en/
           cp michel-maier-2026.png public/en/
           cp resume_michelmaier_en.pdf public/en/
           cp resume_michelmaier_en.docx public/en/
+          cp resume_michelmaier_en_short.pdf public/en/
+          cp resume_michelmaier_en_short.docx public/en/
+          cp plaquette_michelmaier_en.pdf public/en/
+
+          # Logos used by the brochures.
+          for logo in airfrance iad leboncoin sanofi; do
+            cp logos/$logo.svg public/fr/logos/
+            cp logos/$logo.svg public/en/logos/
+          done
+
+          # Private directory of every document. Nothing links to it and it asks
+          # not to be indexed, so it is only reachable by someone who has the URL.
+          mkdir -p public/perso-8b41d6
+          cp annuaire/index.html public/perso-8b41d6/
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./public

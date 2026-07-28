@@ -1,0 +1,139 @@
+{
+  "basics": {
+    "name": "Michel MAIER",
+    "image": "michel-maier-2026.png",
+    "email": "michel@solean-it.com",
+    "phone": "(+33) 6.13.56.19.40",
+    "url": "https://php-freelance.com/",
+    "location": {
+      "city": "Strasbourg",
+      "countryCode": "FR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/maier-michel",
+        "username": "maier-michel"
+      }
+    ]
+  },
+  "plaquette": {
+    "eyebrow": "Ingénieur logiciel indépendant &middot; 19 ans &middot; Backend, Cloud &amp; IA",
+    "statement": "Votre produit avance à la vitesse de votre code le plus ancien.",
+    "counter": "Je reprends ce code, je le sécurise, et je lui rends de la vitesse. <em>Sans arrêter votre production.</em>",
+    "availability": "Disponible à partir d'octobre 2026",
+    "figures": [
+      {
+        "value": "19",
+        "unit": "ans",
+        "caption": "à construire des systèmes neufs et à reprendre ceux des autres"
+      },
+      {
+        "value": "1",
+        "unit": "interlocuteur",
+        "caption": "du front à l'infrastructure, sans coordination entre prestataires"
+      },
+      {
+        "value": "100",
+        "unit": "%",
+        "caption": "du code couvert par des tests, rien ne part à l'aveugle"
+      },
+      {
+        "value": "20",
+        "unit": "%",
+        "caption": "de mes honoraires récupérés par votre PME, agrément CII"
+      }
+    ],
+    "painsTitle": "Trois phrases que j'entends avant chaque mission",
+    "pains": [
+      {
+        "pain": "« Personne ne sait plus comment ça marche. »",
+        "answer": "L'équipe d'origine est partie, il n'y a ni tests ni documentation, et chaque correction en casse une autre. Je cartographie le système et je pose un filet de tests sur les chemins critiques <strong>avant</strong> d'y toucher."
+      },
+      {
+        "pain": "« On nous propose de tout réécrire. »",
+        "answer": "C'est le projet le plus risqué qu'une entreprise puisse lancer : budget doublé, deux ans sans nouvelle fonctionnalité, et l'ancien système toujours en vie. Je découpe l'existant morceau par morceau, chaque étape étant livrable et réversible."
+      },
+      {
+        "pain": "« L'IA, on en parle depuis deux ans, rien n'est en production. »",
+        "answer": "Parce que le sujet est traité comme une démonstration au lieu d'un problème d'ingénierie. J'intègre des modèles dans le produit, avec la revue et les tests qui vont avec. Et s'il ne faut pas que vos données sortent, ils tournent chez vous."
+      }
+    ],
+    "trustTitle": "Ils m'ont fait confiance",
+    "trust": [
+      {
+        "name": "Sanofi",
+        "logo": "logos/sanofi.svg",
+        "h": "7.5mm"
+      },
+      {
+        "name": "leboncoin",
+        "logo": "logos/leboncoin.svg",
+        "h": "7mm"
+      },
+      {
+        "name": "IAD",
+        "logo": "logos/iad.svg",
+        "h": "7.5mm"
+      },
+      {
+        "name": "Air France",
+        "logo": "logos/airfrance.svg",
+        "h": "4.5mm"
+      }
+    ],
+    "trustNote": "Auparavant Amadeus IT et Cora. Les plateformes que j'ai outillées servent aujourd'hui des campagnes de l'UNICEF et du fonds de dotation du Paris Saint-Germain.",
+    "missionsTitle": "Ce que ça donne, concrètement",
+    "missions": [
+      {
+        "client": "GoTombola",
+        "period": "Depuis 2026",
+        "title": "Produire un site ne demande plus de développeur",
+        "body": "Au départ, chaque site passait par un développeur : un goulot d'étranglement à chaque nouvelle campagne. À deux avec le directeur technique, sept mois pour livrer un studio que n'importe qui dans l'équipe utilise sans savoir coder. L'IA rédige le site, l'outil le monte, la chaîne le publie.",
+        "proof": "Son directeur technique me rappelle depuis 2015."
+      },
+      {
+        "client": "Sanofi",
+        "period": "2024 &ndash; 2025",
+        "title": "Deux développements sur mesure devenus une plateforme paramétrable",
+        "body": "Conception du socle qui a permis de généraliser un outil de génération de documents par IA, puis démantèlement du monolithe vers des services indépendants."
+      },
+      {
+        "client": "IAD",
+        "period": "2022 &ndash; 2024",
+        "title": "Un moteur de rapprochement qui débloque les ventes croisées",
+        "body": "Mise en relation automatique des biens du réseau avec les critères des acquéreurs, y compris sur les biens jamais publiés en ligne.",
+        "proof": "Premier réseau de mandataires de France, 14 000 conseillers."
+      },
+      {
+        "client": "leboncoin",
+        "period": "2021 &ndash; 2022",
+        "title": "Une application rachetée, sécurisée, puis internalisée",
+        "body": "Reprise sans tests et avec une documentation parcellaire, remise en production dans l'écosystème du groupe, puis migration des comptes professionnels pour cesser de payer leur prestataire historique."
+      }
+    ],
+    "quotesTitle": "Ce qu'en disent ceux qui m'ont employé",
+    "quotes": [
+      {
+        "text": "Un vrai atout pour les sociétés qui veulent construire un produit rapidement en combinant pragmatisme et qualité.",
+        "author": "David Huby",
+        "role": "Head of Engineering, IAD Group"
+      },
+      {
+        "text": "Un rouleau compresseur de traitement des sujets épineux, un producteur de code stable et maintenable.",
+        "author": "Sébastien Veigneau",
+        "role": "Capitaine Air France, co-fondateur de DgBirds"
+      }
+    ],
+    "stackTitle": "Savoir-faire",
+    "stack": [
+      "TypeScript · Node.js · React",
+      "AWS serverless · Terraform",
+      "PHP · Symfony",
+      "LLM en production · agents de code",
+      "Architecture hexagonale · DDD · TDD"
+    ],
+    "ctaTitle": "Le premier échange sert à qualifier votre problème, pas à vous vendre quelque chose.",
+    "ctaBody": "Décrivez-moi votre système et ce qui vous empêche d'avancer. Nous apporterons une solution."
+  }
+}

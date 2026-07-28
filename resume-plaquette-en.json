@@ -1,0 +1,138 @@
+{
+  "basics": {
+    "name": "Michel MAIER",
+    "image": "michel-maier-2026.png",
+    "email": "michel@solean-it.com",
+    "phone": "(+33) 6.13.56.19.40",
+    "url": "https://php-freelance.com/",
+    "location": {
+      "city": "Strasbourg",
+      "countryCode": "FR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/maier-michel",
+        "username": "maier-michel"
+      }
+    ]
+  },
+  "plaquette": {
+    "eyebrow": "Independent software engineer &middot; 19 years &middot; Backend, Cloud &amp; AI",
+    "statement": "Your product moves at the speed of your oldest code.",
+    "counter": "I take that code over, I make it safe to change, and I give it back its speed. <em>Without ever stopping your production.</em>",
+    "availability": "Available from October 2026",
+    "figures": [
+      {
+        "value": "19",
+        "unit": "years",
+        "caption": "building new systems and taking over the ones others wrote"
+      },
+      {
+        "value": "1",
+        "unit": "point of contact",
+        "caption": "from the front end to the infrastructure, no vendor to coordinate"
+      },
+      {
+        "value": "100",
+        "unit": "%",
+        "caption": "of the code covered by tests, nothing ships blind"
+      },
+      {
+        "value": "7",
+        "unit": "months",
+        "caption": "to deliver a full production studio, as a pair"
+      }
+    ],
+    "painsTitle": "Three sentences I hear before every engagement",
+    "pains": [
+      {
+        "pain": "&ldquo;Nobody knows how it works any more.&rdquo;",
+        "answer": "The original team has gone, there are no tests and the documentation is patchy, and every fix breaks something else. I map the system and put a safety net of tests over the critical paths <strong>before</strong> touching anything."
+      },
+      {
+        "pain": "&ldquo;We are being told to rewrite everything.&rdquo;",
+        "answer": "It is the riskiest project a company can start: double the budget, two years without a new feature, and the old system still running. I break the existing one down piece by piece, each step shippable and reversible."
+      },
+      {
+        "pain": "&ldquo;We have been talking about AI for two years, nothing is live.&rdquo;",
+        "answer": "Because it is treated as a demo instead of an engineering problem. I embed models in the product, with the reviews and the tests that go with them. And if your data must not leave your walls, they run inside them."
+      }
+    ],
+    "trustTitle": "They put their trust in me",
+    "trust": [
+      {
+        "name": "Sanofi",
+        "logo": "logos/sanofi.svg",
+        "h": "7.5mm"
+      },
+      {
+        "name": "leboncoin",
+        "logo": "logos/leboncoin.svg",
+        "h": "7mm"
+      },
+      {
+        "name": "IAD",
+        "logo": "logos/iad.svg",
+        "h": "7.5mm"
+      },
+      {
+        "name": "Air France",
+        "logo": "logos/airfrance.svg",
+        "h": "4.5mm"
+      }
+    ],
+    "trustNote": "Earlier, Amadeus IT and Cora. The platforms I tooled today serve campaigns for UNICEF and for the Paris Saint-Germain endowment fund.",
+    "missionsTitle": "What that looks like in practice",
+    "missions": [
+      {
+        "client": "GoTombola",
+        "period": "Since 2026",
+        "title": "Producing a site no longer requires a developer",
+        "body": "At the start, every site went through a developer: a bottleneck on each new campaign. As a pair with the CTO, seven months to deliver a studio anyone on the team uses without writing code. The AI writes the site, the tool assembles it, the pipeline publishes it.",
+        "proof": "Its CTO has been hiring me back since 2015."
+      },
+      {
+        "client": "Sanofi",
+        "period": "2024 &ndash; 2025",
+        "title": "Two bespoke builds turned into one configurable platform",
+        "body": "Design of the foundation that made it possible to generalise an AI document generation tool, then the gradual dismantling of the monolith into independent services."
+      },
+      {
+        "client": "IAD",
+        "period": "2022 &ndash; 2024",
+        "title": "A matching engine that unlocks cross-selling across the network",
+        "body": "Automatic matching of the network's properties against buyers' criteria, including properties never listed online.",
+        "proof": "France's leading estate agent network, 14,000 advisors."
+      },
+      {
+        "client": "leboncoin",
+        "period": "2021 &ndash; 2022",
+        "title": "An acquired application secured, then brought in-house",
+        "body": "Taken over with no tests and only patchy documentation, put back into production inside the group's ecosystem, then the professional accounts migrated to stop paying their incumbent provider."
+      }
+    ],
+    "quotesTitle": "What the people who hired me say",
+    "quotes": [
+      {
+        "text": "A true asset for companies that want to build a product quickly by combining pragmatism and quality.",
+        "author": "David Huby",
+        "role": "Head of Engineering, IAD Group"
+      },
+      {
+        "text": "A steamroller when it comes to tackling thorny issues, and someone who produces stable, maintainable code.",
+        "author": "Sébastien Veigneau",
+        "role": "Air France Captain, co-founder of DgBirds"
+      }
+    ],
+    "stack": [
+      "TypeScript &middot; Node.js &middot; React",
+      "AWS serverless &middot; Terraform",
+      "PHP &middot; Symfony",
+      "LLMs in production &middot; coding agents",
+      "Hexagonal architecture &middot; DDD &middot; TDD"
+    ],
+    "ctaTitle": "The first conversation is there to qualify your problem, not to sell you something.",
+    "ctaBody": "Tell me about your system and what is stopping you from moving forward. We will bring you a solution."
+  }
+}

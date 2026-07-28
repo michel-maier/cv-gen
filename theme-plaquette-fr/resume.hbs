@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>{{resume.basics.name}} - Plaquette</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <style>{{{css}}}</style>
+</head>
+<body>
+
+{{!-- =====================================================================
+     PAGE 1 - L'ACCROCHE
+     Le bandeau ne fait qu'une chose : nommer le probleme du lecteur avant
+     de parler de soi. Puis les chiffres, puis ses propres phrases.
+     ===================================================================== --}}
+
+<header class="cover">
+    <div class="cover-top">
+        <div class="eyebrow">{{{p.eyebrow}}}</div>
+        <div class="cover-name">{{resume.basics.name}}</div>
+    </div>
+
+    <div class="cover-core">
+        <h1 class="statement">{{{p.statement}}}</h1>
+        <p class="counter">{{{p.counter}}}</p>
+    </div>
+
+    <div class="cover-foot">
+        {{#if resume.basics.image}}
+            <img class="cover-photo" src="{{resume.basics.image}}" alt="{{resume.basics.name}}" />
+        {{/if}}
+        <div class="pill">{{{p.availability}}}</div>
+    </div>
+</header>
+
+{{#if p.figures}}
+    <section class="figures">
+        {{#each p.figures}}
+            <div class="figure">
+                <div class="figure-value">{{{value}}}<span>{{{unit}}}</span></div>
+                <div class="figure-caption">{{{caption}}}</div>
+            </div>
+        {{/each}}
+    </section>
+{{/if}}
+
+{{#if p.stack}}
+    <section class="toolbelt">
+        <span class="toolbelt-label">Outillage</span>
+        <ul>{{#each p.stack}}<li>{{{this}}}</li>{{/each}}</ul>
+
+    </section>
+{{/if}}
+
+{{#if p.pains}}
+    <section class="band">
+        <h2 class="label">{{{p.painsTitle}}}</h2>
+        {{#each p.pains}}
+            <article class="pain">
+                <h3>{{{pain}}}</h3>
+                <p>{{{answer}}}</p>
+            </article>
+        {{/each}}
+    </section>
+{{/if}}
+
+{{!-- =====================================================================
+     PAGE 2 - LA PREUVE
+     ===================================================================== --}}
+<div class="break"></div>
+
+{{#if p.trust}}
+    <section class="trustband">
+        <h2 class="label label--onDark">{{{p.trustTitle}}}</h2>
+        <ul class="trust">
+            {{#each p.trust}}
+                <li><img src="{{logo}}" alt="{{name}}" style="height:{{h}}" /></li>
+            {{/each}}
+        </ul>
+        {{#if p.trustNote}}<p class="trust-note">{{{p.trustNote}}}</p>{{/if}}
+    </section>
+{{/if}}
+
+{{#if p.missions}}
+    <section class="band">
+        <h2 class="label">{{{p.missionsTitle}}}</h2>
+        {{#each p.missions}}
+            <article class="mission">
+                <div class="mission-side">
+                    <div class="mission-client">{{{client}}}</div>
+                    <div class="mission-period">{{{period}}}</div>
+                </div>
+                <div class="mission-main">
+                    <h3>{{{title}}}</h3>
+                    <p>{{{body}}}</p>
+                    {{#if proof}}<p class="mission-proof">{{{proof}}}</p>{{/if}}
+                </div>
+            </article>
+        {{/each}}
+    </section>
+{{/if}}
+
+{{#if p.quotes}}
+    <section class="band">
+        <h2 class="label">{{{p.quotesTitle}}}</h2>
+        <div class="quotes">
+            {{#each p.quotes}}
+                <blockquote>
+                    <p>{{{text}}}</p>
+                    <footer><strong>{{{author}}}</strong><span>{{{role}}}</span></footer>
+                </blockquote>
+            {{/each}}
+        </div>
+    </section>
+{{/if}}
+
+<footer class="cta">
+    <div class="cta-text">
+        <h2>{{{p.ctaTitle}}}</h2>
+        <p>{{{p.ctaBody}}}</p>
+    </div>
+    <ul class="cta-contact">
+        {{#if resume.basics.email}}<li><span>Courriel</span>{{resume.basics.email}}</li>{{/if}}
+        {{#if resume.basics.phone}}<li><span>Téléphone</span>{{resume.basics.phone}}</li>{{/if}}
+        {{#if resume.basics.url}}<li><span>Site</span>{{host resume.basics.url}}</li>{{/if}}
+        {{#each resume.basics.profiles}}<li><span>LinkedIn</span>{{host url}}</li>{{/each}}
+    </ul>
+</footer>
+
+</body>
+</html>

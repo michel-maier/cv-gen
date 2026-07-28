@@ -23,6 +23,10 @@ a:visited {
     color: #000;
     text-decoration: underline;
 }
+/* Les liens ne se coupent pas en plein milieu d'un domaine. */
+a {
+    white-space: nowrap;
+}
 
 /* -------------------------------------------------------------------------- */
 /* MAIN HEADER                                                                */
@@ -41,13 +45,14 @@ a:visited {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .photo {
     flex-shrink: 0;
 }
 .photo img {
-    width: 120px;
+    width: 100px;
     height: auto;
     object-fit: cover;
     border-radius: 6px;
@@ -58,24 +63,44 @@ a:visited {
     font-size: 0.9rem;
     color: #333;
 }
+/* Le nom ne passe jamais sur deux lignes, et sa taille est bornee :
+   le h1 par defaut (2em) volait la largeur necessaire au titre a droite. */
+.contact h1 {
+    white-space: nowrap;
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
 .contact div {
     margin: 0.3rem 0;
+    white-space: nowrap;
 }
 
 .header-right {
     text-align: right;
+    flex: 1;
+    min-width: 0;
+    padding-left: 12px;
 }
+/* La premiere ligne du label est la plus lue du CV : elle domine.
+   Les lignes secondaires portent la classe .label-sub dans le JSON. */
 .header-right h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.35;
+    font-weight: 600;
     margin-bottom: 1rem;
-    color: #777;
+    color: #1a1a1a;
+}
+.header-right h2 .label-sub {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #666;
 }
 
 /* -------------------------------------------------------------------------- */
 /* GENERAL SECTIONS                                                         */
 /* -------------------------------------------------------------------------- */
 section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 section h3 {
@@ -103,27 +128,40 @@ section h3 {
 .work-header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
 }
+/* La periode ne se coupe jamais : c'est le repere de lecture de la colonne gauche. */
 .experience-date {
     font-size: 0.9rem;
     font-weight: bold;
     color: #555;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
+/* min-width garantit une largeur au poste : sans elle, un nom de societe long
+   ecrase la colonne et le libelle se casse sur trois lignes. */
 .experience-info {
-    flex: 1;
+    flex: 1 1 0%;
+    min-width: 11rem;
+    padding-right: 14px;
 }
 .positionTitle {
     font-size: 1rem;
     color: #777;
 }
+/* Pas de margin-left:auto ici : une marge automatique absorbe l'espace libre
+   AVANT le flex-grow, ce qui empeche .experience-info de s'etendre et casse
+   le libelle du poste sur plusieurs lignes. Le flex:1 du poste suffit a
+   pousser ce bloc a droite. */
 .company-info {
-    margin-left: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    flex-shrink: 1;
+    min-width: 0;
+    text-align: right;
 }
 .companyName {
     font-size: 1.1rem;
@@ -141,10 +179,89 @@ section h3 {
 .work-location i {
     color: #007ACC;
 }
+/* Pas d'italique : sur des resumes de 300 a 500 caracteres, il degrade la lecture. */
 .experience-summary {
-    font-style: italic;
-    color: #444;
+    color: #4a4a4a;
     margin-bottom: 0.5rem;
+}
+
+/* Entree sans description ni puce : le poste seul suffit a dire ce qui a ete
+   fait, donc tout tient sur UNE ligne. On conserve la disposition du reste du
+   CV (periode a gauche, poste au centre, societe et lieu a droite) : seules la
+   hauteur et la taille changent, la societe et le lieu passant cote a cote au
+   lieu d'etre empiles. Le CV long n'est pas concerne, toutes ses entrees ayant
+   une description. */
+.work-item--slim {
+    margin-bottom: 0;
+}
+.work-item--slim .work-header {
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin: 0.3rem 0;
+}
+.work-item--slim .experience-date {
+    font-size: 0.75rem;
+}
+.work-item--slim .experience-info {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-right: 0;
+}
+.work-item--slim .company-info {
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+    text-align: right;
+}
+.work-item--slim .positionTitle,
+.work-item--slim .companyName,
+.work-item--slim .work-location {
+    font-size: 0.8rem;
+    margin-top: 0;
+}
+.work-item--slim .companyName {
+    font-weight: 700;
+}
+.work-item--slim .work-location {
+    white-space: nowrap;
+    font-size: 0.76rem;
+    color: #777;
+}
+.work-item--slim .companyName {
+    font-weight: 700;
+}
+.work-item--slim .work-location {
+    order: 4;
+    flex: 0 0 auto;
+    margin-left: 6px;
+    color: #777;
+}
+
+/* La ligne Contexte n'est pas une realisation : elle ferme l'entree, donc pas
+   de puce, et elle se cale sur le texte du resume au-dessus. */
+.work-item ul li:last-child {
+    list-style: none;
+    margin-left: -1rem;
+}
+
+/* Sur les entrees les plus anciennes, rendues sur une seule ligne, les noms de
+   societe demarrent tous a la meme abscisse : une colonne de largeur fixe
+   alignee a gauche, plutot qu'un alignement a droite qui les faisait commencer
+   n'importe ou. La ville coule ensuite librement. Les entrees detaillees, elles,
+   gardent leur alignement a droite. */
+.work-item--slim .company-info {
+    flex: 0 0 17.9rem;
+    align-items: baseline;
+    text-align: left;
+}
+
+/* Le nom de societe ne se coupe jamais : c'est le repere d'alignement. */
+.work-item--slim .companyName {
+    white-space: nowrap;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -181,6 +298,7 @@ section h3 {
 /* OTHER SECTIONS: SKILLS, LANGUAGES, INTERESTS, PROJECTS, REFERENCES         */
 /* -------------------------------------------------------------------------- */
 .skills,
+.certificates,
 .languages,
 .interests,
 .references,
@@ -194,8 +312,9 @@ ul {
     margin-top: 0.5rem;
 }
 .skills li,
+.certificates li,
 .languages li {
-    margin: 0.3rem 0;
+    margin: 0.22rem 0;
 }
 .interest {
     margin-bottom: 0.8rem;
@@ -207,6 +326,19 @@ ul {
     margin-bottom: 1rem;
 }
 
+/* --------------------------------------------------------------------------
+   MODE COMPACT - active par resume.meta.compact, donc uniquement sur le CV
+   court. Une reduction globale et proportionnelle du corps de texte, plutot
+   qu'une serie de reglages par bloc : c'est previsible, et ca permet de garder
+   les listes de competences completes. Le CV long n'est pas concerne.
+   -------------------------------------------------------------------------- */
+body.compact {
+    font-size: 13px;
+}
+body.compact .skills li {
+    margin: 0.18rem 0;
+}
+
 /* -------------------------------------------------------------------------- */
 /* PRINTING                                                                   */
 /* -------------------------------------------------------------------------- */
@@ -214,6 +346,8 @@ ul {
     body {
         margin: 0;
         padding: 1rem;
+        orphans: 2;
+        widows: 2;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -221,18 +355,34 @@ ul {
         border-bottom: 1px solid #aaa;
     }
     .header-right h2 {
-        font-size: 1rem;
+        font-size: 1.1rem;
+    }
+    /* Le poste tient sur une ligne : la zone imprimable (704px) est plus etroite
+       que la zone ecran (760px), le libelle a donc besoin d'un cran de moins. */
+    .positionTitle {
+        font-size: 0.85rem;
     }
     * {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
+    /* Une experience n'est jamais coupee sur deux pages. */
     .work-item,
     .education-item,
     .education,
-    .references {
+    .references,
+    .projects article,
+    .interest,
+    .certificates li {
         page-break-inside: avoid;
         break-inside: avoid;
+    }
+    /* Un titre de section ou d'experience ne reste jamais seul en bas de page. */
+    section h3,
+    .work-header,
+    .projects h4 {
+        page-break-after: avoid;
+        break-after: avoid;
     }
 }
 

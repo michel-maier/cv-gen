@@ -1,16 +1,25 @@
 {
   "private": true,
+  "packageManager": "yarn@4.12.0",
   "dependencies": {
-    "puppeteer": "^24.31.0",
-    "resumed": "^4.1.0",
+    "handlebars": "4.7.9",
+    "puppeteer": "25.4.0",
+    "resumed": "6.1.0",
     "theme-boiler-plate": "file:./theme-boiler-plate",
     "theme-english": "file:./theme-english",
-    "theme-french": "file:./theme-french"
+    "theme-french": "file:./theme-french",
+    "theme-plaquette-en": "file:./theme-plaquette-en",
+    "theme-plaquette-fr": "file:./theme-plaquette-fr"
   },
   "scripts": {
     "rbp": "cat resume-french.json > resume.json && yarn resumed --theme theme-boiler-plate",
     "rfrench": "cat resume-french.json > resume.json && yarn resumed --theme theme-french -o resume_fr.html",
     "renglish": "cat resume-english.json > resume.json && yarn resumed --theme theme-english -o resume_en.html",
-    "2pdf": "node convert-to-pdf.js"
+    "rfrench-short": "cat resume-french-short.json > resume.json && yarn resumed --theme theme-french -o resume_fr_short.html",
+    "renglish-short": "cat resume-english-short.json > resume.json && yarn resumed --theme theme-english -o resume_en_short.html",
+    "pfrench": "cat resume-plaquette-fr.json > resume.json && yarn resumed --theme theme-plaquette-fr -o plaquette_fr.html",
+    "penglish": "cat resume-plaquette-en.json > resume.json && yarn resumed --theme theme-plaquette-en -o plaquette_en.html",
+    "2pdf": "node convert-to-pdf.js",
+    "validate": "resumed validate resume-french.json && resumed validate resume-english.json && resumed validate resume-french-short.json && resumed validate resume-english-short.json && resumed validate resume-plaquette-fr.json && resumed validate resume-plaquette-en.json"
   }
 }

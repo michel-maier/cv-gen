@@ -5,7 +5,7 @@
     <title>
         {{#if resume.basics}}
             {{resume.basics.name}}
-        {{/if}} - CV
+        {{/if}} - Resume
     </title>
     <style>
             {{{css}}}
@@ -13,7 +13,7 @@
     <!-- Optional: Google Fonts, Font Awesome... -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
 </head>
-<body>
+<body class="{{#if resume.meta.compact}}compact{{/if}}">
 
 {{!-- HEADER --}}
 {{#if resume.basics}}
@@ -37,9 +37,7 @@
                 {{/if}}
                 {{#if resume.basics.location}}
                     <div><i class="fas fa-map-marker-alt"></i>
-                        {{resume.basics.location.address}},
-                        {{resume.basics.location.postalCode}}
-                        {{resume.basics.location.city}}
+                        {{#if resume.basics.location.address}}{{resume.basics.location.address}}, {{/if}}{{#if resume.basics.location.postalCode}}{{resume.basics.location.postalCode}} {{/if}}{{resume.basics.location.city}}{{#if resume.basics.location.countryCode}}, {{resume.basics.location.countryCode}}{{/if}}
                     </div>
                 {{/if}}
             </div>
@@ -59,12 +57,46 @@
     </section>
 {{/if}}
 
+{{!-- SKILLS --}}
+{{#if resume.skills}}
+    <section class="skills">
+        <h3>Skills</h3>
+        <ul>
+            {{#each resume.skills}}
+                <li>
+                    <strong>{{name}}</strong>{{#if level}} ({{level}}){{/if}}
+                    {{#if keywords}}
+                        :
+                        {{#each keywords}}
+                            {{this}}{{#unless @last}}, {{/unless}}
+                        {{/each}}
+                    {{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+{{/if}}
+
+{{!-- ACCREDITATIONS --}}
+{{#if resume.certificates}}
+    <section class="certificates">
+        <h3>Accreditations</h3>
+        <ul>
+            {{#each resume.certificates}}
+                <li>
+                    <strong>{{name}}</strong>{{#if issuer}}, {{issuer}}{{/if}}{{#if summary}} : {{{summary}}}{{/if}}
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+{{/if}}
+
 {{!-- PROFESSIONAL EXPERIENCE --}}
 {{#if resume.work}}
     <section class="work">
         <h3>Professional Experience</h3>
         {{#each resume.work}}
-            <article class="work-item">
+            <article class="work-item{{#unless summary}} work-item--slim{{/unless}}">
                 <div class="work-header">
                     <div class="experience-date">
                         {{formatDate startDate}} - {{#if endDate}}{{formatDate endDate}}{{else}}Present{{/if}}
@@ -81,7 +113,7 @@
                         {{/if}}
                     </div>
                 </div>
-                <p class="experience-summary">{{{summary}}}</p>
+                {{#if summary}}<p class="experience-summary">{{{summary}}}</p>{{/if}}
                 {{#if highlights}}
                     <ul>
                         {{#each highlights}}
@@ -89,94 +121,6 @@
                         {{/each}}
                     </ul>
                 {{/if}}
-            </article>
-        {{/each}}
-    </section>
-{{/if}}
-
-{{!-- EDUCATION --}}
-{{#if resume.education}}
-    <section class="education">
-        <h3>Education</h3>
-        {{#each resume.education}}
-            <article class="education-item">
-                <div class="education-header">
-                    <div class="education-date">
-                        {{#if startDate}}{{formatDate startDate}} - {{formatDate endDate}}{{else}}{{endDate}}{{/if}}
-                    </div>
-                    <div class="education-info">
-                        <h4 class="education-title">{{studyType}} - {{area}}</h4>
-                        <div class="institution">{{institution}}</div>
-                    </div>
-                </div>
-            </article>
-        {{/each}}
-    </section>
-{{/if}}
-
-{{!-- SKILLS --}}
-{{#if resume.skills}}
-    <section class="skills">
-        <h3>Skills</h3>
-        <ul>
-            {{#each resume.skills}}
-                <li>
-                    <strong>{{name}}</strong> ({{level}})
-                    {{#if keywords}}
-                        :
-                        {{#each keywords}}
-                            {{this}}{{#unless @last}}, {{/unless}}
-                        {{/each}}
-                    {{/if}}
-                </li>
-            {{/each}}
-        </ul>
-    </section>
-{{/if}}
-
-{{!-- LANGUAGES --}}
-{{#if resume.languages}}
-    <section class="languages">
-        <h3>Languages</h3>
-        <ul>
-            {{#each resume.languages}}
-                <li>
-                    <strong>{{language}}:</strong> {{fluency}}
-                </li>
-            {{/each}}
-        </ul>
-    </section>
-{{/if}}
-
-{{!-- INTERESTS --}}
-{{#if resume.interests}}
-    <section class="interests">
-        <h3>Interests</h3>
-        {{#each resume.interests}}
-            <article class="interest">
-                <strong>{{name}}</strong>
-                {{#if keywords}}
-                    <ul>
-                        {{#each (limit keywords 5)}}
-                            <li>{{this}}</li>
-                        {{/each}}
-                        {{#ifMoreThan keywords 5}}
-                            <li>...</li>
-                        {{/ifMoreThan}}
-                    </ul>
-                {{/if}}
-            </article>
-        {{/each}}
-    </section>
-{{/if}}
-
-{{!-- REFERENCES --}}
-{{#if resume.references}}
-    <section class="references">
-        <h3>References</h3>
-        {{#each resume.references}}
-            <article>
-                <strong>{{name}}</strong>: {{reference}}
             </article>
         {{/each}}
     </section>
@@ -208,6 +152,55 @@
         {{/each}}
     </section>
 {{/if}}
+
+{{!-- REFERENCES --}}
+{{#if resume.references}}
+    <section class="references">
+        <h3>References</h3>
+        {{#each resume.references}}
+            <article>
+                <strong>{{name}}</strong> : {{reference}}
+            </article>
+        {{/each}}
+    </section>
+{{/if}}
+
+{{!-- EDUCATION --}}
+{{#if resume.education}}
+    <section class="education">
+        <h3>Education</h3>
+        {{#each resume.education}}
+            <article class="education-item">
+                <div class="education-header">
+                    <div class="education-date">
+                        {{#if startDate}}{{formatDate startDate}} - {{formatDate endDate}}{{else}}{{endDate}}{{/if}}
+                    </div>
+                    <div class="education-info">
+                        <h4 class="education-title">{{studyType}}{{#if area}} - {{area}}{{/if}}</h4>
+                        <div class="institution">{{institution}}</div>
+                    </div>
+                </div>
+            </article>
+        {{/each}}
+    </section>
+{{/if}}
+
+{{!-- LANGUAGES --}}
+{{#if resume.languages}}
+    <section class="languages">
+        <h3>Languages</h3>
+        <ul>
+            {{#each resume.languages}}
+                <li>
+                    <strong>{{language}}:</strong> {{fluency}}
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+{{/if}}
+
+{{!-- resume.interests is kept in the JSON but deliberately left out of the resume:
+     it took a whole page at the end of the document, for content that does not sell. --}}
 
 </body>
 </html>

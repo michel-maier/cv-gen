@@ -1,0 +1,542 @@
+/* ==========================================================================
+   PLAQUETTE - lecteur decideur, pas technique.
+
+   Trois partis pris qui separent une plaquette d'un CV mis en couleur :
+   1. Contraste d'echelle brutal. Une seule chose domine chaque zone :
+      l'accroche fait 34pt, les micro-titres 7.5pt, rien entre les deux.
+   2. Deux couleurs, pas quatre. Encre quasi noire et un bleu electrique ;
+      le gris n'est pas une couleur, c'est de l'encre diluee.
+   3. Le blanc est un materiau. Des respirations larges et regulieres,
+      c'est ce qui distingue l'imprime cher de l'imprime bavard.
+
+   A4 sans marge : les bandeaux vont bord a bord, le rembourrage est ici.
+   ========================================================================== */
+
+:root {
+    --ink: #0b0d0f;
+    --ink-2: #3d454d;
+    --ink-3: #737e88;
+    --accent: #0a63f5;
+    --paper: #ffffff;
+    --paper-2: #f4f6f8;
+    --rule: #e3e8ec;
+    --rule-dark: rgba(255, 255, 255, 0.14);
+    --pad: 18mm;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 9.5pt;
+    line-height: 1.55;
+    letter-spacing: -0.05pt;
+}
+
+/* Micro-titre de section : petit, capitales, tres espace. C'est ce detail
+   qui signale un document compose et non un document tape. */
+.label {
+    font-size: 7.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.6pt;
+    color: var(--ink-3);
+    margin-bottom: 5mm;
+}
+
+.band {
+    padding: 7mm var(--pad) 0;
+}
+
+.band--tight {
+    padding-top: 6mm;
+}
+
+/* --------------------------------------------------------------------------
+   COUVERTURE
+   -------------------------------------------------------------------------- */
+.cover {
+    background: var(--ink);
+    color: #fff;
+    padding: 13mm var(--pad) 11mm;
+    display: flex;
+    flex-direction: column;
+    gap: 10mm;
+}
+
+.cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 6mm;
+    border-bottom: 1px solid var(--rule-dark);
+}
+
+.eyebrow {
+    font-size: 7.5pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.6pt;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.cover-name {
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8pt;
+    color: #fff;
+}
+
+/* L'accroche nomme le probleme du lecteur : c'est la seule phrase qu'il doit
+   lire pour se reconnaitre. Serif editorial, grande, serree. */
+.statement {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 30pt;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.6pt;
+    color: #fff;
+    max-width: 21em;
+}
+
+.counter {
+    margin-top: 6mm;
+    font-size: 11.5pt;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 30em;
+}
+
+.counter em {
+    font-style: normal;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: inset 0 -0.35em 0 rgba(10, 99, 245, 0.55);
+}
+
+.cover-foot {
+    display: flex;
+    align-items: center;
+    gap: 6mm;
+}
+
+.cover-photo {
+    width: 17mm;
+    height: 17mm;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(100%) contrast(1.05);
+    flex-shrink: 0;
+}
+
+.pill {
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 0.3pt;
+    color: #fff;
+    padding: 2mm 5mm;
+    background: var(--accent);
+    border-radius: 40px;
+}
+
+/* --------------------------------------------------------------------------
+   CHIFFRES - ancrage. Un decideur lit les nombres avant les phrases.
+   -------------------------------------------------------------------------- */
+.figures {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--rule);
+    padding: 9mm var(--pad);
+    gap: 7mm;
+}
+
+.figure {
+    padding-left: 6mm;
+    border-left: 1px solid var(--rule);
+}
+
+.figure:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.figure-value {
+    font-variant-numeric: tabular-nums;
+    font-size: 26pt;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -1.4pt;
+    color: var(--ink);
+}
+
+.figure-value span {
+    white-space: nowrap;
+    margin-left: 1.2mm;
+    font-size: 9.5pt;
+    font-weight: 600;
+    letter-spacing: -0.1pt;
+    color: var(--accent);
+}
+
+.figure-caption {
+    margin-top: 3.5mm;
+    font-size: 8pt;
+    line-height: 1.45;
+    color: var(--ink-3);
+}
+
+/* --------------------------------------------------------------------------
+   DOULEURS - formulees dans les mots du lecteur, pas dans les miens.
+   -------------------------------------------------------------------------- */
+.pain {
+    display: grid;
+    grid-template-columns: 62mm 1fr;
+    gap: 9mm;
+    padding-bottom: 5mm;
+    margin-bottom: 5mm;
+    border-bottom: 1px solid var(--rule);
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.pain:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.pain h3 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 15pt;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.2;
+    letter-spacing: -0.2pt;
+    color: var(--ink);
+}
+
+.pain p {
+    font-size: 9.5pt;
+    color: var(--ink-2);
+    line-height: 1.6;
+}
+
+.pain strong {
+    font-weight: 600;
+    color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   CONFIANCE - bande sombre, logos en blanc pur.
+
+   Les SVG fournis sont multicolores et charges en <img> : leur `fill` n'est
+   donc pas accessible en CSS. brightness(0) aplatit toute couleur en noir en
+   preservant la transparence, invert(1) la retourne en blanc. C'est la seule
+   facon fiable de monochromer un logo externe sans le reediter.
+   Bonus : ca rattrape le logo Symfony, dont le fill est blanc et qui etait
+   donc invisible sur fond clair.
+   -------------------------------------------------------------------------- */
+.trustband {
+    background: var(--ink);
+    color: #fff;
+    padding: 8mm var(--pad);
+}
+
+.label--onDark {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.trust {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5mm 11mm;
+}
+
+/* Les logos sont a leurs couleurs de marque : c'est plus credible et plus
+   reconnaissable qu'un aplat monochrome, et ca respecte leurs chartes.
+   La hauteur est reglee logo par logo pour egaliser le poids optique,
+   les rapports d'aspect allant de 3,9:1 (Sanofi) a 11,5:1 (Air France). */
+.trust li img {
+    display: block;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.trust-note {
+    margin-top: 5mm;
+    padding-top: 4mm;
+    border-top: 1px solid var(--rule-dark);
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.62);
+    max-width: 52em;
+}
+
+/* --------------------------------------------------------------------------
+   REALISATIONS
+   -------------------------------------------------------------------------- */
+.mission {
+    display: grid;
+    grid-template-columns: 38mm 1fr;
+    gap: 9mm;
+    padding-bottom: 3mm;
+    margin-bottom: 3mm;
+    border-bottom: 1px solid var(--rule);
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.mission:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.mission-client {
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: -0.3pt;
+    line-height: 1.15;
+    color: var(--ink);
+}
+
+.mission-period {
+    margin-top: 1.5mm;
+    font-size: 7.5pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    color: var(--ink-3);
+}
+
+.mission-main h3 {
+    font-size: 11pt;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.2pt;
+    color: var(--ink);
+    margin-bottom: 2.5mm;
+}
+
+.mission-main p {
+    font-size: 9pt;
+    color: var(--ink-2);
+    line-height: 1.48;
+}
+
+.mission-proof {
+    margin-top: 2.5mm;
+    padding-left: 3.5mm;
+    border-left: 2px solid var(--accent);
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--ink) !important;
+}
+
+/* --------------------------------------------------------------------------
+   CITATIONS
+   -------------------------------------------------------------------------- */
+.quotes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7mm;
+}
+
+blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+blockquote p {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.32;
+    letter-spacing: -0.2pt;
+    color: var(--ink);
+}
+
+blockquote p::before {
+    content: '\201C';
+}
+
+blockquote p::after {
+    content: '\201D';
+}
+
+blockquote footer {
+    margin-top: 4mm;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6mm;
+}
+
+blockquote footer strong {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+blockquote footer span {
+    font-size: 8pt;
+    color: var(--ink-3);
+}
+
+/* --------------------------------------------------------------------------
+   SAVOIR-FAIRE
+   -------------------------------------------------------------------------- */
+.toolbelt {
+    display: flex;
+    align-items: baseline;
+    gap: 6mm;
+    padding: 5mm var(--pad);
+    border-bottom: 1px solid var(--rule);
+}
+
+.toolbelt-label {
+    flex-shrink: 0;
+    font-size: 7pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.4pt;
+    color: var(--ink-3);
+}
+
+.toolbelt-logos {
+    flex-shrink: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 5mm;
+}
+
+.toolbelt-logos img {
+    display: block;
+    width: auto;
+    filter: brightness(0);
+    opacity: 0.7;
+}
+
+.toolbelt ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5mm 4mm;
+}
+
+/* Les points separent DEJA les technos a l'interieur d'un groupe ; sans marque
+   entre les groupes, tout se lisait comme une seule enumeration.
+   Un filet vertical plutot qu'un point : sur une liste qui passe a la ligne, un
+   separateur en ::before atterrit en tete de ligne et ressemble a une puce
+   egaree, alors qu'un filet en fin d'element se lit comme une colonne. */
+.toolbelt li:not(:last-child) {
+    padding-right: 4mm;
+    border-right: 1px solid var(--rule);
+}
+
+.toolbelt li {
+    font-size: 8pt;
+    font-weight: 500;
+    color: var(--ink-2);
+}
+
+/* --------------------------------------------------------------------------
+   APPEL A L'ACTION
+   -------------------------------------------------------------------------- */
+.cta {
+    margin-top: 4mm;
+    background: var(--ink);
+    color: #fff;
+    padding: 7mm var(--pad) 11mm;   /* le bas remplit la page : sans ca un lisere blanc
+                                      apparait sous un bandeau censé aller bord a bord */
+    display: grid;
+    grid-template-columns: 1fr 62mm;
+    gap: 12mm;
+    align-items: start;
+}
+
+.cta-text h2 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 15pt;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: -0.3pt;
+    color: #fff;
+}
+
+.cta-text p {
+    margin-top: 5mm;
+    font-size: 9pt;
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.68);
+    max-width: 34em;
+}
+
+.cta-contact {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5mm;
+}
+
+.cta-contact li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8mm;
+    font-size: 9pt;
+    font-weight: 500;
+    color: #fff;
+}
+
+.cta-contact li span {
+    font-size: 6.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.4pt;
+    color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   IMPRESSION
+   -------------------------------------------------------------------------- */
+.break {
+    page-break-before: always;
+    break-before: page;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    body {
+        orphans: 2;
+        widows: 2;
+    }
+    .label,
+    .cover-top {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+    .figures,
+    .cta {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}

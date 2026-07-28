@@ -1,6 +1,9 @@
 .idea
 node_modules
 *.html
+!annuaire/index.html
 resume.json
 *.pdf
+*.docx
+public
 .yarn/*
