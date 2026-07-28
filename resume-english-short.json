@@ -28,7 +28,7 @@
       "location": "Ansacq, FR",
       "position": "Fullstack TypeScript Developer – Cloud & AI",
       "startDate": "2026-01",
-      "summary": "A SaaS platform for raffles and fundraising, serving small charities as well as high-visibility campaigns: the <a href=\"https://www.tombola-unicef.org/\" target=\"_blank\">UNICEF 10 KM solidarity raffle</a>, or the one run by the <a href=\"https://soutenir.psg.fr/fr/\" target=\"_blank\">Paris Saint-Germain endowment fund</a>. Working as a pair with the CTO, who has been hiring me back since 2015, we delivered in seven months the product's turning point: moving away from configuration-driven site generation towards AI-assisted generation in HTML, without touching the API contract.",
+      "summary": "A SaaS platform for raffles and fundraising, serving small charities as well as high-visibility campaigns: the <a href=\"https://www.tombola-unicef.org/\" target=\"_blank\">UNICEF 10 KM solidarity raffle</a>, or the one run by the <a href=\"https://soutenir.psg.fr/fr/\" target=\"_blank\">Paris Saint-Germain endowment fund</a>. Working as a pair with the CTO, who has trusted me since 2015, we delivered in seven months the product's turning point: moving away from configuration-driven site generation towards AI-assisted generation in HTML, without touching the API contract.",
       "highlights": [
         "<b>Context:</b> TypeScript, Node.js, React, Electron, Jest, GraphQL / AppSync, AWS (Lambda, Step Functions, DynamoDB, S3, CloudFront, CodeArtifact), Terraform, Docker, Claude Agent SDK, MCP, Ollama"
       ]
