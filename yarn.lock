@@ -318,10 +318,10 @@ __metadata:
 
 "theme-english@file:./theme-english::locator=root-workspace-0b6124%40workspace%3A.":
   version: 0.0.1
-  resolution: "theme-english@file:./theme-english#./theme-english::hash=929352&locator=root-workspace-0b6124%40workspace%3A."
+  resolution: "theme-english@file:./theme-english#./theme-english::hash=2a443c&locator=root-workspace-0b6124%40workspace%3A."
   dependencies:
     handlebars: "npm:^4.7.8"
-  checksum: 10c0/15822a5dc403a9e3e94748ab8c23714f5048ad9f3c60b04584d5391b58d92560ca35b598d8bdad2914b6c4463e4fc402bd14741baf234ac8e172326fceb222d5
+  checksum: 10c0/257ba723df34042b740b290d8be7c6bbe18fee5512d50a982f9f39a603e401fb71c984cb17077de1e0844b4666585d323d7c534f7cc815396acc42bcb9da4291
   languageName: node
   linkType: hard
 
