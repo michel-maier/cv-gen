@@ -409,7 +409,7 @@ body.compact .skills li {
     <!-- Optional: Google Fonts, Font Awesome... -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
 </head>
-<body class="">
+<body class="compact">
 
     <header class="header">
         <div class="header-left">
@@ -434,14 +434,14 @@ body.compact .skills li {
 
     <section class="summary">
         <h3>Profile</h3>
-        <p>For <b>nineteen years</b> I have been designing and taking over back-ends and cloud platforms. Two areas suit me particularly well: serverless architectures on AWS in TypeScript, and the modernisation of PHP/Symfony monoliths, which I evolve step by step rather than through a full rewrite.<br/>What changed over the past year is the way I produce. I direct coding agents daily, Claude Code chief among them, and I embed language models in the products I deliver, including models run locally when the code must not leave the client's premises. The gain in speed is real, provided you keep your hands on the architecture, the reviews and the tests. That is how, working as a pair with GoTombola's CTO, we delivered a desktop application, an agent daemon and a complete multi-tenant deployment pipeline in seven months.<br/>In practice, I work on systems that are already in production. I learn them, I make them safe to change with tests, then I split them up or scale them without interrupting your business. I also embed AI in them, to speed up your teams and improve your users' experience.<br/><b>Available from October 2026</b>, working remotely from Strasbourg with regular travel to client sites.</p>
+        <p>For <b>nineteen years</b> I have been designing and taking over back-ends and cloud platforms, between serverless on AWS in TypeScript and the modernisation of PHP/Symfony monoliths step by step rather than through a rewrite.<br/>I work on systems that are already in production. I learn them, I make them safe to change with tests, then I split them up or scale them without interrupting your business. I also embed AI in them, to speed up your teams and improve your users' experience.<br/><b>Available from October 2026</b>, working remotely from Strasbourg.</p>
     </section>
 
     <section class="skills">
         <h3>Skills</h3>
         <ul>
                 <li>
-                    <strong>TypeScript &amp; Node.js</strong> (Expert)
+                    <strong>TypeScript &amp; Node.js</strong>
                         :
                             TypeScript, 
                             Node.js, 
@@ -452,7 +452,7 @@ body.compact .skills li {
                             Jest
                 </li>
                 <li>
-                    <strong>AWS &amp; Serverless</strong> (Expert)
+                    <strong>AWS &amp; Serverless</strong>
                         :
                             Lambda, 
                             Step Functions, 
@@ -465,44 +465,34 @@ body.compact .skills li {
                             CI/CD &amp; Docker
                 </li>
                 <li>
-                    <strong>Applied AI</strong> (Proficient)
+                    <strong>Applied AI</strong>
                         :
-                            LLM integration in production, 
-                            Directed coding agents (Claude Code), 
+                            LLMs in production, 
+                            Claude Code, 
                             Claude Agent SDK, 
-                            MCP (Model Context Protocol), 
-                            Local models (Ollama), 
+                            MCP, 
+                            Ollama, 
                             Multi-provider abstraction
                 </li>
                 <li>
-                    <strong>PHP &amp; Symfony</strong> (Expert)
+                    <strong>PHP &amp; Symfony</strong>
                         :
                             Symfony 2 to 6, 
                             Legacy modernisation, 
-                            Business logic extraction, 
+                            Domain extraction, 
                             PHP version upgrades, 
                             API Platform, 
                             PhpUnit
                 </li>
                 <li>
-                    <strong>Architecture &amp; craft</strong> (Expert)
+                    <strong>Architecture &amp; craft</strong>
                         :
                             Hexagonal Architecture, 
                             Clean Architecture, 
                             DDD &amp; bounded contexts, 
-                            Monolith decomposition (strangler fig), 
+                            Strangler fig, 
                             TDD, 
                             Refactoring under tests
-                </li>
-                <li>
-                    <strong>Databases</strong> (Proficient)
-                        :
-                            PostgreSQL, 
-                            MySQL / MariaDB, 
-                            Oracle, 
-                            MongoDB, 
-                            DynamoDB, 
-                            Elasticsearch
                 </li>
         </ul>
     </section>
@@ -525,17 +515,9 @@ body.compact .skills li {
                             </div>
                     </div>
                 </div>
-                <p class="experience-summary">GoTombola is a SaaS platform for raffles and fundraising, serving small charities as well as high-visibility campaigns: the <a href="https://www.tombola-unicef.org/" target="_blank">UNICEF 10 KM solidarity raffle</a>, or the one run by the <a href="https://soutenir.psg.fr/fr/" target="_blank">Paris Saint-Germain endowment fund</a> for the Necker children's hospital. I had taken part in the platform's initial AWS setup back in 2020, and its CTO called me back five years later to build its production tooling: we have worked together on and off since 2015, he knows how I work and he knows what he can rely on. The work is done as a pair with him on a monorepo of more than a hundred packages, with intensive use of Claude Code kept in check by code review and by the repository's test coverage requirement. Between the two of us, we delivered in seven months the product's turning point: moving away from configuration-driven site generation towards AI-assisted generation in HTML, without touching the API contract. I built the desktop workshop that produces those sites, the agent layer that drives it and the multi-tenant deployment pipeline that puts them live; the dynamic parts are still served by reusable widgets calling the same web services.</p>
+                <p class="experience-summary">A SaaS platform for raffles and fundraising, serving small charities as well as high-visibility campaigns: the <a href="https://www.tombola-unicef.org/" target="_blank">UNICEF 10 KM solidarity raffle</a>, or the one run by the <a href="https://soutenir.psg.fr/fr/" target="_blank">Paris Saint-Germain endowment fund</a>. Working as a pair with the CTO, who has been hiring me back since 2015, we delivered in seven months the product's turning point: moving away from configuration-driven site generation towards AI-assisted generation in HTML, without touching the API contract.</p>
                     <ul>
-                            <li><b>Producing a site no longer requires a developer</b>: GoStudio, the Electron / React / TypeScript desktop application I built, replaces a build-and-publish process that was previously done by hand. The team assembles a site without writing code, with a raffle regulation editor, a repository explorer with Git status, a media library and a multi-device preview faithful to production, in five languages.</li>
-                            <li>Transactional email composition engine: the Handlebars templates are generated by the AI at runtime, the product shipping only the contract, and a compilation chain turns them into the minified artefacts to deploy. Faithful per-mail-client preview, region-aware translation cascade, named data fixtures, test sends through Amazon SES or SMTP.</li>
-                            <li>Import of an existing site from a URL, rewritten as parallel Helios jobs (scan, then build, render and localise) around a daemon-side state machine: a Playwright render service for pages that need a browser, crawl redirect resolution, URL rewriting towards the target domain. The ingestion modules were extracted out of Electron so they run in pure Node inside the workers.</li>
-                            <li>Design of the 'Helios' agent layer: an HTTP + SSE daemon with a SQLite job queue, worker pool, per-project locks and token authentication, which survives the application being closed and which the application can reconnect to. It carries the change-request lifecycle, where the LLM analyses a request, executes it against the repository and writes its own changelog under exclusive write access. A provider abstraction allows the model to be swapped without touching the rest of the code: Claude through the Claude Agent SDK, and Ollama for local offline execution, packaged in an extension system independent of the host application (isolated runtime, model catalogue, à-la-carte installation with an estimate of the VRAM required and context-window tuning).</li>
-                            <li>Construction of the end-to-end multi-tenant deployment pipeline: two Step Functions and two containerised Lambdas, source mirroring driven by an MD5 manifest file (SSE-KMS ETags being opaque), build and deployment through a private CodeArtifact npm registry, CloudFront invalidation and redirects served from a CloudFront KeyValueStore, all provisioned with Terraform. Two topologies mirroring the commercial tiers: dedicated domain and bucket for premium clients, path multiplexing on a shared domain for the others, with its own state machine and isolated Lambda. Per-commit archives make it possible to <b>redeploy a specific version</b> after the fact, with a dead-letter queue and a CloudWatch alarm on failures.</li>
-                            <li>Real-time deployment tracking through an AppSync mutation and subscription with APPSYNC_JS resolvers, which made it possible to remove the AWS SDK from the client machine entirely: no AWS credential ever leaves the server.</li>
-                            <li>Migration of the project configuration model to a DynamoDB tenant registry as the single source of truth, with a versioned schema-migration chain on the client side able to resume where it left off, and extraction of reusable packages so the two Lambdas can never drift apart: deploy-target resolution isolated in a package with no dependency at all, and the CDN upload component with its AWS access injected.</li>
-                            <li>Testing discipline held across the whole scope: the repository enforces <b>100% line and file coverage</b> before any behaviour change, which is the indispensable counterpart of AI-assisted development.</li>
-                            <li><b>Context:</b> TypeScript, Node.js, React, Electron, Vite, Jest, GraphQL / AppSync (APPSYNC_JS), AWS (Lambda, Step Functions, DynamoDB, S3, CloudFront, KeyValueStore, SQS, ECR, CodeArtifact, CodeCommit, Cognito, SES), Terraform, Docker, Claude Agent SDK, MCP, Ollama, moon / monorepo, Git</li>
+                            <li><b>Context:</b> TypeScript, Node.js, React, Electron, Jest, GraphQL / AppSync, AWS (Lambda, Step Functions, DynamoDB, S3, CloudFront, CodeArtifact), Terraform, Docker, Claude Agent SDK, MCP, Ollama</li>
                     </ul>
             </article>
             <article class="work-item">
@@ -555,13 +537,7 @@ body.compact .skills li {
                 </div>
                 <p class="experience-summary">Sanofi's Accelerator builds internal AI-driven document generation tools. Embedded in a feature team as a fullstack developer, I evolved the existing tool, which served two distinct document use cases, then prepared its transformation into a generic platform configurable without dedicated development, an effort that started as my assignment was ending. The second part of my work focused on backend refactoring and the dismantling of the NestJS monolith deployed in an ECS container, whose code is being extracted into serverless microservices.</p>
                     <ul>
-                            <li>Design and implementation of an event system to automate and generalise document post-processing: this is the technical foundation the configurable platform was built on.</li>
-                            <li>Fullstack development of new features on an LLM-based document generation product: NestJS backend and React frontend.</li>
-                            <li>Extraction of features out of the monolith into serverless microservices, in hexagonal architecture and under automated tests.</li>
-                            <li>Analysis of the specific developments that had diverged between the two use cases, and proposal of the common foundation needed to generalise them.</li>
-                            <li>Extensive use of managed AWS services: DynamoDB, S3, Step Functions.</li>
-                            <li>Infrastructure as Code: AWS infrastructure provisioning with Terraform.</li>
-                            <li><b>Context:</b> Node.js, TypeScript, ReactJS, NestJS, GraphQL, Docker, ECS, Lambda, Step Functions, DynamoDB, Terraform, LLMs, Scrum, Kanban</li>
+                            <li><b>Context:</b> Node.js, TypeScript, React, NestJS, GraphQL, Docker, ECS, Lambda, Step Functions, DynamoDB, Terraform, LLMs</li>
                     </ul>
             </article>
             <article class="work-item">
@@ -581,12 +557,7 @@ body.compact .skills li {
                 </div>
                 <p class="experience-summary">IAD is the leading network of self-employed estate agents in France, with close to 14,000 advisors domestically and more than 17,000 worldwide. As part of the overhaul of its tools and its expansion into the UK and the US, the company embarked on the modernisation of its platforms. I worked two years on that programme, in hexagonal architecture and with a DDD approach, on a modular monolith.</p>
                     <ul>
-                            <li>Development of an automatic matching engine between the network's properties and buyers' search criteria, starting with a simple search engine intended to unlock cross-selling, particularly for properties not listed online.</li>
-                            <li>Development of the 'purchase project', a single entry point where a buyer's criteria are managed and the properties offered to them are tracked: ratings, viewings, price reductions.</li>
-                            <li>Development of the Buyer Lead CRM module: qualification of leads coming from classified ad platforms (Leboncoin, SeLoger) and conversion into tracked purchase projects.</li>
-                            <li>Development of the advisor application module for the opening of the UK and US branches.</li>
-                            <li>Development in hexagonal architecture and DDD, within two successive product squads: Grow (5 backend developers, 2 frontend) on the application module, then Match (3 backend, 1 frontend) on the CRM and the matching engine.</li>
-                            <li><b>Context:</b> Linux Alpine, Docker, Git, PHP 7.2 / PHP 8, Symfony 3.4, 5 and 6, Postgres, PhpUnit, API Platform, AWS (S3, ECS, Lambda, SQS, MariaDB, DocumentDB), Jira, GitHub, Hexagonal Architecture, Clean Code, DDD, modular monolith</li>
+                            <li><b>Context:</b> Docker, PHP 7.2 / 8, Symfony 3.4 to 6, Postgres, PhpUnit, API Platform, AWS, hexagonal architecture, DDD</li>
                     </ul>
             </article>
             <article class="work-item">
@@ -606,17 +577,10 @@ body.compact .skills li {
                 </div>
                 <p class="experience-summary">After the acquisition of the L'Argus group, Leboncoin's Import feature team forked an application for the multi-posting of automotive classified ads, written elsewhere, with no test safety net and only patchy documentation. The stake was to bring multi-posting in-house and stop paying their incumbent provider for it. My assignment was to make that application usable: understand it, secure it with tests, run it inside the group's ecosystem and publish to Leboncoin.fr. A textbook case of taking over legacy code, and the kind of assignment I have specialised in since.</p>
                     <ul>
-                            <li>Preparation and migration of professional accounts from the incumbent multi-poster to the new tool, the first wave delivered in three months: every migrated account left the scope billed by their incumbent provider.</li>
-                            <li>Implementation of functional tests on the application's critical functions (import and export) and smoke tests on the configuration interfaces, to protect the critical paths before making any change.</li>
-                            <li>Optimisation and refactoring of several parts of the application towards a hexagonal architecture, under unit tests, with PHP and Symfony version upgrades.</li>
-                            <li>Optimisation of the Docker image, brought down from over 1 GB to a few hundred megabytes.</li>
-                            <li>Development of an API to automate client onboarding from the contractualisation service, replacing a manual operation.</li>
-                            <li>Integration of new dealer management software (DMS) and authoring of the associated mapping rules.</li>
-                            <li>Documentation and diagrams of the functional modules to fill in patchy existing documentation, then handover to the team and to the customer service team.</li>
-                            <li><b>Context:</b> Linux Alpine, Docker, Git, PHP 7.2 / PHP 8, Symfony 3.4 / 5, MariaDB, MongoDB, Kubernetes, PhpUnit, Sonata Admin, AWS (S3, ECS, Batch, Lambda, SQS, RDS, MariaDB, DocumentDB), Jira, GitHub, Hexagonal Architecture, Clean Code</li>
+                            <li><b>Context:</b> Docker, PHP 7.2 / 8, Symfony 3.4 / 5, MariaDB, MongoDB, Kubernetes, PhpUnit, AWS, hexagonal architecture</li>
                     </ul>
             </article>
-            <article class="work-item">
+            <article class="work-item work-item--slim">
                 <div class="work-header">
                     <div class="experience-date">
                         05/2021 - 07/2021
@@ -631,16 +595,9 @@ body.compact .skills li {
                             </div>
                     </div>
                 </div>
-                <p class="experience-summary">Following an internal reorganisation, DPS brought me in to industrialise their processes by setting up continuous integration and continuous deployment. The assignment turned out to be far broader than its initial scope, with a significant share of knowledge transfer to the team.</p>
-                    <ul>
-                            <li>Dockerisation of the development environment to mirror production, then implementation of continuous integration and deployment for the Symfony applications, after a reasoned comparison of several solutions.</li>
-                            <li>Running technical workshops for the team: setting up and using Xdebug, Gitflow, Docker, configuring WSL.</li>
-                            <li>Backup, dockerisation and redeployment of their Redmine project management tool, hosted on a server that had become inaccessible.</li>
-                            <li>Migration of <a href="https://www.suzuki.fr" target="_blank">suzuki.fr</a> from dedicated hosting to a Platform.sh instance.</li>
-                            <li><b>Context:</b> Linux, Docker, Git, PHP 7.2, Symfony, Ansible, Ansible Vault, Ansistrano, GitHub Actions, Redmine, GitHub, Platform.sh</li>
-                    </ul>
+                
             </article>
-            <article class="work-item">
+            <article class="work-item work-item--slim">
                 <div class="work-header">
                     <div class="experience-date">
                         10/2020 - 04/2021
@@ -655,15 +612,9 @@ body.compact .skills li {
                             </div>
                     </div>
                 </div>
-                <p class="experience-summary">Three freelance assignments run in parallel, and the turning point where I moved towards AWS cloud, serverless and infrastructure as code. This is where I took part in the initial AWS setup of gotombola.co, the product I returned to five years later.</p>
-                    <ul>
-                            <li>Migration of a monolithic PHP/Symfony concrete slab calculation application (DTU 13-3 standard) to AWS in serverless mode, with PHP running inside Lambdas: the engine's calculations run in parallel, which changes the order of magnitude of response times.</li>
-                            <li>Wrapping of a legacy REST API behind an Apollo GraphQL server for the complete redesign of <a href="https://www.lunii.com" target="_blank">lunii.com</a> on Gatsby, e-commerce features included.</li>
-                            <li>Participation in the AWS setup of the <a href="https://www.maars.cc" target="_blank">maars.cc</a> and <a href="https://gotombola.co" target="_blank">gotombola.co</a> platforms.</li>
-                            <li><b>Context:</b> Node.js, Jest, PHP 7.2, Symfony, React, Apollo, AWS (API Gateway, CloudFront, Lambda, DynamoDB, S3, SNS, SQS, RDS MySQL Aurora, SES), Terraform, Microservices, Serverless, ClickUp, GitHub, Trello</li>
-                    </ul>
+                
             </article>
-            <article class="work-item">
+            <article class="work-item work-item--slim">
                 <div class="work-header">
                     <div class="experience-date">
                         07/2018 - 12/2019
@@ -678,17 +629,9 @@ body.compact .skills li {
                             </div>
                     </div>
                 </div>
-                <p class="experience-summary">DgBirds was an intrapreneurial project inside the Air France group: a SaaS toolkit on iPad for pilots and ground staff. The product was good but had lost its coherence after a long succession of contributors. My work was to stabilise it and rework its architecture without interrupting delivery.</p>
-                    <ul>
-                            <li>Extraction of business logic out of the controllers into application services, to obtain a business API independent of implementation details (Symfony, Doctrine, S3).</li>
-                            <li>Definition and implementation of the strategy for turning the fullstack Symfony application into an API-centric application consumed by an SPA.</li>
-                            <li>Development of the 'Mission Report' module (forms distributed to crews and response tracking), enhancement of the 'Documentation' and 'Mission Activities' modules, refactoring of the permissions system.</li>
-                            <li>Definition of a testing strategy, then implementation of unit and functional tests, static code analysis and continuous integration.</li>
-                            <li>Migration from MySQL 5.0 to PostgreSQL 11, and rewriting of the heavy queries using advanced DBMS features: recursive CTEs, triggers, materialised views.</li>
-                            <li><b>Context:</b> Linux, Docker, Git, PHP 7.1, Vue.js, Symfony 3.4, PhpUnit, MySQL, PostgreSQL, AWS S3, Ansible, Terraform, LDAP, Clean Architecture, SOLID, Jira, GitHub</li>
-                    </ul>
+                
             </article>
-            <article class="work-item">
+            <article class="work-item work-item--slim">
                 <div class="work-header">
                     <div class="experience-date">
                         10/2015 - 06/2018
@@ -703,16 +646,9 @@ body.compact .skills li {
                             </div>
                     </div>
                 </div>
-                <p class="experience-summary">Itiqiti SAS was a startup providing fundraising services to French charities, built around raffle games: organisation, WYSIWYG online ticket design, digital tickets and draws. Three years fully remote, on an asynchronous microservices architecture.</p>
-                    <ul>
-                            <li>Maintenance and enhancement of the central RESTful API and of the public API.</li>
-                            <li>Development and maintenance of asynchronous microservices, and of tools for the operations team.</li>
-                            <li>Development of a public API on Firebase (Node.js) acting as a proxy to the central API for a React Native application.</li>
-                            <li>TDD: acceptance and unit tests, code reviews and continuous improvement.</li>
-                            <li><b>Context:</b> Linux (Debian/Alpine), Docker, Git, Symfony 2.7 / 3, Nginx, PHP 5.7, MongoDB, ZeroMQ, PhpUnit, Golang, Stripe, PayPal, Firebase Cloud Functions, Jenkins, Jira, GitHub, Scrum, Kanban</li>
-                    </ul>
+                
             </article>
-            <article class="work-item">
+            <article class="work-item work-item--slim">
                 <div class="work-header">
                     <div class="experience-date">
                         12/2011 - 05/2015
@@ -727,15 +663,9 @@ body.compact .skills li {
                             </div>
                     </div>
                 </div>
-                <p class="experience-summary">Gestour SAS, formerly Perinfo, published the most widely used travel agency management tool in France, deployed across <b>1,500 points of sale</b>, before being acquired in 2010 by Amadeus IT, Europe's leader in travel product distribution. Three and a half years spent porting a legacy C++ rich-client product to the web, without touching the existing server.</p>
-                    <ul>
-                            <li>Development of Gestour 360, the web version of the product, targeting the complete decommissioning of the C++ rich client while retaining the existing business server.</li>
-                            <li>Research and selection of the PHP framework adopted for all of the company's web developments, and enhancement of the continuous integration platform.</li>
-                            <li>Development of a CRM for CroisiEurope (Gestour Sales Forces) and of a business-oriented statistical analysis application (Gestour Analytics).</li>
-                            <li><b>Context:</b> Jenkins, Vagrant, Gestour API server, Apache, Oracle, PHP 5.3, Symfony 2.3 LTS, jQuery, Mercurial, PhpUnit, JMeter, SonarQube, Scrum</li>
-                    </ul>
+                
             </article>
-            <article class="work-item">
+            <article class="work-item work-item--slim">
                 <div class="work-header">
                     <div class="experience-date">
                         12/2008 - 12/2011
@@ -750,54 +680,24 @@ body.compact .skills li {
                             </div>
                     </div>
                 </div>
-                <p class="experience-summary">Cora Informatique is the IT department of the Cora hypermarkets, 59 stores in France at the time, where the group's internal tools and web portals are developed.</p>
-                    <ul>
-                            <li>Redesign of cora.fr and of <b>every store website</b> on TYPO3: integration and development.</li>
-                            <li>Taking over the code of the 'solution voyages' application to ensure its continuity of service, then securing and maintaining it, and integration of the Paybox online payment solution on coravoyages.fr.</li>
-                            <li>Development of TYPO3 extensions, maintenance of the group's websites, and acceptance testing of the kido.fr website built by an external provider.</li>
-                            <li><b>Context:</b> PHP 5.2, TYPO3, jQuery, Apache, SVN, Paybox</li>
-                    </ul>
+                
             </article>
     </section>
 
-    <section class="projects">
-        <h3>Projects</h3>
-            <article>
-                <h4>PHP legacy modernisation</h4>
-                    <p>The progressive refactoring method I offer on assignments, documented publicly: protect the critical paths first with functional tests, extract business logic into explicit use cases, identify the bounded contexts, introduce ports and adapters, then enrich the domain model. No big-bang rewrites, measurable improvement aligned with the product roadmap: <a href="https://php-freelance.com/php-refactoring/" target="_blank">php-freelance.com/php-refactoring</a>.</p>
-            </article>
-            <article>
-                <h4>CleanProspecter</h4>
-                    <div class="date">
-                        (02/2018 - 06/2018)
-                    </div>
-                    <p>Open-source proof of concept, written to put the Clean Code and Clean Architecture principles of Robert C. Martin into practice on a prospect management application. Development was stopped at 70% of the MVP, the goal being the architectural demonstration: the domain logic is isolated in a Composer package independent of the framework, the Symfony implementation being merely a detail. <a href="https://github.com/SO-LEAN/cleanprospecter" target="_blank">github.com/SO-LEAN/cleanprospecter</a> and <a href="https://github.com/SO-LEAN/prospecterapp" target="_blank">github.com/SO-LEAN/prospecterapp</a>.</p>
-            </article>
-            <article>
-                <h4>SOLEAN LAB, development factory</h4>
-                    <div class="date">
-                        (11/2016 - 04/2017)
-                    </div>
-                    <p>A development factory built inside my own company to bid on fixed-price tenders, in parallel with my ItiQiti assignment: 7 servers at Scaleway, GitLab CI, Rancher, two environments and the monitoring. The company portal served as a proof of concept industrialised end to end, with a 5-stage pipeline and an environment created dynamically per branch, and as an experimentation ground: load, security, ELK, Varnish and ESI. Discontinued since, for lack of fixed-price projects.</p>
-            </article>
-    </section>
 
     <section class="references">
         <h3>References</h3>
             <article>
-                <strong>David Huby - Head of Engineering at IAD Group</strong> : Beyond his technical skills, he brings real value to product/tech collaboration by providing business insight into the developments to be carried out. He is a true asset for companies that want to build a product quickly by combining pragmatism and quality.
+                <strong>David Huby</strong> : Head of Engineering, IAD
             </article>
             <article>
-                <strong>Thomas Haddad - Head of Engineering at Leboncoin</strong> : It is with sadness that we see this PHP superhero leave after a great one-year mission. A true expert, an excellent mentor and always in good spirits, it was a real pleasure working with Michel on a daily basis.
+                <strong>Thomas Haddad</strong> : Head of Engineering, leboncoin
             </article>
             <article>
-                <strong>Sébastien Veigneau - Air France Captain and former President / Co-founder of DgBirds</strong> : He greatly helped us stabilise a product that, due to the number of stakeholders, had lost its coherence. A diligent worker, extremely meticulous, a veritable powerhouse when tackling complex issues, and someone who produces stable, maintainable code. I highly recommend him, holding him in high regard.
+                <strong>Sébastien Veigneau</strong> : Air France Captain, co-founder of DgBirds
             </article>
             <article>
-                <strong>Olivier Hoareau - CTO of GoTombola, former CTO of ItiQiti (we have worked together since 2015)</strong> : A colleague you can count on daily: experienced, competent and tenacious, yet humble and determined. He enjoys finding technical solutions to the most complex problems, and he is self-reliant and efficient even in long-term fully remote contexts.
-            </article>
-            <article>
-                <strong>Other references</strong> : On request
+                <strong>Olivier Hoareau</strong> : CTO of GoTombola, former CTO of ItiQiti
             </article>
     </section>
 
@@ -809,7 +709,7 @@ body.compact .skills li {
                         2007
                     </div>
                     <div class="education-info">
-                        <h4 class="education-title">Master&#x27;s degree (Level 1 RNCP) - Expert in Computer Science and Information Systems</h4>
+                        <h4 class="education-title">Master&#x27;s degree (Level 1 RNCP)</h4>
                         <div class="institution">Paris Graduate School of Computer Science (ESI – SUPINFO)</div>
                     </div>
                 </div>
@@ -820,7 +720,7 @@ body.compact .skills li {
                         2002
                     </div>
                     <div class="education-info">
-                        <h4 class="education-title">University Technology Diploma (DUT) - Electrical Engineering and Industrial Computing</h4>
+                        <h4 class="education-title">University Technology Diploma (DUT)</h4>
                         <div class="institution">IUT de Mulhouse</div>
                     </div>
                 </div>

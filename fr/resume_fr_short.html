@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>
+            Michel MAIER
+         - CV
+    </title>
+    <style>
+            /* -------------------------------------------------------------------------- */
+/* BASE RESET                                                                 */
+/* -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 20px;
+}
+
+a,
+a:visited {
+    color: #000;
+    text-decoration: underline;
+}
+/* Les liens ne se coupent pas en plein milieu d'un domaine. */
+a {
+    white-space: nowrap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* MAIN HEADER                                                                */
+/* -------------------------------------------------------------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 1rem;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.photo {
+    flex-shrink: 0;
+}
+.photo img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+}
+
+.contact {
+    font-size: 0.9rem;
+    color: #333;
+}
+/* Le nom ne passe jamais sur deux lignes, et sa taille est bornee :
+   le h1 par defaut (2em) volait la largeur necessaire au titre a droite. */
+.contact h1 {
+    white-space: nowrap;
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
+.contact div {
+    margin: 0.3rem 0;
+    white-space: nowrap;
+}
+
+.header-right {
+    text-align: right;
+    flex: 1;
+    min-width: 0;
+    padding-left: 12px;
+}
+/* La premiere ligne du label est la plus lue du CV : elle domine.
+   Les lignes secondaires portent la classe .label-sub dans le JSON. */
+.header-right h2 {
+    font-size: 1.1rem;
+    line-height: 1.35;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+.header-right h2 .label-sub {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #666;
+}
+
+/* -------------------------------------------------------------------------- */
+/* GENERAL SECTIONS                                                         */
+/* -------------------------------------------------------------------------- */
+section {
+    margin-bottom: 1.25rem;
+}
+
+section h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #444;
+    border-left: 4px solid #007ACC;
+    padding-left: 8px;
+    margin-bottom: 0.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* PROFILE / SUMMARY                                                          */
+/* -------------------------------------------------------------------------- */
+.summary {
+    margin-bottom: 1.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* PROFESSIONAL EXPERIENCE                                                    */
+/* -------------------------------------------------------------------------- */
+.work-item {
+    margin-bottom: 1.2rem;
+}
+.work-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+/* La periode ne se coupe jamais : c'est le repere de lecture de la colonne gauche. */
+.experience-date {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+/* min-width garantit une largeur au poste : sans elle, un nom de societe long
+   ecrase la colonne et le libelle se casse sur trois lignes. */
+.experience-info {
+    flex: 1 1 0%;
+    min-width: 11rem;
+    padding-right: 14px;
+}
+.positionTitle {
+    font-size: 1rem;
+    color: #777;
+}
+/* Pas de margin-left:auto ici : une marge automatique absorbe l'espace libre
+   AVANT le flex-grow, ce qui empeche .experience-info de s'etendre et casse
+   le libelle du poste sur plusieurs lignes. Le flex:1 du poste suffit a
+   pousser ce bloc a droite. */
+.company-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 1;
+    min-width: 0;
+    text-align: right;
+}
+.companyName {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+.work-location {
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2px;
+}
+.work-location i {
+    color: #007ACC;
+}
+/* Pas d'italique : sur des resumes de 300 a 500 caracteres, il degrade la lecture. */
+.experience-summary {
+    color: #4a4a4a;
+    margin-bottom: 0.5rem;
+}
+
+/* Entree sans description ni puce : le poste seul suffit a dire ce qui a ete
+   fait, donc tout tient sur UNE ligne. On conserve la disposition du reste du
+   CV (periode a gauche, poste au centre, societe et lieu a droite) : seules la
+   hauteur et la taille changent, la societe et le lieu passant cote a cote au
+   lieu d'etre empiles. Le CV long n'est pas concerne, toutes ses entrees ayant
+   une description. */
+.work-item--slim {
+    margin-bottom: 0;
+}
+.work-item--slim .work-header {
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin: 0.3rem 0;
+}
+.work-item--slim .experience-date {
+    font-size: 0.75rem;
+}
+.work-item--slim .experience-info {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-right: 0;
+}
+.work-item--slim .company-info {
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+    text-align: right;
+}
+.work-item--slim .positionTitle,
+.work-item--slim .companyName,
+.work-item--slim .work-location {
+    font-size: 0.8rem;
+    margin-top: 0;
+}
+.work-item--slim .companyName {
+    font-weight: 700;
+}
+.work-item--slim .work-location {
+    white-space: nowrap;
+    font-size: 0.76rem;
+    color: #777;
+}
+.work-item--slim .companyName {
+    font-weight: 700;
+}
+.work-item--slim .work-location {
+    order: 4;
+    flex: 0 0 auto;
+    margin-left: 6px;
+    color: #777;
+}
+
+/* La ligne Contexte n'est pas une realisation : elle ferme l'entree, donc pas
+   de puce, et elle se cale sur le texte du resume au-dessus. */
+.work-item ul li:last-child {
+    list-style: none;
+    margin-left: -1rem;
+}
+
+/* Sur les entrees les plus anciennes, rendues sur une seule ligne, les noms de
+   societe demarrent tous a la meme abscisse : une colonne de largeur fixe
+   alignee a gauche, plutot qu'un alignement a droite qui les faisait commencer
+   n'importe ou. La ville coule ensuite librement. Les entrees detaillees, elles,
+   gardent leur alignement a droite. */
+.work-item--slim .company-info {
+    flex: 0 0 17.9rem;
+    align-items: baseline;
+    text-align: left;
+}
+
+/* Le nom de societe ne se coupe jamais : c'est le repere d'alignement. */
+.work-item--slim .companyName {
+    white-space: nowrap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* EDUCATION                                                                  */
+/* -------------------------------------------------------------------------- */
+.education-item {
+    margin-bottom: 1.2rem;
+}
+.education-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.education-date {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    margin-right: 10px;
+}
+.education-info {
+    display: flex;
+    flex-direction: column;
+}
+.education-title {
+    font-size: 1rem;
+    color: #333;
+}
+.institution {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* -------------------------------------------------------------------------- */
+/* OTHER SECTIONS: SKILLS, LANGUAGES, INTERESTS, PROJECTS, REFERENCES         */
+/* -------------------------------------------------------------------------- */
+.skills,
+.certificates,
+.languages,
+.interests,
+.references,
+.projects {
+    margin-bottom: 1.5rem;
+}
+ul {
+    list-style-type: square;
+    list-style-position: outside;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+.skills li,
+.certificates li,
+.languages li {
+    margin: 0.22rem 0;
+}
+.interest {
+    margin-bottom: 0.8rem;
+}
+.references article {
+    margin-bottom: 0.5rem;
+}
+.projects article {
+    margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   MODE COMPACT - active par resume.meta.compact, donc uniquement sur le CV
+   court. Une reduction globale et proportionnelle du corps de texte, plutot
+   qu'une serie de reglages par bloc : c'est previsible, et ca permet de garder
+   les listes de competences completes. Le CV long n'est pas concerne.
+   -------------------------------------------------------------------------- */
+body.compact {
+    font-size: 13px;
+}
+body.compact .skills li {
+    margin: 0.18rem 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* PRINTING                                                                   */
+/* -------------------------------------------------------------------------- */
+@media print {
+    body {
+        margin: 0;
+        padding: 1rem;
+        orphans: 2;
+        widows: 2;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .header {
+        border-bottom: 1px solid #aaa;
+    }
+    .header-right h2 {
+        font-size: 1.1rem;
+    }
+    /* Le poste tient sur une ligne : la zone imprimable (704px) est plus etroite
+       que la zone ecran (760px), le libelle a donc besoin d'un cran de moins. */
+    .positionTitle {
+        font-size: 0.85rem;
+    }
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    /* Une experience n'est jamais coupee sur deux pages. */
+    .work-item,
+    .education-item,
+    .education,
+    .references,
+    .projects article,
+    .interest,
+    .certificates li {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    /* Un titre de section ou d'experience ne reste jamais seul en bas de page. */
+    section h3,
+    .work-header,
+    .projects h4 {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 0.3in;
+}
+
+    </style>
+    <!-- Optionnel: Google Fonts, Font Awesome... -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+</head>
+<body class="compact">
+
+    <header class="header">
+        <div class="header-left">
+                <div class="photo">
+                    <img src="michel-maier-2026.png" alt="Photo de Michel MAIER" />
+                </div>
+            <div class="contact">
+                <h1>Michel MAIER</h1>
+                    <div><i class="fas fa-envelope"></i> michel@solean-it.com</div>
+                    <div><i class="fas fa-phone"></i> (+33) 6.13.56.19.40</div>
+                    <div><i class="fas fa-globe"></i> <a href="https://php-freelance.com/fr/">https://php-freelance.com/fr/</a></div>
+                    <div><i class="fas fa-map-marker-alt"></i>
+                        Strasbourg
+                    </div>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <h2>Développeur senior fullstack<br/><span class="label-sub">Backend, Cloud & IA</span><br/><span class="label-sub">TypeScript · PHP/Symfony · AWS serverless</span><br/><span class="label-sub">19 ans d'expérience</span></h2>
+        </div>
+    </header>
+
+    <section class="summary">
+        <h3>Profil</h3>
+        <p>Depuis <b>dix-neuf ans</b>, je conçois et je reprends des back-ends et des plateformes cloud, entre serverless sur AWS en TypeScript et modernisation de monolithes PHP/Symfony par étapes plutôt que par réécriture.<br/>J'interviens sur des systèmes déjà en production. Je les comprends, je les sécurise par des tests, puis je les découpe ou je les fais monter en charge sans interrompre votre activité. J'y intègre aussi l'IA, pour accélérer vos équipes et améliorer l'expérience de vos utilisateurs.<br/><b>Disponible à partir d'octobre 2026</b>, en télétravail depuis Strasbourg.<br/><b>Agréé CII</b> : un crédit d'impôt de 20 % pour une PME éligible.</p>
+    </section>
+
+    <section class="skills">
+        <h3>Compétences</h3>
+        <ul>
+                <li>
+                    <strong>TypeScript &amp; Node.js</strong>
+                        :
+                            TypeScript, 
+                            Node.js, 
+                            NestJS, 
+                            React, 
+                            GraphQL / Apollo / AppSync, 
+                            Electron, 
+                            Jest
+                </li>
+                <li>
+                    <strong>AWS &amp; Serverless</strong>
+                        :
+                            Lambda, 
+                            Step Functions, 
+                            DynamoDB, 
+                            S3 &amp; CloudFront, 
+                            AppSync, 
+                            SQS / SNS / EventBridge, 
+                            ECS &amp; conteneurs, 
+                            Terraform, 
+                            CI/CD &amp; Docker
+                </li>
+                <li>
+                    <strong>IA appliquée</strong>
+                        :
+                            LLM en production, 
+                            Claude Code, 
+                            Claude Agent SDK, 
+                            MCP, 
+                            Ollama, 
+                            Abstraction multi-fournisseurs
+                </li>
+                <li>
+                    <strong>PHP &amp; Symfony</strong>
+                        :
+                            Symfony 2 à 6, 
+                            Modernisation de legacy, 
+                            Extraction de domaine, 
+                            Montées de version PHP, 
+                            API Platform, 
+                            PhpUnit
+                </li>
+                <li>
+                    <strong>Architecture &amp; craft</strong>
+                        :
+                            Architecture hexagonale, 
+                            Clean Architecture, 
+                            DDD &amp; bounded contexts, 
+                            Strangler fig, 
+                            TDD, 
+                            Refactoring sous tests
+                </li>
+        </ul>
+    </section>
+
+
+    <section class="work">
+        <h3>Expériences professionnelles</h3>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        01/2026 - Aujourd'hui
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur fullstack TypeScript – Cloud &amp; IA</h4>
+                    </div>
+                    <div class="company-info">
+                        <div class="companyName">GoTombola</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Ansacq, FR
+                            </div>
+                    </div>
+                </div>
+                <p class="experience-summary">Plateforme SaaS de tombolas et de collecte, qui outille aussi bien de petites associations que des campagnes à forte visibilité : la tombola solidaire du <a href="https://www.tombola-unicef.org/" target="_blank">10 KM UNICEF</a>, ou celle du <a href="https://soutenir.psg.fr/fr/" target="_blank">fonds de dotation du Paris Saint-Germain</a>. En binôme avec le CTO, qui me reprend depuis 2015, nous avons livré en sept mois le virage du produit : quitter la génération de sites par configuration pour une génération assistée par IA en HTML, sans toucher au contrat d'API.</p>
+                    <ul>
+                            <li><b>Contexte :</b> TypeScript, Node.js, React, Electron, Jest, GraphQL / AppSync, AWS (Lambda, Step Functions, DynamoDB, S3, CloudFront, CodeArtifact), Terraform, Docker, Claude Agent SDK, MCP, Ollama</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        12/2024 - 11/2025
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur fullstack TypeScript</h4>
+                    </div>
+                    <div class="company-info">
+                        <div class="companyName">Sanofi Accelerator</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Paris, FR
+                            </div>
+                    </div>
+                </div>
+                <p class="experience-summary">L'Accelerator de Sanofi développe des outils internes de génération de documents par IA. Intégré à une feature team comme développeur fullstack, j'ai fait évoluer l'outil existant, qui servait deux cas d'usage documentaires distincts, puis préparé sa transformation en plateforme générique configurable sans développement spécifique, chantier démarré à la fin de ma mission. La seconde partie de mon intervention a porté sur le refactoring du backend et le démantèlement du monolithe NestJS déployé en container ECS, dont le code est extrait vers des microservices serverless.</p>
+                    <ul>
+                            <li><b>Contexte :</b> Node.js, TypeScript, React, NestJS, GraphQL, Docker, ECS, Lambda, Step Functions, DynamoDB, Terraform, LLMs</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        12/2022 - 10/2024
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur back-end – PHP / Symfony</h4>
+                    </div>
+                    <div class="company-info">
+                        <div class="companyName">IAD</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Paris, FR
+                            </div>
+                    </div>
+                </div>
+                <p class="experience-summary">IAD est le premier réseau de mandataires immobiliers en France, avec près de 14 000 conseillers dans l'Hexagone et plus de 17 000 dans le monde. Dans le cadre de la refonte de ses outils et de son expansion au Royaume-Uni et aux États-Unis, l'entreprise a engagé la modernisation de ses plateformes. J'ai travaillé deux ans sur ce chantier, en architecture hexagonale et approche DDD, sur un monolithe modulaire.</p>
+                    <ul>
+                            <li><b>Contexte :</b> Docker, PHP 7.2 / 8, Symfony 3.4 à 6, Postgres, PhpUnit, API Platform, AWS, architecture hexagonale, DDD</li>
+                    </ul>
+            </article>
+            <article class="work-item">
+                <div class="work-header">
+                    <div class="experience-date">
+                        09/2021 - 09/2022
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur back-end – PHP / Symfony</h4>
+                    </div>
+                    <div class="company-info">
+                        <div class="companyName">Leboncoin (Adevinta)</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Paris, FR
+                            </div>
+                    </div>
+                </div>
+                <p class="experience-summary">Après le rachat du groupe L'Argus, la feature team Import de Leboncoin a récupéré par fork une application de multidiffusion d'annonces automobiles, écrite ailleurs, sans filet de tests et documentée de façon parcellaire. L'enjeu était d'internaliser la multidiffusion pour cesser de la payer à leur prestataire historique. Ma mission a été de rendre cette application exploitable : la comprendre, la sécuriser par des tests, la faire tourner dans l'écosystème du groupe et diffuser vers Leboncoin.fr. Un cas d'école de reprise de legacy, et le type de mission que je pratique depuis.</p>
+                    <ul>
+                            <li><b>Contexte :</b> Docker, PHP 7.2 / 8, Symfony 3.4 / 5, MariaDB, MongoDB, Kubernetes, PhpUnit, AWS, architecture hexagonale</li>
+                    </ul>
+            </article>
+            <article class="work-item work-item--slim">
+                <div class="work-header">
+                    <div class="experience-date">
+                        05/2021 - 07/2021
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">DevOps / Coaching technique</h4>
+                    </div>
+                    <div class="company-info">
+                        <div class="companyName">Agence DPS (Syneido)</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Paris, FR
+                            </div>
+                    </div>
+                </div>
+                
+            </article>
+            <article class="work-item work-item--slim">
+                <div class="work-header">
+                    <div class="experience-date">
+                        10/2020 - 04/2021
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur back-end – PHP / JS / Terraform</h4>
+                    </div>
+                    <div class="company-info">
+                        <div class="companyName">Lunii · Maars · GoTombola</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Strasbourg, FR
+                            </div>
+                    </div>
+                </div>
+                
+            </article>
+            <article class="work-item work-item--slim">
+                <div class="work-header">
+                    <div class="experience-date">
+                        07/2018 - 12/2019
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur back-end – PHP / Symfony</h4>
+                    </div>
+                    <div class="company-info">
+                        <div class="companyName">DgBirds (Air France)</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Tremblay en France, FR
+                            </div>
+                    </div>
+                </div>
+                
+            </article>
+            <article class="work-item work-item--slim">
+                <div class="work-header">
+                    <div class="experience-date">
+                        10/2015 - 06/2018
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur – PHP / Symfony</h4>
+                    </div>
+                    <div class="company-info">
+                        <div class="companyName">ItiQiti</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Paris, FR
+                            </div>
+                    </div>
+                </div>
+                
+            </article>
+            <article class="work-item work-item--slim">
+                <div class="work-header">
+                    <div class="experience-date">
+                        12/2011 - 05/2015
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Concepteur / Développeur – PHP / Symfony</h4>
+                    </div>
+                    <div class="company-info">
+                        <div class="companyName">Amadeus IT (Gestour)</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Strasbourg, FR
+                            </div>
+                    </div>
+                </div>
+                
+            </article>
+            <article class="work-item work-item--slim">
+                <div class="work-header">
+                    <div class="experience-date">
+                        12/2008 - 12/2011
+                    </div>
+                    <div class="experience-info">
+                        <h4 class="positionTitle">Développeur – PHP / TYPO3</h4>
+                    </div>
+                    <div class="company-info">
+                        <div class="companyName">Cora informatique (Carrefour)</div>
+                            <div class="work-location">
+                                <i class="fas fa-map-marker-alt"></i> Metz, FR
+                            </div>
+                    </div>
+                </div>
+                
+            </article>
+    </section>
+
+
+    <section class="references">
+        <h3>Références</h3>
+            <article>
+                <strong>David Huby</strong> : Head of Engineering, IAD
+            </article>
+            <article>
+                <strong>Thomas Haddad</strong> : Head of Engineering, leboncoin
+            </article>
+            <article>
+                <strong>Sébastien Veigneau</strong> : Capitaine Air France, co-fondateur de DgBirds
+            </article>
+            <article>
+                <strong>Olivier Hoareau</strong> : CTO de GoTombola, ex-CTO d&#x27;ItiQiti
+            </article>
+    </section>
+
+    <section class="education">
+        <h3>Formation</h3>
+            <article class="education-item">
+                <div class="education-header">
+                    <div class="education-date">
+                        2007
+                    </div>
+                    <div class="education-info">
+                        <h4 class="education-title">BAC+5 (RNCP Niveau 1)</h4>
+                        <div class="institution">École supérieure d&#x27;informatique de Paris (ESI – SUPINFO)</div>
+                    </div>
+                </div>
+            </article>
+            <article class="education-item">
+                <div class="education-header">
+                    <div class="education-date">
+                        2002
+                    </div>
+                    <div class="education-info">
+                        <h4 class="education-title">DUT</h4>
+                        <div class="institution">IUT de Mulhouse</div>
+                    </div>
+                </div>
+            </article>
+    </section>
+
+    <section class="languages">
+        <h3>Langues</h3>
+        <ul>
+                <li>
+                    <strong>Français :</strong> Langue maternelle
+                </li>
+                <li>
+                    <strong>Anglais :</strong> Professionnel
+                </li>
+        </ul>
+    </section>
+
+
+</body>
+</html>

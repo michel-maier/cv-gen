@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Michel MAIER - Plaquette</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <style>/* ==========================================================================
+   PLAQUETTE - lecteur decideur, pas technique.
+
+   Trois partis pris qui separent une plaquette d'un CV mis en couleur :
+   1. Contraste d'echelle brutal. Une seule chose domine chaque zone :
+      l'accroche fait 34pt, les micro-titres 7.5pt, rien entre les deux.
+   2. Deux couleurs, pas quatre. Encre quasi noire et un bleu electrique ;
+      le gris n'est pas une couleur, c'est de l'encre diluee.
+   3. Le blanc est un materiau. Des respirations larges et regulieres,
+      c'est ce qui distingue l'imprime cher de l'imprime bavard.
+
+   A4 sans marge : les bandeaux vont bord a bord, le rembourrage est ici.
+   ========================================================================== */
+
+:root {
+    --ink: #0b0d0f;
+    --ink-2: #3d454d;
+    --ink-3: #737e88;
+    --accent: #0a63f5;
+    --paper: #ffffff;
+    --paper-2: #f4f6f8;
+    --rule: #e3e8ec;
+    --rule-dark: rgba(255, 255, 255, 0.14);
+    --pad: 18mm;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 9.5pt;
+    line-height: 1.55;
+    letter-spacing: -0.05pt;
+}
+
+/* Micro-titre de section : petit, capitales, tres espace. C'est ce detail
+   qui signale un document compose et non un document tape. */
+.label {
+    font-size: 7.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.6pt;
+    color: var(--ink-3);
+    margin-bottom: 5mm;
+}
+
+.band {
+    padding: 7mm var(--pad) 0;
+}
+
+.band--tight {
+    padding-top: 6mm;
+}
+
+/* --------------------------------------------------------------------------
+   COUVERTURE
+   -------------------------------------------------------------------------- */
+.cover {
+    background: var(--ink);
+    color: #fff;
+    padding: 13mm var(--pad) 11mm;
+    display: flex;
+    flex-direction: column;
+    gap: 10mm;
+}
+
+.cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 6mm;
+    border-bottom: 1px solid var(--rule-dark);
+}
+
+.eyebrow {
+    font-size: 7.5pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.6pt;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.cover-name {
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8pt;
+    color: #fff;
+}
+
+/* L'accroche nomme le probleme du lecteur : c'est la seule phrase qu'il doit
+   lire pour se reconnaitre. Serif editorial, grande, serree. */
+.statement {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 30pt;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.6pt;
+    color: #fff;
+    max-width: 21em;
+}
+
+.counter {
+    margin-top: 6mm;
+    font-size: 11.5pt;
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 30em;
+}
+
+.counter em {
+    font-style: normal;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: inset 0 -0.35em 0 rgba(10, 99, 245, 0.55);
+}
+
+.cover-foot {
+    display: flex;
+    align-items: center;
+    gap: 6mm;
+}
+
+.cover-photo {
+    width: 17mm;
+    height: 17mm;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(100%) contrast(1.05);
+    flex-shrink: 0;
+}
+
+.pill {
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 0.3pt;
+    color: #fff;
+    padding: 2mm 5mm;
+    background: var(--accent);
+    border-radius: 40px;
+}
+
+/* --------------------------------------------------------------------------
+   CHIFFRES - ancrage. Un decideur lit les nombres avant les phrases.
+   -------------------------------------------------------------------------- */
+.figures {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--rule);
+    padding: 9mm var(--pad);
+    gap: 7mm;
+}
+
+.figure {
+    padding-left: 6mm;
+    border-left: 1px solid var(--rule);
+}
+
+.figure:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.figure-value {
+    font-variant-numeric: tabular-nums;
+    font-size: 26pt;
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -1.4pt;
+    color: var(--ink);
+}
+
+.figure-value span {
+    white-space: nowrap;
+    margin-left: 1.2mm;
+    font-size: 9.5pt;
+    font-weight: 600;
+    letter-spacing: -0.1pt;
+    color: var(--accent);
+}
+
+.figure-caption {
+    margin-top: 3.5mm;
+    font-size: 8pt;
+    line-height: 1.45;
+    color: var(--ink-3);
+}
+
+/* --------------------------------------------------------------------------
+   DOULEURS - formulees dans les mots du lecteur, pas dans les miens.
+   -------------------------------------------------------------------------- */
+.pain {
+    display: grid;
+    grid-template-columns: 62mm 1fr;
+    gap: 9mm;
+    padding-bottom: 5mm;
+    margin-bottom: 5mm;
+    border-bottom: 1px solid var(--rule);
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.pain:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.pain h3 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 15pt;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.2;
+    letter-spacing: -0.2pt;
+    color: var(--ink);
+}
+
+.pain p {
+    font-size: 9.5pt;
+    color: var(--ink-2);
+    line-height: 1.6;
+}
+
+.pain strong {
+    font-weight: 600;
+    color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   CONFIANCE - bande sombre, logos en blanc pur.
+
+   Les SVG fournis sont multicolores et charges en <img> : leur `fill` n'est
+   donc pas accessible en CSS. brightness(0) aplatit toute couleur en noir en
+   preservant la transparence, invert(1) la retourne en blanc. C'est la seule
+   facon fiable de monochromer un logo externe sans le reediter.
+   Bonus : ca rattrape le logo Symfony, dont le fill est blanc et qui etait
+   donc invisible sur fond clair.
+   -------------------------------------------------------------------------- */
+.trustband {
+    background: var(--ink);
+    color: #fff;
+    padding: 8mm var(--pad);
+}
+
+.label--onDark {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.trust {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5mm 11mm;
+}
+
+/* Les logos sont a leurs couleurs de marque : c'est plus credible et plus
+   reconnaissable qu'un aplat monochrome, et ca respecte leurs chartes.
+   La hauteur est reglee logo par logo pour egaliser le poids optique,
+   les rapports d'aspect allant de 3,9:1 (Sanofi) a 11,5:1 (Air France). */
+.trust li img {
+    display: block;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.trust-note {
+    margin-top: 5mm;
+    padding-top: 4mm;
+    border-top: 1px solid var(--rule-dark);
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.62);
+    max-width: 52em;
+}
+
+/* --------------------------------------------------------------------------
+   REALISATIONS
+   -------------------------------------------------------------------------- */
+.mission {
+    display: grid;
+    grid-template-columns: 38mm 1fr;
+    gap: 9mm;
+    padding-bottom: 3mm;
+    margin-bottom: 3mm;
+    border-bottom: 1px solid var(--rule);
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.mission:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.mission-client {
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: -0.3pt;
+    line-height: 1.15;
+    color: var(--ink);
+}
+
+.mission-period {
+    margin-top: 1.5mm;
+    font-size: 7.5pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    color: var(--ink-3);
+}
+
+.mission-main h3 {
+    font-size: 11pt;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.2pt;
+    color: var(--ink);
+    margin-bottom: 2.5mm;
+}
+
+.mission-main p {
+    font-size: 9pt;
+    color: var(--ink-2);
+    line-height: 1.48;
+}
+
+.mission-proof {
+    margin-top: 2.5mm;
+    padding-left: 3.5mm;
+    border-left: 2px solid var(--accent);
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: var(--ink) !important;
+}
+
+/* --------------------------------------------------------------------------
+   CITATIONS
+   -------------------------------------------------------------------------- */
+.quotes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7mm;
+}
+
+blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+blockquote p {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 11pt;
+    line-height: 1.32;
+    letter-spacing: -0.2pt;
+    color: var(--ink);
+}
+
+blockquote p::before {
+    content: '\201C';
+}
+
+blockquote p::after {
+    content: '\201D';
+}
+
+blockquote footer {
+    margin-top: 4mm;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6mm;
+}
+
+blockquote footer strong {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+blockquote footer span {
+    font-size: 8pt;
+    color: var(--ink-3);
+}
+
+/* --------------------------------------------------------------------------
+   SAVOIR-FAIRE
+   -------------------------------------------------------------------------- */
+.toolbelt {
+    display: flex;
+    align-items: baseline;
+    gap: 6mm;
+    padding: 5mm var(--pad);
+    border-bottom: 1px solid var(--rule);
+}
+
+.toolbelt-label {
+    flex-shrink: 0;
+    font-size: 7pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.4pt;
+    color: var(--ink-3);
+}
+
+.toolbelt-logos {
+    flex-shrink: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 5mm;
+}
+
+.toolbelt-logos img {
+    display: block;
+    width: auto;
+    filter: brightness(0);
+    opacity: 0.7;
+}
+
+.toolbelt ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5mm 4mm;
+}
+
+/* Les points separent DEJA les technos a l'interieur d'un groupe ; sans marque
+   entre les groupes, tout se lisait comme une seule enumeration.
+   Un filet vertical plutot qu'un point : sur une liste qui passe a la ligne, un
+   separateur en ::before atterrit en tete de ligne et ressemble a une puce
+   egaree, alors qu'un filet en fin d'element se lit comme une colonne. */
+.toolbelt li:not(:last-child) {
+    padding-right: 4mm;
+    border-right: 1px solid var(--rule);
+}
+
+.toolbelt li {
+    font-size: 8pt;
+    font-weight: 500;
+    color: var(--ink-2);
+}
+
+/* --------------------------------------------------------------------------
+   APPEL A L'ACTION
+   -------------------------------------------------------------------------- */
+.cta {
+    margin-top: 4mm;
+    background: var(--ink);
+    color: #fff;
+    padding: 7mm var(--pad) 11mm;   /* le bas remplit la page : sans ca un lisere blanc
+                                      apparait sous un bandeau censé aller bord a bord */
+    display: grid;
+    grid-template-columns: 1fr 62mm;
+    gap: 12mm;
+    align-items: start;
+}
+
+.cta-text h2 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 15pt;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: -0.3pt;
+    color: #fff;
+}
+
+.cta-text p {
+    margin-top: 5mm;
+    font-size: 9pt;
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.68);
+    max-width: 34em;
+}
+
+.cta-contact {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5mm;
+}
+
+.cta-contact li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8mm;
+    font-size: 9pt;
+    font-weight: 500;
+    color: #fff;
+}
+
+.cta-contact li span {
+    font-size: 6.5pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.4pt;
+    color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   IMPRESSION
+   -------------------------------------------------------------------------- */
+.break {
+    page-break-before: always;
+    break-before: page;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    body {
+        orphans: 2;
+        widows: 2;
+    }
+    .label,
+    .cover-top {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+    .figures,
+    .cta {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+</style>
+</head>
+<body>
+
+
+<header class="cover">
+    <div class="cover-top">
+        <div class="eyebrow">Ingénieur logiciel indépendant &middot; 19 ans &middot; Backend, Cloud &amp; IA</div>
+        <div class="cover-name">Michel MAIER</div>
+    </div>
+
+    <div class="cover-core">
+        <h1 class="statement">Votre produit avance à la vitesse de votre code le plus ancien.</h1>
+        <p class="counter">Je reprends ce code, je le sécurise, et je lui rends de la vitesse. <em>Sans arrêter votre production.</em></p>
+    </div>
+
+    <div class="cover-foot">
+            <img class="cover-photo" src="michel-maier-2026.png" alt="Michel MAIER" />
+        <div class="pill">Disponible à partir d'octobre 2026</div>
+    </div>
+</header>
+
+    <section class="figures">
+            <div class="figure">
+                <div class="figure-value">19<span>ans</span></div>
+                <div class="figure-caption">à construire des systèmes neufs et à reprendre ceux des autres</div>
+            </div>
+            <div class="figure">
+                <div class="figure-value">1<span>interlocuteur</span></div>
+                <div class="figure-caption">du front à l'infrastructure, sans coordination entre prestataires</div>
+            </div>
+            <div class="figure">
+                <div class="figure-value">100<span>%</span></div>
+                <div class="figure-caption">du code couvert par des tests, rien ne part à l'aveugle</div>
+            </div>
+            <div class="figure">
+                <div class="figure-value">20<span>%</span></div>
+                <div class="figure-caption">de mes honoraires récupérés par votre PME, agrément CII</div>
+            </div>
+    </section>
+
+    <section class="toolbelt">
+        <span class="toolbelt-label">Outillage</span>
+        <ul><li>TypeScript · Node.js · React</li><li>AWS serverless · Terraform</li><li>PHP · Symfony</li><li>LLM en production · agents de code</li><li>Architecture hexagonale · DDD · TDD</li></ul>
+
+    </section>
+
+    <section class="band">
+        <h2 class="label">Trois phrases que j'entends avant chaque mission</h2>
+            <article class="pain">
+                <h3>« Personne ne sait plus comment ça marche. »</h3>
+                <p>L'équipe d'origine est partie, il n'y a ni tests ni documentation, et chaque correction en casse une autre. Je cartographie le système et je pose un filet de tests sur les chemins critiques <strong>avant</strong> d'y toucher.</p>
+            </article>
+            <article class="pain">
+                <h3>« On nous propose de tout réécrire. »</h3>
+                <p>C'est le projet le plus risqué qu'une entreprise puisse lancer : budget doublé, deux ans sans nouvelle fonctionnalité, et l'ancien système toujours en vie. Je découpe l'existant morceau par morceau, chaque étape étant livrable et réversible.</p>
+            </article>
+            <article class="pain">
+                <h3>« L'IA, on en parle depuis deux ans, rien n'est en production. »</h3>
+                <p>Parce que le sujet est traité comme une démonstration au lieu d'un problème d'ingénierie. J'intègre des modèles dans le produit, avec la revue et les tests qui vont avec. Et s'il ne faut pas que vos données sortent, ils tournent chez vous.</p>
+            </article>
+    </section>
+
+<div class="break"></div>
+
+    <section class="trustband">
+        <h2 class="label label--onDark">Ils m'ont fait confiance</h2>
+        <ul class="trust">
+                <li><img src="logos/sanofi.svg" alt="Sanofi" style="height:7.5mm" /></li>
+                <li><img src="logos/leboncoin.svg" alt="leboncoin" style="height:7mm" /></li>
+                <li><img src="logos/iad.svg" alt="IAD" style="height:7.5mm" /></li>
+                <li><img src="logos/airfrance.svg" alt="Air France" style="height:4.5mm" /></li>
+        </ul>
+        <p class="trust-note">Auparavant Amadeus IT et Cora. Les plateformes que j'ai outillées servent aujourd'hui des campagnes de l'UNICEF et du fonds de dotation du Paris Saint-Germain.</p>
+    </section>
+
+    <section class="band">
+        <h2 class="label">Ce que ça donne, concrètement</h2>
+            <article class="mission">
+                <div class="mission-side">
+                    <div class="mission-client">GoTombola</div>
+                    <div class="mission-period">Depuis 2026</div>
+                </div>
+                <div class="mission-main">
+                    <h3>Produire un site ne demande plus de développeur</h3>
+                    <p>Au départ, chaque site passait par un développeur : un goulot d'étranglement à chaque nouvelle campagne. À deux avec le directeur technique, sept mois pour livrer un studio que n'importe qui dans l'équipe utilise sans savoir coder. L'IA rédige le site, l'outil le monte, la chaîne le publie.</p>
+                    <p class="mission-proof">Son directeur technique me rappelle depuis 2015.</p>
+                </div>
+            </article>
+            <article class="mission">
+                <div class="mission-side">
+                    <div class="mission-client">Sanofi</div>
+                    <div class="mission-period">2024 &ndash; 2025</div>
+                </div>
+                <div class="mission-main">
+                    <h3>Deux développements sur mesure devenus une plateforme paramétrable</h3>
+                    <p>Conception du socle qui a permis de généraliser un outil de génération de documents par IA, puis démantèlement du monolithe vers des services indépendants.</p>
+                    
+                </div>
+            </article>
+            <article class="mission">
+                <div class="mission-side">
+                    <div class="mission-client">IAD</div>
+                    <div class="mission-period">2022 &ndash; 2024</div>
+                </div>
+                <div class="mission-main">
+                    <h3>Un moteur de rapprochement qui débloque les ventes croisées</h3>
+                    <p>Mise en relation automatique des biens du réseau avec les critères des acquéreurs, y compris sur les biens jamais publiés en ligne.</p>
+                    <p class="mission-proof">Premier réseau de mandataires de France, 14 000 conseillers.</p>
+                </div>
+            </article>
+            <article class="mission">
+                <div class="mission-side">
+                    <div class="mission-client">leboncoin</div>
+                    <div class="mission-period">2021 &ndash; 2022</div>
+                </div>
+                <div class="mission-main">
+                    <h3>Une application rachetée, sécurisée, puis internalisée</h3>
+                    <p>Reprise sans tests et avec une documentation parcellaire, remise en production dans l'écosystème du groupe, puis migration des comptes professionnels pour cesser de payer leur prestataire historique.</p>
+                    
+                </div>
+            </article>
+    </section>
+
+    <section class="band">
+        <h2 class="label">Ce qu'en disent ceux qui m'ont employé</h2>
+        <div class="quotes">
+                <blockquote>
+                    <p>Un vrai atout pour les sociétés qui veulent construire un produit rapidement en combinant pragmatisme et qualité.</p>
+                    <footer><strong>David Huby</strong><span>Head of Engineering, IAD Group</span></footer>
+                </blockquote>
+                <blockquote>
+                    <p>Un rouleau compresseur de traitement des sujets épineux, un producteur de code stable et maintenable.</p>
+                    <footer><strong>Sébastien Veigneau</strong><span>Capitaine Air France, co-fondateur de DgBirds</span></footer>
+                </blockquote>
+        </div>
+    </section>
+
+<footer class="cta">
+    <div class="cta-text">
+        <h2>Le premier échange sert à qualifier votre problème, pas à vous vendre quelque chose.</h2>
+        <p>Décrivez-moi votre système et ce qui vous empêche d'avancer. Nous apporterons une solution.</p>
+    </div>
+    <ul class="cta-contact">
+        <li><span>Courriel</span>michel@solean-it.com</li>
+        <li><span>Téléphone</span>(+33) 6.13.56.19.40</li>
+        <li><span>Site</span>php-freelance.com</li>
+        <li><span>LinkedIn</span>linkedin.com/in/maier-michel</li>
+    </ul>
+</footer>
+
+</body>
+</html>
