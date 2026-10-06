@@ -9,7 +9,7 @@
     "email": "michel@solean-it.com",
     "phone": "(+33) 6.13.56.19.40",
     "url": "https://php-freelance.com/",
-    "summary": "For <b>nineteen years</b> I have been designing and taking over back-ends and cloud platforms, between serverless on AWS in TypeScript and the modernisation of PHP/Symfony monoliths step by step rather than through a rewrite.<br/>I work on systems that are already in production. I learn them, I make them safe to change with tests, then I split them up or scale them without interrupting your business. I also embed AI in them, to speed up your teams and improve your users' experience.<br/><b>Available from October 2026</b>, working remotely from Strasbourg.",
+    "summary": "For <b>nineteen years</b> I have been designing and taking over back-ends and cloud platforms, between serverless on AWS in TypeScript and the modernisation of PHP/Symfony monoliths step by step rather than through a rewrite.<br/>I work on systems that are already in production. I learn them, I make them safe to change with tests, then I split them up or scale them without interrupting your business. I also embed AI in them, to speed up your teams and improve your users' experience.<br/>Working remotely from Strasbourg.",
     "location": {
       "city": "Strasbourg",
       "countryCode": "FR"
@@ -29,7 +29,7 @@
       "position": "Fullstack TypeScript Developer – Cloud & AI",
       "startDate": "2026-01",
       "endDate": "2026-09",
-      "summary": "A SaaS platform for raffles and fundraising, serving small charities as well as high-visibility campaigns: the <a href=\"https://www.tombola-unicef.org/\" target=\"_blank\">UNICEF 10 KM solidarity raffle</a>, or the one run by the <a href=\"https://soutenir.psg.fr/fr/\" target=\"_blank\">Paris Saint-Germain endowment fund</a>. Working as a pair with the CTO, who has trusted me since 2015, we delivered in seven months the product's turning point: moving away from configuration-driven site generation towards AI-assisted generation in HTML, without touching the API contract.",
+      "summary": "A SaaS platform for raffles and fundraising, serving small charities as well as high-visibility campaigns: the <a href=\"https://www.tombola-unicef.org/\" target=\"_blank\">UNICEF 10 KM solidarity raffle</a>, or the one run by the <a href=\"https://soutenir.psg.fr/fr/\" target=\"_blank\">Paris Saint-Germain endowment fund</a>. Working as a pair with the CTO, who has trusted me since 2015, we delivered in nine months the product's turning point: moving away from configuration-driven site generation towards AI-assisted generation in HTML, without touching the API contract.",
       "highlights": [
         "<b>Context:</b> TypeScript, Node.js, React, Electron, Jest, GraphQL / AppSync, AWS (Lambda, Step Functions, DynamoDB, S3, CloudFront, CodeArtifact), Terraform, Docker, Claude Agent SDK, MCP, Ollama"
       ]

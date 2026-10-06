@@ -336,19 +336,19 @@ __metadata:
 
 "theme-plaquette-en@file:./theme-plaquette-en::locator=root-workspace-0b6124%40workspace%3A.":
   version: 0.0.1
-  resolution: "theme-plaquette-en@file:./theme-plaquette-en#./theme-plaquette-en::hash=9f3c51&locator=root-workspace-0b6124%40workspace%3A."
+  resolution: "theme-plaquette-en@file:./theme-plaquette-en#./theme-plaquette-en::hash=2a36be&locator=root-workspace-0b6124%40workspace%3A."
   dependencies:
     handlebars: "npm:^4.7.8"
-  checksum: 10c0/4dfcb1e19b427525ea0a586107f3c6bcc0b4eea229f071778743395df33459a96ece5a7370e40565c3cc221683f3ab71695964b73afed93b49ea9ff2b347a01b
+  checksum: 10c0/bc4fa158a8a8e58205a5c4d7b906c8392ae8187a997cf98fd7e68bb1799a56ad201b436a8e9fc2aa6b4c9a321f27974620ab04e9c836065c6db37323ae2def80
   languageName: node
   linkType: hard
 
 "theme-plaquette-fr@file:./theme-plaquette-fr::locator=root-workspace-0b6124%40workspace%3A.":
   version: 0.0.1
-  resolution: "theme-plaquette-fr@file:./theme-plaquette-fr#./theme-plaquette-fr::hash=ff383c&locator=root-workspace-0b6124%40workspace%3A."
+  resolution: "theme-plaquette-fr@file:./theme-plaquette-fr#./theme-plaquette-fr::hash=8fadeb&locator=root-workspace-0b6124%40workspace%3A."
   dependencies:
     handlebars: "npm:^4.7.8"
-  checksum: 10c0/348b061b0484e2fe1122d035d30daabdc9a7027602df5b338ab0a8ccc1cadbcc1f1f3459a21ca0d563f4fddbbb84ed90e7ded0e3b8908b9676482ba904c92011
+  checksum: 10c0/ead42d9963ff65d6d55f81c359ec21d61701f8df1c3083d4edc560f62aeee26d115d8857c00286a5b98ea15efba25b55db227a825ed5146c77e6420714c2f787
   languageName: node
   linkType: hard
 

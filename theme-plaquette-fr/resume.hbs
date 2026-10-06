@@ -31,7 +31,9 @@
         {{#if resume.basics.image}}
             <img class="cover-photo" src="{{resume.basics.image}}" alt="{{resume.basics.name}}" />
         {{/if}}
-        <div class="pill">{{{p.availability}}}</div>
+        {{#if p.availability}}
+            <div class="pill">{{{p.availability}}}</div>
+        {{/if}}
     </div>
 </header>
 

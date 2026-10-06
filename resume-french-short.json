@@ -9,7 +9,7 @@
     "email": "michel@solean-it.com",
     "phone": "(+33) 6.13.56.19.40",
     "url": "https://php-freelance.com/fr/",
-    "summary": "Depuis <b>dix-neuf ans</b>, je conçois et je reprends des back-ends et des plateformes cloud, entre serverless sur AWS en TypeScript et modernisation de monolithes PHP/Symfony par étapes plutôt que par réécriture.<br/>J'interviens sur des systèmes déjà en production. Je les comprends, je les sécurise par des tests, puis je les découpe ou je les fais monter en charge sans interrompre votre activité. J'y intègre aussi l'IA, pour accélérer vos équipes et améliorer l'expérience de vos utilisateurs.<br/><b>Disponible à partir d'octobre 2026</b>, en télétravail depuis Strasbourg.<br/><b>Agréé CII</b> : un crédit d'impôt de 20 % pour une PME éligible.",
+    "summary": "Depuis <b>dix-neuf ans</b>, je conçois et je reprends des back-ends et des plateformes cloud, entre serverless sur AWS en TypeScript et modernisation de monolithes PHP/Symfony par étapes plutôt que par réécriture.<br/>J'interviens sur des systèmes déjà en production. Je les comprends, je les sécurise par des tests, puis je les découpe ou je les fais monter en charge sans interrompre votre activité. J'y intègre aussi l'IA, pour accélérer vos équipes et améliorer l'expérience de vos utilisateurs.<br/>En télétravail depuis Strasbourg.<br/><b>Agréé CII</b> : un crédit d'impôt de 20 % pour une PME éligible.",
     "location": {
       "city": "Strasbourg",
       "countryCode": "FR"
@@ -29,7 +29,7 @@
       "position": "Développeur fullstack TypeScript – Cloud & IA",
       "startDate": "2026-01",
       "endDate": "2026-09",
-      "summary": "Plateforme SaaS de tombolas et de collecte, qui outille aussi bien de petites associations que des campagnes à forte visibilité : la tombola solidaire du <a href=\"https://www.tombola-unicef.org/\" target=\"_blank\">10 KM UNICEF</a>, ou celle du <a href=\"https://soutenir.psg.fr/fr/\" target=\"_blank\">fonds de dotation du Paris Saint-Germain</a>. En binôme avec le CTO, qui me fait confiance depuis 2015, nous avons livré en sept mois le virage du produit : quitter la génération de sites par configuration pour une génération assistée par IA en HTML, sans toucher au contrat d'API.",
+      "summary": "Plateforme SaaS de tombolas et de collecte, qui outille aussi bien de petites associations que des campagnes à forte visibilité : la tombola solidaire du <a href=\"https://www.tombola-unicef.org/\" target=\"_blank\">10 KM UNICEF</a>, ou celle du <a href=\"https://soutenir.psg.fr/fr/\" target=\"_blank\">fonds de dotation du Paris Saint-Germain</a>. En binôme avec le CTO, qui me fait confiance depuis 2015, nous avons livré en neuf mois le virage du produit : quitter la génération de sites par configuration pour une génération assistée par IA en HTML, sans toucher au contrat d'API.",
       "highlights": [
         "<b>Contexte :</b> TypeScript, Node.js, React, Electron, Jest, GraphQL / AppSync, AWS (Lambda, Step Functions, DynamoDB, S3, CloudFront, CodeArtifact), Terraform, Docker, Claude Agent SDK, MCP, Ollama"
       ]
