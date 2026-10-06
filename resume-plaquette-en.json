@@ -21,7 +21,6 @@
     "eyebrow": "Independent software engineer &middot; 19 years &middot; Backend, Cloud &amp; AI",
     "statement": "Your product moves at the speed of your oldest code.",
     "counter": "I take that code over, I make it safe to change, and I give it back its speed. <em>Without ever stopping your production.</em>",
-    "availability": "Available from October 2026",
     "figures": [
       {
         "value": "19",
@@ -89,7 +88,7 @@
         "client": "GoTombola",
         "period": "2026",
         "title": "Producing a site no longer requires a developer",
-        "body": "At the start, every site went through a developer: a bottleneck on each new campaign. As a pair with the CTO, seven months to deliver a studio anyone on the team uses without writing code. The AI writes the site, the tool assembles it, the pipeline publishes it.",
+        "body": "At the start, every site went through a developer: a bottleneck on each new campaign. As a pair with the CTO, nine months to deliver a studio anyone on the team uses without writing code. The AI writes the site, the tool assembles it, the pipeline publishes it.",
         "proof": "Its CTO has trusted me since 2015."
       },
       {
