@@ -105,11 +105,13 @@ laissent les entrées anciennes sans `summary`, ce qui déclenche leur rendu en 
 seule ligne (`.work-item--slim`) : date, poste, société, ville, les sociétés
 alignées sur un axe vertical unique.
 
-**Variantes PHP.** `resume-french-php.json` (7 pages) et
+**Variantes PHP.** `resume-french-php.json` (6 pages) et
 `resume-french-short-php.json` (2 pages) sont les CV français réorientés PHP /
 Symfony pour les candidatures où le dernier poste en TypeScript ferait croire à un
-abandon de PHP : titre, profil et ordre des compétences mènent par PHP, même
-contenu factuel sinon. Indépendantes elles aussi, publiées par l'action dans
+abandon de PHP : titre, profil et ordre des compétences mènent par PHP. Exceptions
+voulues : dans la variante longue, l'entrée GoTombola est réduite au paragraphe de
+la variante courte plus la ligne sur la couverture de tests, et la section
+`certificates` disparaît (le CII reste dans le profil). Indépendantes elles aussi, publiées par l'action dans
 `public/fr` (HTML, PDF, Word) et listées dans l'annuaire privé, sans équivalent
 anglais pour l'instant.
 
