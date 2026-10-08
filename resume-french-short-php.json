@@ -51,7 +51,7 @@
       "position": "Développeur back-end – PHP / Symfony",
       "startDate": "2022-12",
       "endDate": "2024-10",
-      "summary": "IAD est le premier réseau de mandataires immobiliers en France, avec près de 14 000 conseillers dans l'Hexagone et plus de 17 000 dans le monde. Dans le cadre de la refonte de ses outils et de son expansion au Royaume-Uni et aux États-Unis, l'entreprise a engagé la modernisation de ses plateformes. J'ai travaillé deux ans sur ce chantier, en architecture hexagonale et approche DDD, sur un monolithe modulaire.",
+      "summary": "IAD est le premier réseau de mandataires immobiliers en France, avec près de 14 000 conseillers dans l'Hexagone et plus de 17 000 dans le monde. Dans le cadre de la refonte de ses outils et de son expansion au Royaume-Uni et aux États-Unis, l'entreprise a engagé la modernisation de ses plateformes. J'ai travaillé deux ans sur ce chantier, en architecture hexagonale et approche DDD, sur un monolithe modulaire. Au sein de la squad, j'étais le garant des décisions d'architecture et l'interlocuteur des architectes, et j'ai notamment conçu la stratégie de mise à jour d'une projection alimentée par plusieurs bounded contexts.",
       "highlights": [
         "<b>Contexte :</b> Docker, PHP 7.2 / 8, Symfony 3.4 à 6, Postgres, PhpUnit, API Platform, AWS, architecture hexagonale, DDD"
       ]
