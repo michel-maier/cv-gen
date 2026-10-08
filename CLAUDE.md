@@ -109,8 +109,9 @@ alignées sur un axe vertical unique.
 `resume-french-short-php.json` (2 pages) sont les CV français réorientés PHP /
 Symfony pour les candidatures où le dernier poste en TypeScript ferait croire à un
 abandon de PHP : titre, profil et ordre des compétences mènent par PHP, même
-contenu factuel sinon. Indépendantes elles aussi, validées, non publiées par
-l'action, sans équivalent anglais pour l'instant.
+contenu factuel sinon. Indépendantes elles aussi, publiées par l'action dans
+`public/fr` (HTML, PDF, Word) et listées dans l'annuaire privé, sans équivalent
+anglais pour l'instant.
 
 Les plaquettes rangent leur contenu sous une clé `plaquette` à la racine. Le
 schéma JSON Resume autorise les champs additionnels, les fichiers valident.
@@ -129,7 +130,7 @@ fonctionner. Les quatre nouveaux documents s'ajoutent dans les mêmes répertoir
 
 Pas d'export Word des plaquettes : une mise en page pleine page n'y survit pas.
 
-**Annuaire privé.** `annuaire/index.html` liste les six documents dans leurs trois
+**Annuaire privé.** `annuaire/index.html` liste les huit documents dans leurs trois
 formats et se déploie en `public/perso-8b41d6/`. Aucune page n'y renvoie et il
 porte `<meta name="robots" content="noindex, nofollow, noarchive">`, donc il reste
 introuvable par recherche. Ce n'est pas pour autant un secret : **le dépôt est
