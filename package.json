@@ -16,10 +16,12 @@
     "rfrench": "cat resume-french.json > resume.json && yarn resumed --theme theme-french -o resume_fr.html",
     "renglish": "cat resume-english.json > resume.json && yarn resumed --theme theme-english -o resume_en.html",
     "rfrench-short": "cat resume-french-short.json > resume.json && yarn resumed --theme theme-french -o resume_fr_short.html",
+    "rfrench-php": "cat resume-french-php.json > resume.json && yarn resumed --theme theme-french -o resume_fr_php.html",
+    "rfrench-short-php": "cat resume-french-short-php.json > resume.json && yarn resumed --theme theme-french -o resume_fr_short_php.html",
     "renglish-short": "cat resume-english-short.json > resume.json && yarn resumed --theme theme-english -o resume_en_short.html",
     "pfrench": "cat resume-plaquette-fr.json > resume.json && yarn resumed --theme theme-plaquette-fr -o plaquette_fr.html",
     "penglish": "cat resume-plaquette-en.json > resume.json && yarn resumed --theme theme-plaquette-en -o plaquette_en.html",
     "2pdf": "node convert-to-pdf.js",
-    "validate": "resumed validate resume-french.json && resumed validate resume-english.json && resumed validate resume-french-short.json && resumed validate resume-english-short.json && resumed validate resume-plaquette-fr.json && resumed validate resume-plaquette-en.json"
+    "validate": "resumed validate resume-french.json && resumed validate resume-english.json && resumed validate resume-french-short.json && resumed validate resume-french-php.json && resumed validate resume-french-short-php.json && resumed validate resume-english-short.json && resumed validate resume-plaquette-fr.json && resumed validate resume-plaquette-en.json"
   }
 }
