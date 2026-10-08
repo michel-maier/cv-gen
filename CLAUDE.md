@@ -57,6 +57,8 @@ yarn validate           # les six sources contre le schéma JSON Resume
 yarn rfrench            # resume-french.json        -> resume_fr.html
 yarn renglish           # resume-english.json       -> resume_en.html
 yarn rfrench-short      # resume-french-short.json  -> resume_fr_short.html
+yarn rfrench-php        # resume-french-php.json         -> resume_fr_php.html
+yarn rfrench-short-php  # resume-french-short-php.json   -> resume_fr_short_php.html
 yarn renglish-short     # resume-english-short.json -> resume_en_short.html
 yarn pfrench            # resume-plaquette-fr.json  -> plaquette_fr.html
 yarn penglish           # resume-plaquette-en.json  -> plaquette_en.html
@@ -102,6 +104,13 @@ Les CV courts activent `meta.compact` (le thème réduit la taille du corps) et
 laissent les entrées anciennes sans `summary`, ce qui déclenche leur rendu en une
 seule ligne (`.work-item--slim`) : date, poste, société, ville, les sociétés
 alignées sur un axe vertical unique.
+
+**Variantes PHP.** `resume-french-php.json` (7 pages) et
+`resume-french-short-php.json` (2 pages) sont les CV français réorientés PHP /
+Symfony pour les candidatures où le dernier poste en TypeScript ferait croire à un
+abandon de PHP : titre, profil et ordre des compétences mènent par PHP, même
+contenu factuel sinon. Indépendantes elles aussi, validées, non publiées par
+l'action, sans équivalent anglais pour l'instant.
 
 Les plaquettes rangent leur contenu sous une clé `plaquette` à la racine. Le
 schéma JSON Resume autorise les champs additionnels, les fichiers valident.
